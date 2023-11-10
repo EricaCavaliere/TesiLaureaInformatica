@@ -1,10 +1,18 @@
 % Acronyms
-\newacronym[description={\glslink{apig}{Application Program Interface}}]
-    {api}{API}{Application Program Interface}
+%\newacronym[description={\glslink{apig}{Application Program Interface}}]
+%    {api}{API}{Application Program Interface}
+%
+%\newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
+%    {uml}{UML}{Unified Modeling Language}
 
-\newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
-    {uml}{UML}{Unified Modeling Language}
+\newacronym[description={\glslink{uig}{User Interface}}]
+    {ui}{UI}{User Interface}
 
+\newacronym[description={\glslink{uxg}{User Experience}}]
+    {ux}{UX}{User Experience}
+
+\newacronym[description={\glslink{wcagg}{Web Content Accessibility Guidelines}}]
+    {wcag}{WCAG}{Web Content Accessibility Guidelines}
 
 % Glossary entries
 %\newglossaryentry{apig} {
@@ -23,11 +31,18 @@
 
 % i termini che ho inserito con Gabriel -----------------------------------------------------
 
-\newglossaryentry{cassag} {
+\newglossaryentry{cassacomuneg} {
     name=cassa comune,
     text=cassa comune,
     sort=cas,
     description={viene utilizzato questo termine per indicare i fondi dati dagli operatori aziendali per coprire i pasti}
+}
+
+\newglossaryentry{componentig} {
+    name=componenti,
+    text=componenti,
+    sort=comp,
+    description={sono un insieme di \emph{widget} e di elementi che insieme costituiscono un prodotto software}
 }
 
 \newglossaryentry{dartg} {
@@ -35,28 +50,52 @@
     text=Dart,
     sort=dart,
     description={linguaggio di programmazione \textit{open-source} sviluppato da Google. 
-    È il linguaggio principale utilizzato per scrivere applicazioni con Flutter. Dart è noto per la sua velocità ed efficienza nella creazione di applicazioni mobili e web.
+    È il linguaggio principale utilizzato per scrivere applicazioni con \emph{\gls{flutterg}}. Dart è noto per la sua velocità ed efficienza nella creazione di applicazioni mobili e web.
     Risulta inoltre staticamente tipizzato, cioè consente una dichiarazione esplicita dei tipi delle variabili e garantisce maggiore robustezza in programmazione}
 }
 
-\newglossaryentry{fireg} {
+\newglossaryentry{firebaseg} {
     name=Firebase,
     text=Firebase,
     sort=fire,
-    description={piattaforma di sviluppo di app mobile di Google che offre una serie di servizi tra cui database in tempo reale, autenticazione utente, hosting di applicazioni e molto altro. 
-    È ampiamente utilizzato per la costruzione di app mobile e web in modo rapido e scalabile, grazie alle funzionalità cloud, di notifica e di monitoraggio in real time}
+    description={piattaforma di sviluppo di app mobile di Google che offre una serie di servizi tra cui \emph{database} in tempo reale, autenticazione utente, \emph{hosting} di applicazioni e molto altro. 
+    È ampiamente utilizzato per la costruzione di app mobile e web in modo rapido e scalabile, grazie alle funzionalità \emph{cloud}, di notifica e di monitoraggio in \emph{real time}}
 }
 
-\newglossaryentry{fluttg} {
+\newglossaryentry{flutterg} {
     name=Flutter,
     text=Flutter,
     sort=flutt,
-    description={\textit{framework} \textit{open-source} di Google per lo sviluppo di applicazioni mobile, desktop e webapp utilizzando il linguaggio \textit{Dart}. È basato su widget personalizzabili, puntando su un rapido sviluppo, eccellenti performance, una comunità attiva e supporto per molte piattaforme}
+    description={\textit{framework} \textit{open-source} di Google per lo sviluppo di applicazioni mobile, desktop e webapp utilizzando il linguaggio \emph{\gls{dartg}}. È basato su \emph{widget} personalizzabili, puntando su un rapido sviluppo, eccellenti performance, una comunità attiva e supporto per molte piattaforme}
 }
 
-\newglossaryentry{storng} {
+\newglossaryentry{quotastornatag} {
     name=quota stornata,
     text=quota stornata,
     sort=storn,
     description={indica i soldi che il singolo utente deve dare o ricevere dagli altri utenti per i pasti effettuati e le spese sostenute}
+}
+
+\newglossaryentry{uig} {
+    name=\glslink{ui}{UI},
+    text=UI,
+    sort=ui,
+    description={indica l'interfaccia grafica che viene utilizzata per le comunicazione tra uomo e macchina}
+    %description={indica i soldi che il singolo utente deve dare o ricevere dagli altri utenti per i pasti effettuati e le spese sostenute}
+}
+
+\newglossaryentry{uxg} {
+    name=\glslink{ux}{UX},
+    text=UX,
+    sort=ux,
+    description={indica l'insieme di sensazioni e ricordi che una persona prova quando si rapporta con un prodotto, cioè tutti gli aspetti che condizionano il prodotto per consentire all'utente di utilizzarlo e capirlo con facilità}
+    %description={indica i soldi che il singolo utente deve dare o ricevere dagli altri utenti per i pasti effettuati e le spese sostenute}
+}
+
+\newglossaryentry{wcagg} {
+    name=\glslink{wcag}{WCAG},
+    text=WCAG,
+    sort=wcag,
+    description={si tratta di una serie di linee guida per làaccessibilità}
+    %description={indica i soldi che il singolo utente deve dare o ricevere dagli altri utenti per i pasti effettuati e le spese sostenute}
 }
