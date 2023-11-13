@@ -1,7 +1,8 @@
 \chapter{Processi e metodologie}
 \label{cap:processi-metodologie}
 
-%\intro{Brevissima introduzione al capitolo}\\
+\intro{In questo capitolo viene spiegato il Material Design che sta alla base della progettazione dell'app.\newline
+Viene poi riportata il metodo di lavoro utilizzato e infine le tecnologie adottate per lo sviluppo del progetto.}\\
 
 \section{Material Design}
 % Nome, riscrittura senza ripetizioni del contesto (presentazione simil "marketing")
@@ -26,7 +27,7 @@ Vengono indicate delle regole precise su come devono essere impostate le \emph{\
 Anche \emph{\gls{flutterg}} offre una guida sulle \emph{\gls{componentig}} che mette a disposizione per lo sviluppatore e che sono state ideate per rispettare le regole di Material Design appena descritte.\newline
 
 \section{Metodo di lavoro}
-Al momento dello stage, RiskApp contava circa dieci dipendenti e ognuno era incaricato di sviluppare e mantenere una parte della loro piattaforma, confrontandosi tra loro ogni giorno per capire come continuare a lavorare.\newline
+Durante lo stage, RiskApp contava circa dieci dipendenti e ognuno era incaricato di sviluppare e mantenere una parte della loro piattaforma, confrontandosi tra loro ogni giorno per capire come continuare a lavorare.\newline
 Il loro metodo di lavoro, si avvicina a un metodo Agile, più precisamente ad uno SCRUM ed è stato il metodo utilizzato anche per lo sviluppo del progetto di stage.\newline
 \newline
 Il Manifesto per lo sviluppo Agile (\cite{site:manifesto-agile}) è composto da dodici principi fondamentali che descrivono il modo in cui deve lavorare il team, permettendo possibili cambiamenti in corso d'opera e mettendo al primo posto il cliente, rilasciando varie versioni del prodotto funzionante dopo brevi periodi e privileggiando le comunicazioni faccia a faccia.\newline
@@ -37,96 +38,99 @@ L’idea di fondo consiste nel suddividere i periodi di lavoro in \emph{sprint} 
 Per lo sviluppo del progetto di stage, ogni giorno veniva riportato quanto era stato fatto e veniva mostrato il funzionamento, raccogliendo possibili idee per migliorare o modificare l'app.\newline
 Se in corso d'opera venivano incontrate eventuali problematiche sullo sviluppo, si ragionava su come affrontare o modificare il prodotto per risolvere questi problemi, permettendo così di soddisfare ogni esigenza degli utenti finali, in questo caso per soddisfare le esigenze dei dipendenti dell'azienda.
 
+\newpage
+
 \section{Tecnologie}
 
 \subsection{Flutter}
-%Flutter (Figura \ref{fig:flutter}) è un progetto open-source di Google il cui vantaggio principale è la generazione di applicazioni multipiattaforma a partire da un unico codice sorgente.\newline
-%Permette quindi allo sviluppatore di concentrarsi sul prodotto da realizzare senza dover preferire un sistema operativo mobile ad un altro.\newline
-%Per questo motivo è stato scelto di utilizzare Flutter come framework principale, dato che il prodotto finale deve funzionare sia per dispositivi Android sia per dispositivi iOS.\newline
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.45\columnwidth]{Flutter} 
-%    \caption{Logo di Flutter}\label{fig:flutter}
-%\end{figure}
+Flutter (Figura \ref{fig:flutter}) è un progetto open-source di Google il cui vantaggio principale è la generazione di applicazioni multipiattaforma a partire da un unico codice sorgente.\newline
+Permette quindi allo sviluppatore di concentrarsi sul prodotto da realizzare senza dover preferire un sistema operativo mobile ad un altro.\newline
+Per questo motivo è stato scelto di utilizzare Flutter come \emph{framework} principale, dato che il prodotto finale deve funzionare sia per dispositivi Android sia per dispositivi iOS.\newline
+\begin{figure}[!h] 
+    \centering
+    \includegraphics[width=0.4\columnwidth]{Flutter} 
+    \caption{Logo di Flutter}\label{fig:flutter}
+\end{figure}
 
 \subsection{Dart}
-%Il linguaggio sul quale si basa Flutter è Dart (Figura \ref{fig:dart}), il quale nacque con l’intento di sostituire JavaScript come protagonista delle applicazioni web.\newline
-%Tra i suoi pregi si elencano il compilatore JIT, migliore gestione della sicurezza, la velocità e la maggiore scalabilità.\newline
-%Il paradigma principale è l’orientamento agli oggetti, una sua particolarità è data dalla sua attenzione alla null safety per la quale nessun valore può essere nullo a meno che questa possibilità non sia esplicitamente dichiarata.\newline
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.4\columnwidth]{Dart} 
-%    \caption{Logo di Dart}\label{fig:dart}
-%\end{figure}
+Il linguaggio sul quale si basa Flutter è Dart (Figura \ref{fig:dart}), nato con l’intento di sostituire JavaScript come protagonista delle applicazioni web.\newline
+Tra i suoi pregi si elencano il compilatore JIT, migliore gestione della sicurezza, la velocità e la maggiore scalabilità.\newline
+Il paradigma principale è l’orientamento agli oggetti, una sua particolarità è data dalla sua attenzione alla \emph{null safety}, per la quale nessun valore può essere nullo a meno che questa possibilità non sia esplicitamente dichiarata.\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{Dart} 
+    \caption{Logo di Dart}\label{fig:dart}
+\end{figure}
 
 \subsection{Firebase}
-%Firebase (Figura \ref{fig:dart}) è una piattaforma open-source per la creazione di applicazioni per dispositivi mobili e web sviluppata da Google.\newline
-%Firebase sfrutta l'infrastruttura di Google e il suo cloud per fornire una suite di strumenti per scrivere, analizzare e mantenere applicazioni cross-platform.\newline
-%Infatti offre funzionalità come analisi, database (usando strutture noSQL), messaggistica e segnalazione di arresti anomali per la gestione di applicazioni web, iOS e Android.\newline
-%Per lo sviluppo dell'app sono stati utilizzati:
-%\begin{itemize}
-%    \item Firebase Autenticathion, per permettere la registrazione e l'autenticazione di un utente tramite mail e password
-%    \item Cloud Firestore, per la gestione del database.
-%\end{itemize}
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.55\columnwidth]{Firebase} 
-%    \caption{Logo di Firebase}\label{fig:figma}
-%\end{figure}
+Firebase (Figura \ref{fig:dart}) è una piattaforma \emph{open-source} per la creazione di applicazioni per dispositivi mobili e web sviluppata da Google.\newline
+Firebase sfrutta l'infrastruttura di Google e il suo cloud per fornire una suite di strumenti per scrivere, analizzare e mantenere applicazioni \emph{cross-platform}.\newline
+Infatti offre funzionalità come analisi, database (usando strutture noSQL), messaggistica e segnalazione di arresti anomali per la gestione di applicazioni web, iOS e Android.\newline
+Per lo sviluppo dell'app sono stati utilizzati:
+\begin{itemize}
+    \item Firebase Autentication, per permettere la registrazione e l'autenticazione di un utente tramite mail e password;
+    \item Cloud Firestore, per la gestione del database.
+\end{itemize}
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5\columnwidth]{Firebase} 
+    \caption{Logo di Firebase}\label{fig:figma}
+\end{figure}
 
 \subsection{Figma}
-%Figma (Figura \ref{fig:figma}) è un software per la progettazione di User Interface(UI).\newline
-%Permette infatti di realizzare prototipi delle interfacce, altresì detti mockup, che permettono di illustrare il risultato finale che si desidera ottenere.\newline
-%Questo strumento è stato utilizzato per mostrare e concordare l'interfaccia dell'app al tutor aziendale, prima della fase di codifica.\newline
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.38\columnwidth]{Figma} 
-%    \caption{Logo di Figma}\label{fig:figma}
-%\end{figure}
-
-
+Figma (Figura \ref{fig:figma}) è un software per la progettazione di User Interface(UI).\newline
+Permette infatti di realizzare prototipi delle interfacce, detti anche \emph{mockup}, che permettono di illustrare il risultato finale che si desidera ottenere.\newline
+Questo strumento è stato utilizzato per mostrare e concordare l'interfaccia dell'app al tutor aziendale, prima della fase di codifica.\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{Figma} 
+    \caption{Logo di Figma}\label{fig:figma}
+\end{figure}
 
 \subsection{Android Studio}
-%Android Studio (Figura \ref{fig:android}) è un ambiente di sviluppo integrato adibito per la creazione di applicazioni Android e mette a disposizione dei simulatori virtuali di uno o più cellulari con sistema operativo Android.\newline
-%Il progetto è stato sviluppato interamente con l'uso di questo IDE ed è stato utilizzato il simulatore virtuale di Google Pixel 7 con sistema operativo Android 13 per testare la build dell'app.\newline
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.5\columnwidth]{AndroidStudio} 
-%    \caption{Logo di Android Studio}\label{fig:android}
-%\end{figure}
+Android Studio (Figura \ref{fig:android}) è un \emph{\gls{ide}}\glsfirstoccur adibito per la creazione di applicazioni Android e mette a disposizione dei simulatori virtuali di uno o più cellulari con il sistema operativo di Google.\newline
+Il progetto è stato sviluppato interamente con l'uso di questo \emph{\gls{ideg}} ed è stato utilizzato il simulatore virtuale di Google Pixel 7 con sistema operativo Android 13 per testare la \emph{\gls{buildg}}\glsfirstoccur dell'app.\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5\columnwidth]{AndroidStudio} 
+    \caption{Logo di Android Studio}\label{fig:android}
+\end{figure}
 
 \subsection{Xcode}
-%Xcode (Figura \ref{fig:apple}) è un ambiente di sviluppo integrato (Integrated development environment, IDE), completamente sviluppato e mantenuto da Apple, contenente una suite di strumenti utili allo sviluppo di software per i sistemi macOS, iOS, iPadOS, watchOS e tvOS.\newline
-%Per poter testare la build del progetto, è stato utilizzato il simulatore virtuale di iPhone 15 con sistema operativo iOS 17, messo a disposizione da questo software.\newline
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.4\columnwidth]{Xcode} 
-%    \caption{Logo di Android Studio}\label{fig:apple}
-%\end{figure}
+Xcode (Figura \ref{fig:apple}) è un \emph{\gls{ideg}} completamente sviluppato e mantenuto da Apple, contenente una suite di strumenti utili allo sviluppo di software per i sistemi macOS, iOS, iPadOS, watchOS e tvOS.\newline
+Per poter testare la \emph{\gls{buildg}} del progetto, è stato utilizzato il simulatore virtuale di iPhone 15 con sistema operativo iOS 17, messo a disposizione da questo software.\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.25\columnwidth]{Xcode} 
+    \caption{Logo di Xcode}\label{fig:apple}
+\end{figure}
 
 \subsection{GitHub}
-%GitHub (Figura \ref{fig:github}) è una piattaforma di hosting per repository git.\newline
-%Fornisce agli sviluppatori strumenti per migliorare e mantenere il codice come:
-%\begin{itemize}
-%    \item features utilizzabili da linea di comando,
-%    \item gestione delle pull request e code review,
-%    \item strumenti per l’issue tracking.
-%\end{itemize}
-%La codebase della piattaforma RiskApp è suddivisa in varie repository su GitHub.\newline
-%Per questo progetto, l'azienda ha riservato una repository apposta per permettermi di lavorare in autonomia al codice.\newline
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.5\columnwidth]{GitHub} 
-%    \caption{Logo di GitHub}\label{fig:github}
-%\end{figure}
+GitHub (Figura \ref{fig:github}) è una piattaforma di \emph{hosting} per per ospitare codice all'interno di repository basato sul software Git.\newline
+Fornisce agli sviluppatori strumenti per migliorare e mantenere il codice come:
+\begin{itemize}
+    \item \emph{features} utilizzabili da linea di comando,
+    \item gestione delle \emph{pull request} e \emph{code review},
+    \item strumenti per l’\emph{issue tracking}.
+\end{itemize}
+La codebase della piattaforma RiskApp è suddivisa in varie repository su GitHub.\newline
+Per questo progetto, l'azienda ha riservato una repository apposita per permettermi di lavorare in autonomia al codice.\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5\columnwidth]{GitHub} 
+    \caption{Logo di GitHub}\label{fig:github}
+\end{figure}
+
+\newpage
 
 \subsection{Slack}
-%Slack (Figura \ref{fig:slack}) è un applicazione multipiattaforma per la messaggistica istantanea tra membri di un gruppo di lavoro.\newline
-%Una delle funzioni di Slack è la possibilità di organizzare la comunicazione del team attraverso canali specifici, canali che possono essere accessibili a tutto il team o solo ad alcuni membri.\newline
-%È possibile inoltre comunicare con il team anche attraverso chat individuali private o chat con due o più membri.\newline
-%Questo software è stato utilizzato per comunicare con il tutor aziendale da remoto e per condividere materiale.\newline
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.4\columnwidth]{Slack} 
-%    \caption{Logo di Slack}\label{fig:slack}
-%\end{figure}
+Slack (Figura \ref{fig:slack}) è un applicazione multipiattaforma per la messaggistica istantanea tra membri di un gruppo di lavoro.\newline
+Una delle funzioni di Slack è la possibilità di organizzare la comunicazione del team attraverso canali specifici, canali che possono essere accessibili a tutto il team o solo ad alcuni membri.\newline
+È possibile inoltre comunicare con il team anche attraverso chat individuali private o chat con due o più membri.\newline
+Questo software è stato utilizzato per comunicare con il tutor aziendale da remoto e per condividere materiale.\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{Slack} 
+    \caption{Logo di Slack}\label{fig:slack}
+\end{figure}
+
