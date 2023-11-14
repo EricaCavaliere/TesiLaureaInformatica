@@ -31,41 +31,41 @@
 
 \begin{usecase}{1}{Autenticazione utente}
     \usecaseactors{Utente non autenticato}
-    \usecasepre{L'utente entra nell'app senza essersi autenticato}
+    \usecasepre{L'utente non ha effettuato l'autenticazione}
     \usecasedesc{L'utente inserisce la propria mail e la propria password per effettuare l'accesso}
-    \usecasepost{Si visualizza la schermata Home dell'app}
+    \usecasepost{L'utente è stato autenticato}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
 \begin{usecase}{2}{Registrazione utente}
     \usecaseactors{Utente non autenticato}
-    \usecasepre{L'utente entra nell'applicazione senza essersi mai registrato}
-    \usecasedesc{L'utente inserisce i propri dati per registrare i propri dati nel database e effettuare l'accesso}
-    \usecasepost{L'utente visualizzerà la schermata Home dell'app}
+    \usecasepre{L'utente non è registrato nel database}
+    \usecasedesc{L'utente inserisce i propri dati per registrarsi nel database e effettuare l'accesso}
+    \usecasepost{L'utente è stato registrato nel database}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
 \begin{usecase}{3}{Visualizzazione \emph{\gls{cassacomuneg}}}
     \usecaseactors{Utente}
-    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
-    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare la \emph{\gls{cassacomuneg}}}
-    \usecasepost{Si visualizza la \emph{\gls{cassacomuneg}}}
+    \usecasepre{La \emph{\gls{cassacomuneg}} non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare la \emph{\gls{cassacomuneg}}}
+    \usecasepost{L'utente visualizza la \emph{\gls{cassacomuneg}}}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
 \begin{usecase}{4}{Visualizzazione \emph{\gls{quotastornatag}} utente}
     \usecaseactors{Utente}
-    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
-    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare la \emph{\gls{quotastornatag}} dell'utente}
-    \usecasepost{Si visualizza la \emph{\gls{quotastornatag}} dell'utente}
+    \usecasepre{La \emph{\gls{quotastornatag}} dell'utente non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare la \emph{\gls{quotastornatag}} dell'utente}
+    \usecasepost{L'utente visualizza la \emph{\gls{quotastornatag}} dell'utente}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
 \begin{usecase}{5}{Visualizzazione piatti proposti}
     \usecaseactors{Utente}
-    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
-    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare i piatti proposti del giorno}
-    \usecasepost{Si visualizza la lista dei piatti proposti oggi}
+    \usecasepre{La lista dei piatti proposti oggi non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare i piatti proposti del giorno}
+    \usecasepost{L'utente visualizza la lista dei piatti proposti oggi}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -79,9 +79,9 @@
 
 \begin{usecase}{6}{Visualizzazione transazioni} %serve aggiungere nel glossario la parola transazione?
     \usecaseactors{Utente}
-    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
-    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare la lista delle transazioni}
-    \usecasepost{Si visualizza la lista delle transazioni}
+    \usecasepre{La lista delle transazioni non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare la lista delle transazioni}
+    \usecasepost{L'utente visualizza la lista delle transazioni}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -129,15 +129,39 @@
 
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.9\columnwidth]{usecase/usecase-3} 
+    \includegraphics[width=0.8\columnwidth]{usecase/usecase-3} 
     \caption{Use Case - Menu}
 \end{figure}
 
-\begin{usecase}{6}{Visualizzazione menu} %serve aggiungere nel glossario la parola transazione?
+\begin{usecase}{9}{Visualizzazione menu} %serve aggiungere nel glossario la parola transazione?
     \usecaseactors{Utente}
-    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
-    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare il menu}
-    \usecasepost{Si visualizza la lista dei piatti presenti nel menu}
+    \usecasepre{Il menu non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare il menu}
+    \usecasepost{L'utente visualizza la lista dei piatti presenti nel menu}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{10}{Aggiunta piatto}
+    \usecaseactors{Utente}
+    \usecasepre{Il piatto non è presente nel database e non è visibile nel menu}
+    \usecasedesc{L'utente inserisce i dati del piatto e lo salva nel database}
+    \usecasepost{Il piatto è presente nel database e visibile nel menu}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{11}{Elimina piatto}
+    \usecaseactors{Utente}
+    \usecasepre{Il piatto è presente nel database e visibile dal menu}
+    \usecasedesc{L'utente elimina il piatto interessata dall'app e viene eliminato dal database}
+    \usecasepost{Il piatto non è presente nel database e non è visibile nel menu}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{12}{Proporre piatto del giorno}
+    \usecaseactors{Utente}
+    \usecasepre{Il piatto non è indicato come piatto proposto del giorno}
+    \usecasedesc{L'utente propone il piatto interessato come piatto del giorno}
+    \usecasepost{Il piatto è indicato come piatto proposto del giorno}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -149,21 +173,163 @@
     \caption{Use Case - Utente}
 \end{figure}
 
+\begin{usecase}{13}{Visualizzazione quota pasto} %aggiungere nel glossario quota pasto
+    \usecaseactors{Amministratore}
+    \usecasepre{La quota pasto non è visibile}
+    \usecasedesc{L'amministratore entra nell'app per visualizzare la quota pasto}
+    \usecasepost{L'amministratore visualizza la quota pasto}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{14}{Modifica quota pasto} %aggiungere nel glossario quota pasto
+    \usecaseactors{Amministratore}
+    \usecasepre{La quota pasto è salvata nel database con il vecchio valore}
+    \usecasedesc{L'amministratore modifica la quota pasto con il nuovo valore}
+    \usecasepost{La quota passto è salvata nel database con il nuovo valore}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{15}{Visualizzazione \emph{\gls{quotastornatag}} stagisti}
+    \usecaseactors{Amministratore}
+    \usecasepre{La \emph{\gls{quotastornatag}} stagisti non è visibile}
+    \usecasedesc{L'amministratore entra nell'app per visualizzare la \emph{\gls{quotastornatag}} stagisti}
+    \usecasepost{L'amministratore visualizza la \emph{\gls{quotastornatag}} stagisti}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{16}{Visualizzazione presenza stagisti}
+    \usecaseactors{Amministratore}
+    \usecasepre{La lista delle presenze dei stagisti non è visibile}
+    \usecasedesc{L'amministratore entra nell'app per visualizzare la lista delle presenze dei stagisti}
+    \usecasepost{L'amministratore visualizza la lista delle presenze dei stagisti}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{17}{Modifica presenza stagisti}
+    \usecaseactors{Amministratore}
+    \usecasepre{La lista delle presenze degli stagisti è salvato nel database con i vecchi valori}
+    \usecasedesc{L'amministratore modifica la lista delle presenze degli stagisti con i nuovi valori}
+    \usecasepost{La lista delle presenze degli stagisti è salvato nel database con i nuovi valori}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{18}{Visualizzazione presenza}
+    \usecaseactors{Utente}
+    \usecasepre{La lista delle presenze dell'utente non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare la lista delle proprie presenze}
+    \usecasepost{L'utente visualizza la lista delle proprie presenze}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{19}{Modifica presenza}
+    \usecaseactors{Amministratore}
+    \usecasepre{La lista delle presenze dell'utente è salvato nel database con i vecchi valori}
+    \usecasedesc{L'utente modifica la lista delle proprie presenze con i nuovi valori}
+    \usecasepost{La lista delle presenze dell'utente è salvato nel database con i nuovi valori}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
 \newpage
 
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.9\columnwidth]{usecase/usecase-5} 
+    \includegraphics[width=0.7\columnwidth]{usecase/usecase-5} 
     \caption{Use Case - Impostazioni}
 \end{figure}
 
-\newpage
-
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.9\columnwidth]{usecase/usecase-6} 
+    \includegraphics[width=1.1\columnwidth]{usecase/usecase-6} 
     \caption{Use Case - UC21 e UC22}
 \end{figure}
+
+\begin{usecase}{20}{Disconnessione}
+    \usecaseactors{Utente}
+    \usecasepre{L'utente è autenticato nell'app}
+    \usecasedesc{L'utente disconnette l'accesso effettuato}
+    \usecasepost{L'utente non è autenticato}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{21}{Visualizzazione dati utente}
+    \usecaseactors{Utente}
+    \usecasepre{I dati dell'utente non sono visibili}
+    \usecasedesc{L'utente entra nell'app per visualizzare i propri dati}
+    \usecasepost{L'utente visualizza i propri dati}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{21.1}{Visualizzazione mail utente}
+    \usecaseactors{Utente}
+    \usecasepre{La mail dell'utente non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare la propria mail}
+    \usecasepost{L'utente visualizza la propria mail}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{21.2}{Visualizzazione nome utente}
+    \usecaseactors{Utente}
+    \usecasepre{Il nome dell'utente non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare il proprio nome}
+    \usecasepost{L'utente visualizza il proprio nome}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{21.3}{Visualizzazione cognome utente}
+    \usecaseactors{Utente}
+    \usecasepre{Il cognome dell'utente non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare il proprio cognome}
+    \usecasepost{L'utente visualizza il proprio cognome}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{21.4}{Visualizzazione UID Satispay utente}
+    \usecaseactors{Utente}
+    \usecasepre{L'UID Satispay dell'utente non è visibile}
+    \usecasedesc{L'utente entra nell'app per visualizzare il proprio UID Satispay}
+    \usecasepost{L'utente visualizza il proprio UID Satispay}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{22}{Modifica dati utente}
+    \usecaseactors{Utente}
+    \usecasepre{I dati dell'utente sono salvati nel database con i vecchi valori}
+    \usecasedesc{L'utente modifica i propri dati con i nuovi valori}
+    \usecasepost{I dati dell'utente sono salvati nel database con i nuovi valori}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{22.1}{Modifica password utente}
+    \usecaseactors{Utente}
+    \usecasepre{La password dell'utente è salvato nel database con il vecchio valore}
+    \usecasedesc{L'utente modifica la propria password con il nuovo valore}
+    \usecasepost{La password dell'utente è salvato nel database con il nuovo valore}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{22.2}{Modifica nome utente}
+    \usecaseactors{Utente}
+    \usecasepre{Il nome dell'utente è salvato nel database con il vecchio valore}
+    \usecasedesc{L'utente modifica il proprio nome con il nuovo valore}
+    \usecasepost{Il nome dell'utente è salvato nel database con il nuovo valore}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{22.3}{Modifica cognome utente}
+    \usecaseactors{Utente}
+    \usecasepre{Il cognome dell'utente è salvato nel database con il vecchio valore}
+    \usecasedesc{L'utente modifica il proprio cognome con il nuovo valore}
+    \usecasepost{Il cognome dell'utente è salvato nel database con il nuovo valore}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{22.4}{Modifica UID Satispay utente}
+    \usecaseactors{Utente}
+    \usecasepre{L'UID di Satispay dell'utente è salvato nel database con il vecchio valore}
+    \usecasedesc{L'utente modifica il proprio UID Satispay con il nuovo valore}
+    \usecasepost{L'UID Satispay dell'utente è salvato nel database con il nuovo valore}
+%    \label{uc:scenario-principale}
+\end{usecase}
 
 \newpage
 
