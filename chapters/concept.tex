@@ -8,7 +8,7 @@
 %Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
 %I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
 %Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
-%
+
 %\begin{figure}[!h] 
 %    \centering 
 %    \includegraphics[width=0.9\columnwidth]{usecase/scenario-principale} 
@@ -23,56 +23,201 @@
 %\label{uc:scenario-principale}
 %\end{usecase}
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{usecase/usecase-1} 
+    \caption{Use Case - Primo accesso e Home}
+\end{figure}
+
+\begin{usecase}{1}{Autenticazione utente}
+    \usecaseactors{Utente non autenticato}
+    \usecasepre{L'utente entra nell'app senza essersi autenticato}
+    \usecasedesc{L'utente inserisce la propria mail e la propria password per effettuare l'accesso}
+    \usecasepost{Si visualizza la schermata Home dell'app}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{2}{Registrazione utente}
+    \usecaseactors{Utente non autenticato}
+    \usecasepre{L'utente entra nell'applicazione senza essersi mai registrato}
+    \usecasedesc{L'utente inserisce i propri dati per registrare i propri dati nel database e effettuare l'accesso}
+    \usecasepost{L'utente visualizzerà la schermata Home dell'app}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{3}{Visualizzazione \emph{\gls{cassacomuneg}}}
+    \usecaseactors{Utente}
+    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
+    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare la \emph{\gls{cassacomuneg}}}
+    \usecasepost{Si visualizza la \emph{\gls{cassacomuneg}}}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{4}{Visualizzazione \emph{\gls{quotastornatag}} utente}
+    \usecaseactors{Utente}
+    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
+    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare la \emph{\gls{quotastornatag}} dell'utente}
+    \usecasepost{Si visualizza la \emph{\gls{quotastornatag}} dell'utente}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{5}{Visualizzazione piatti proposti}
+    \usecaseactors{Utente}
+    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
+    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare i piatti proposti del giorno}
+    \usecasepost{Si visualizza la lista dei piatti proposti oggi}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\newpage
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=1.0\columnwidth]{usecase/usecase-2} 
+    \caption{Use Case - Spese e UC7}
+\end{figure}
+
+\begin{usecase}{6}{Visualizzazione transazioni} %serve aggiungere nel glossario la parola transazione?
+    \usecaseactors{Utente}
+    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
+    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare la lista delle transazioni}
+    \usecasepost{Si visualizza la lista delle transazioni}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{7}{Aggiunta transazione}
+    \usecaseactors{Utente}
+    \usecasepre{La transazione non è presente nel database e non è visibile nella lista delle transazioni}
+    \usecasedesc{L'utente inserisce i dati della transazione interessata e la salva nel database}
+    \usecasepost{La transazione è presente nel database e visibile nella lista delle transazioni}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{7.1}{Aggiunta transazione spesa effettuata da uno stagista}
+    \usecaseactors{Amministratore}
+    \usecasepre{La spesa effettuata da un stagista non è presente nel database e non è visibile nella lista delle transazioni}
+    \usecasedesc{L'amministratore inserisce i dati della spesa effettuata da un stagista e la salva nel database}
+    \usecasepost{La spesa effettuata da un stagista è presente nel database e visibile nella lista delle transazioni}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{7.2}{Aggiunta transazione spesa effettuata}
+    \usecaseactors{Utente}
+    \usecasepre{La spesa effettuata dall'utente non è presente nel database e non è visibile nella lista delle transazioni}
+    \usecasedesc{L'utente inserisce i dati della spesa effettuata e la salva nel database}
+    \usecasepost{La spesa dell'utente è presente nel database e visibile nella lista delle transazioni}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{7.3}{Aggiunta transazione di invio soldi a un altro utente}
+    \usecaseactors{Utente}
+    \usecasepre{L'invio dei soldi ad un altro utente non è presente nel database e non è visibile nella lista delle transazioni}
+    \usecasedesc{L'utente inserisce i dati dell'invio dei soldi e lo salva nel database}
+    \usecasepost{L'invio dei soldi ad un altro utente è presente nel database e visibile nella lista delle transazioni}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{8}{Elimina transazione}
+    \usecaseactors{Utente}
+    \usecasepre{La transazione è presente nel database e visibile nella lista delle transazioni}
+    \usecasedesc{L'utente elimina la transazione interessata dall'app e viene eliminata dal database}
+    \usecasepost{La transazione non è presente nel database e non è visibile nella lista delle transazioni}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\newpage
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{usecase/usecase-3} 
+    \caption{Use Case - Menu}
+\end{figure}
+
+\begin{usecase}{6}{Visualizzazione menu} %serve aggiungere nel glossario la parola transazione?
+    \usecaseactors{Utente}
+    \usecasepre{L'utente non è ancora entrato nell'app o non ha ancora effettuato un accesso}
+    \usecasedesc{Viene effettuato l'accesso per entrare nell'app e visualizzare il menu}
+    \usecasepost{Si visualizza la lista dei piatti presenti nel menu}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\newpage
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{usecase/usecase-4} 
+    \caption{Use Case - Utente}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{usecase/usecase-5} 
+    \caption{Use Case - Impostazioni}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{usecase/usecase-6} 
+    \caption{Use Case - UC21 e UC22}
+\end{figure}
+
+\newpage
+
 \section{Tracciamento dei requisiti}
 
 %Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
 %Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
-%Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
+%Il codice dei requisiti è così strutturato R(O/D/F) dove:
 %\begin{enumerate}
-%	\item[R =] requisito
-%    \item[F =] funzionale
-%    \item[Q =] qualitativo
-%    \item[V =] di vincolo
-%    \item[N =] obbligatorio (necessario)
+%%	\item[R =] requisito
+%%    \item[F =] funzionale
+%%    \item[Q =] qualitativo
+%%    \item[V =] di vincolo
+%    \item[O =] obbligatorio (necessario)
 %    \item[D =] desiderabile
-%    \item[Z =] opzionale
+%    \item[F =] facoltativo
+%%    \item[Z =] opzionale
 %\end{enumerate}
-%Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
+%Nelle tabelle \ref{tab:requisiti-obbligatori}, \ref{tab:requisiti-desiderabili} e \ref{tab:requisiti-facoltativi} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
 %
 %\newpage
 %
 %\begin{table}%
-%\caption{Tabella del tracciamento dei requisti funzionali}
-%\label{tab:requisiti-funzionali}
+%\caption{Tabella del tracciamento dei requisti obbligatori}
+%\label{tab:requisiti-obbligatori}
 %\begin{tabularx}{\textwidth}{lXl}
 %\hline\hline
 %\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 %\hline
-%RFN-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
+%RO-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
 %\hline
 %\end{tabularx}
 %\end{table}%
 %
 %\begin{table}%
-%\caption{Tabella del tracciamento dei requisiti qualitativi}
-%\label{tab:requisiti-qualitativi}
+%\caption{Tabella del tracciamento dei requisiti desiderabili}
+%\label{tab:requisiti-desiderabili}
 %\begin{tabularx}{\textwidth}{lXl}
 %\hline\hline
 %\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 %\hline
-%RQD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecuzione dei test e non la generazione di falsi negativi & - \\
+%RD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecuzione dei test e non la generazione di falsi negativi & - \\
 %\hline
 %\end{tabularx}
 %\end{table}%
 %
 %\begin{table}%
-%\caption{Tabella del tracciamento dei requisiti di vincolo}
-%\label{tab:requisiti-vincolo}
+%\caption{Tabella del tracciamento dei requisiti facoltativi}
+%\label{tab:requisiti-facoltativi}
 %\begin{tabularx}{\textwidth}{lXl}
 %\hline\hline
 %\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 %\hline
-%RVO-1    & La libreria per l'esecuzione dei test automatici deve essere riutilizzabile & - \\
+%RF-1    & La libreria per l'esecuzione dei test automatici deve essere riutilizzabile & - \\
 %\hline
 %\end{tabularx}
 %\end{table}%
