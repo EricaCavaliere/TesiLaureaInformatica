@@ -5,9 +5,19 @@
 
 \section{Casi d'uso}
 
-%Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
-%I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
-%Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
+Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.\newline
+I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.\newline
+Per convenzione i casi d'uso saranno classificati con questo codice:
+\begin{center}
+\textbf{UC[codice padre](.[Codice figlio])}
+\end{center}
+Dove UC indica \emph{Use Case} e i due codici sono:
+\begin{itemize}
+	\item \textbf{Codice padre} è il codice identificativo numerico del dato caso d’uso;
+    \item \textbf{Codice figlio} è il codice identificativo di un eventuale sotto caso d’uso.
+\end{itemize}
+
+%Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.\newline
 
 %\begin{figure}[!h] 
 %    \centering 
@@ -22,6 +32,19 @@
 %\usecasepost{Il sistema è pronto per permettere una nuova interazione}
 %\label{uc:scenario-principale}
 %\end{usecase}
+
+\subsection{Attori}
+Gli attori principali che andranno ad interagire con l'applicazione sono i seguenti:
+\begin{itemize}
+    \item Utente non autenticato
+    \item Utente
+    \item Amministratore
+\end{itemize}
+Nell'analisi è stato identificato un quarto attore ovvero ChatGPT, perchè tra i requisiti desiderabili c'è l'integrazione di ChatGPT per consigliare delle ricette, ma alla fine dello stage questa integrazione non è stata svolta, preferendo dare priorità ai requisiti obbligatori e al funzionamento vero e proprio dell'applicazione.
+
+\newpage
+
+\subsection{Diagrammi e descrizione}
 
 \begin{figure}[!h] 
     \centering 
@@ -40,8 +63,8 @@
 \begin{usecase}{2}{Registrazione utente}
     \usecaseactors{Utente non autenticato}
     \usecasepre{L'utente non è registrato nel database}
-    \usecasedesc{L'utente inserisce i propri dati per registrarsi nel database e effettuare l'accesso}
-    \usecasepost{L'utente è stato registrato nel database}
+    \usecasedesc{L'utente inserisce i propri dati per registrarsi nel database}
+    \usecasepost{L'utente è registrato nel database}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -56,16 +79,16 @@
 \begin{usecase}{4}{Visualizzazione \emph{\gls{quotastornatag}} utente}
     \usecaseactors{Utente}
     \usecasepre{La \emph{\gls{quotastornatag}} dell'utente non è visibile}
-    \usecasedesc{L'utente entra nell'app per visualizzare la \emph{\gls{quotastornatag}} dell'utente}
-    \usecasepost{L'utente visualizza la \emph{\gls{quotastornatag}} dell'utente}
+    \usecasedesc{L'utente entra nell'app per visualizzare la propria \emph{\gls{quotastornatag}}}
+    \usecasepost{L'utente visualizza la propria \emph{\gls{quotastornatag}}}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
 \begin{usecase}{5}{Visualizzazione piatti proposti}
     \usecaseactors{Utente}
-    \usecasepre{La lista dei piatti proposti oggi non è visibile}
+    \usecasepre{La lista dei piatti proposti del giorno non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare i piatti proposti del giorno}
-    \usecasepost{L'utente visualizza la lista dei piatti proposti oggi}
+    \usecasepost{L'utente visualizza la lista dei piatti proposti del giorno}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -77,7 +100,7 @@
     \caption{Use Case - Spese e UC7}
 \end{figure}
 
-\begin{usecase}{6}{Visualizzazione transazioni} %serve aggiungere nel glossario la parola transazione?
+\begin{usecase}{6}{Visualizzazione transazioni}
     \usecaseactors{Utente}
     \usecasepre{La lista delle transazioni non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la lista delle transazioni}
@@ -111,9 +134,9 @@
 
 \begin{usecase}{7.3}{Aggiunta transazione di invio soldi a un altro utente}
     \usecaseactors{Utente}
-    \usecasepre{L'invio dei soldi ad un altro utente non è presente nel database e non è visibile nella lista delle transazioni}
-    \usecasedesc{L'utente inserisce i dati dell'invio dei soldi e lo salva nel database}
-    \usecasepost{L'invio dei soldi ad un altro utente è presente nel database e visibile nella lista delle transazioni}
+    \usecasepre{L'invio dei soldi tra due utenti non è presente nel database e non è visibile nella lista delle transazioni}
+    \usecasedesc{L'utente inserisce i dati dell'invio dei soldi a un altro utente e lo salva nel database}
+    \usecasepost{L'invio dei soldi tra due utenti è presente nel database e visibile nella lista delle transazioni}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -133,7 +156,7 @@
     \caption{Use Case - Menu}
 \end{figure}
 
-\begin{usecase}{9}{Visualizzazione menu} %serve aggiungere nel glossario la parola transazione?
+\begin{usecase}{9}{Visualizzazione menu}
     \usecaseactors{Utente}
     \usecasepre{Il menu non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il menu}
@@ -143,9 +166,9 @@
 
 \begin{usecase}{10}{Aggiunta piatto}
     \usecaseactors{Utente}
-    \usecasepre{Il piatto non è presente nel database e non è visibile nel menu}
+    \usecasepre{Il piatto non è presente nel database e non è visibile dal menu}
     \usecasedesc{L'utente inserisce i dati del piatto e lo salva nel database}
-    \usecasepost{Il piatto è presente nel database e visibile nel menu}
+    \usecasepost{Il piatto è presente nel database e visibile dal menu}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -153,7 +176,7 @@
     \usecaseactors{Utente}
     \usecasepre{Il piatto è presente nel database e visibile dal menu}
     \usecasedesc{L'utente elimina il piatto interessata dall'app e viene eliminato dal database}
-    \usecasepost{Il piatto non è presente nel database e non è visibile nel menu}
+    \usecasepost{Il piatto non è presente nel database e non è visibile dal menu}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -173,27 +196,27 @@
     \caption{Use Case - Utente}
 \end{figure}
 
-\begin{usecase}{13}{Visualizzazione quota pasto} %aggiungere nel glossario quota pasto
+\begin{usecase}{13}{Visualizzazione \emph{\gls{quotapastog}}\glsfirstoccur}
     \usecaseactors{Amministratore}
-    \usecasepre{La quota pasto non è visibile}
-    \usecasedesc{L'amministratore entra nell'app per visualizzare la quota pasto}
-    \usecasepost{L'amministratore visualizza la quota pasto}
+    \usecasepre{La \emph{\gls{quotapastog}} non è visibile}
+    \usecasedesc{L'amministratore entra nell'app per visualizzare la \emph{\gls{quotapastog}}}
+    \usecasepost{L'amministratore visualizza la \emph{\gls{quotapastog}}}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
-\begin{usecase}{14}{Modifica quota pasto} %aggiungere nel glossario quota pasto
+\begin{usecase}{14}{Modifica \emph{\gls{quotapastog}}}
     \usecaseactors{Amministratore}
-    \usecasepre{La quota pasto è salvata nel database con il vecchio valore}
-    \usecasedesc{L'amministratore modifica la quota pasto con il nuovo valore}
-    \usecasepost{La quota passto è salvata nel database con il nuovo valore}
+    \usecasepre{La \emph{\gls{quotapastog}} è salvata nel database con il vecchio valore}
+    \usecasedesc{L'amministratore modifica la \emph{\gls{quotapastog}} con il nuovo valore}
+    \usecasepost{La \emph{\gls{quotapastog}} è salvata nel database con il nuovo valore}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
 \begin{usecase}{15}{Visualizzazione \emph{\gls{quotastornatag}} stagisti}
     \usecaseactors{Amministratore}
-    \usecasepre{La \emph{\gls{quotastornatag}} stagisti non è visibile}
-    \usecasedesc{L'amministratore entra nell'app per visualizzare la \emph{\gls{quotastornatag}} stagisti}
-    \usecasepost{L'amministratore visualizza la \emph{\gls{quotastornatag}} stagisti}
+    \usecasepre{La \emph{\gls{quotastornatag}} dei stagisti non è visibile}
+    \usecasedesc{L'amministratore entra nell'app per visualizzare la \emph{\gls{quotastornatag}} dei stagisti}
+    \usecasepost{L'amministratore visualizza la \emph{\gls{quotastornatag}} dei stagisti}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -207,9 +230,9 @@
 
 \begin{usecase}{17}{Modifica presenza stagisti}
     \usecaseactors{Amministratore}
-    \usecasepre{La lista delle presenze degli stagisti è salvato nel database con i vecchi valori}
-    \usecasedesc{L'amministratore modifica la lista delle presenze degli stagisti con i nuovi valori}
-    \usecasepost{La lista delle presenze degli stagisti è salvato nel database con i nuovi valori}
+    \usecasepre{La lista delle presenze dei stagisti è salvato nel database con i vecchi valori}
+    \usecasedesc{L'amministratore modifica la lista delle presenze dei stagisti con i nuovi valori}
+    \usecasepost{La lista delle presenze dei stagisti è salvato nel database con i nuovi valori}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -222,7 +245,7 @@
 \end{usecase}
 
 \begin{usecase}{19}{Modifica presenza}
-    \usecaseactors{Amministratore}
+    \usecaseactors{Utente}
     \usecasepre{La lista delle presenze dell'utente è salvato nel database con i vecchi valori}
     \usecasedesc{L'utente modifica la lista delle proprie presenze con i nuovi valori}
     \usecasepost{La lista delle presenze dell'utente è salvato nel database con i nuovi valori}
@@ -233,14 +256,8 @@
 
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.7\columnwidth]{usecase/usecase-5} 
-    \caption{Use Case - Impostazioni}
-\end{figure}
-
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=1.1\columnwidth]{usecase/usecase-6} 
-    \caption{Use Case - UC21 e UC22}
+    \includegraphics[width=1.0\columnwidth]{usecase/usecase-5} 
+    \caption{Use Case - Impostazioni, UC21 e UC22}
 \end{figure}
 
 \begin{usecase}{20}{Disconnessione}
@@ -333,57 +350,173 @@
 
 \newpage
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.7\columnwidth]{usecase/usecase-6} 
+    \caption{Use Case - ChatGPT}
+\end{figure}
+
+\begin{usecase}{23}{Richiesta di una ricetta a ChatGPT}
+    \usecaseactors{Utente, ChatGPT}
+    \usecasepre{L'utente vuole una nuova ricetta}
+    \usecasedesc{L'utente chiede a ChatGPT una ricetta}
+    \usecasepost{ChatGPT restituisce una possibile ricetta all'utente}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\begin{usecase}{24}{Aggiunta ricetta di ChatGPT nel Menu}
+    \usecaseactors{Utente}
+    \usecasepre{ChatGPT ha consigliato una ricetta all'utente}
+    \usecasedesc{L'utente aggiunge la ricetta ricevuta da ChatGPT come nuovo piatto al menu e salva il piatto nel database}
+    \usecasepost{La ricetta consigliata da ChatGPT è salvata nel database e visibile dal menu}
+%    \label{uc:scenario-principale}
+\end{usecase}
+
+\newpage
+
 \section{Tracciamento dei requisiti}
 
-%Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
-%Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
-%Il codice dei requisiti è così strutturato R(O/D/F) dove:
-%\begin{enumerate}
-%%	\item[R =] requisito
-%%    \item[F =] funzionale
-%%    \item[Q =] qualitativo
-%%    \item[V =] di vincolo
-%    \item[O =] obbligatorio (necessario)
-%    \item[D =] desiderabile
-%    \item[F =] facoltativo
-%%    \item[Z =] opzionale
-%\end{enumerate}
-%Nelle tabelle \ref{tab:requisiti-obbligatori}, \ref{tab:requisiti-desiderabili} e \ref{tab:requisiti-facoltativi} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
-%
+Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
+Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
+Il codice dei requisiti è così strutturato R(F/Q/V)(O/D/N) dove:
+\begin{enumerate}
+	\item[R =] requisito
+    \item[F =] funzionale
+    \item[Q =] qualitativo
+    \item[V =] di vincolo
+    \item[O =] obbligatorio (necessario)
+    \item[D =] desiderabile
+    \item[N =] facoltativo
+\end{enumerate}
+%Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.\newline
+
 %\newpage
-%
-%\begin{table}%
-%\caption{Tabella del tracciamento dei requisti obbligatori}
-%\label{tab:requisiti-obbligatori}
-%\begin{tabularx}{\textwidth}{lXl}
-%\hline\hline
-%\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-%\hline
-%RO-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
-%\hline
-%\end{tabularx}
-%\end{table}%
-%
-%\begin{table}%
-%\caption{Tabella del tracciamento dei requisiti desiderabili}
-%\label{tab:requisiti-desiderabili}
-%\begin{tabularx}{\textwidth}{lXl}
-%\hline\hline
-%\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-%\hline
-%RD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecuzione dei test e non la generazione di falsi negativi & - \\
-%\hline
-%\end{tabularx}
-%\end{table}%
-%
-%\begin{table}%
-%\caption{Tabella del tracciamento dei requisiti facoltativi}
-%\label{tab:requisiti-facoltativi}
-%\begin{tabularx}{\textwidth}{lXl}
-%\hline\hline
-%\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-%\hline
-%RF-1    & La libreria per l'esecuzione dei test automatici deve essere riutilizzabile & - \\
-%\hline
-%\end{tabularx}
-%\end{table}%
+\subsection{Requisiti funzionali}
+
+\begin{table}[htb]%
+\caption{Tabella del tracciamento dei requisti funzionali dall'1 all'11}
+\label{tab:requisiti-funzionali}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
+\hline\hline
+RFO-1     & L'utente effettua l'accesso all'app inserendo la propria password e la propria mail & UC1 \\
+\hline
+RFO-2     & L'utente si registra nel database inserendo il proprio nome, cognome, mail e password & UC2 \\
+\hline
+RFO-3     & Si visualizza la \emph{\gls{cassacomuneg}} salvata nel database nell'app & UC3 \\
+\hline
+RFO-4     & L'utente visualizza la propria \emph{\gls{quotastornatag}} salvata nel database nell'app & UC4 \\
+\hline
+RFO-5     & Si visualizza la lista dei piatti proposti del giorno nell'app & UC5 \\
+\hline
+RFO-6     & Si visualizza la lista delle transazioni nell'app & UC6 \\
+\hline
+RFO-7     & L'utente aggiunge una nuova transazione nell'app, indicando i soldi e la data e la salva nel database & UC7 \\
+\hline
+RFO-8     & L'utente amministratore aggiunge la spesa effettuata da uno stagista nell'app, indicando la data e quanto ha speso e lo salva nel database & UC7.1 \\
+\hline
+RFO-9     & L'utente indica la spesa che ha effettuato nell'app, riportando i soldi e la data e lo salva nel database & UC7.2 \\
+\hline
+RFO-10    & L'utente indica nell'app i soldi che ha inviato a un altro utente registrato nel database e salva la transazione nel database & UC7.3 \\
+\hline
+RFO-11    & L'utente elimina una transazione presente nel database dall'app & UC8 \\
+\hline
+\end{tabularx}
+\end{table}%
+
+\begin{table}%
+\caption{Tabella del tracciamento dei requisti funzionali dal 12 al 35}
+%\label{tab:requisiti-funzionali}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
+\hline\hline
+RFO-12    & Si visualizza il menu che contiene la lista dei piatti dall'app & UC9 \\
+\hline
+RFO-13    & L'utente aggiunge un nuovo piatto nell'app, indicando il nome del piatto, gli ingredienti e la ricetta e lo salva nel database & UC10 \\
+\hline
+RFO-14    & L'utente elimina un piatto presente nel database dall'app & UC11 \\
+\hline
+RFO-15    & L'utente propone un piatto da mangiare a pranzo selezionandolo dal menu & UC12 \\
+\hline
+RFO-16    & L'amministratore visualizza la \emph{\gls{quotapastog}} dall'app & UC13 \\
+\hline
+RFO-17    & L'amministratore modifica la \emph{\gls{quotapastog}} dall'app e salva il nuovo valore nel database & UC14 \\
+\hline
+RFO-18    & L'amministratore visualizza la \emph{\gls{quotastornatag}} degli stagisti dall'app & UC15 \\
+\hline
+RFO-19    & L'amministratore visualizza la lista con indicato i giorni di presenza degli stagisti dall'app & UC16 \\
+\hline
+RFO-20    & L'amministratore modifica la lista con indicato i giorni di presenza degli stagisti dall'app e salva le modifiche nel database & UC17 \\
+\hline
+RFO-21    & L'utente visualizza la lista con indicato i propri giorni di presenza a pranzo dall'app & UC18 \\
+\hline
+RFO-22    & L'utente modifica la lista con indicato i propri giorni di presenza a pranzo dall'app e salva le modifiche nel database & UC19 \\
+\hline
+RFO-23    & L'utente si disconette dall'app & UC20 \\
+\hline
+RFO-24    & L'utente visualizza i propri dati dall'app & UC21 \\
+\hline
+RFO-25    & L'utente visualizza la propria mail dall'app & UC21.1 \\
+\hline
+RFO-26    & L'utente visualizza il proprio nome dall'app & UC21.2 \\
+\hline
+RFO-27    & L'utente visualizza il proprio cognome dall'app & UC21.3 \\
+\hline
+RFO-28    & L'utente visualizza il proprio UID Satispay dall'app & UC21.4 \\
+\hline
+RFO-29    & L'utente modifica i propri dati dall'app e salva le modifiche nel database & UC22 \\
+\hline
+RFO-30    & L'utente modifica la propria password dall'app e salva la nuova password nel database & UC22.1 \\
+\hline
+RFO-31    & L'utente modifica il proprio nome dall'app e salva il nuovo nome nel database & UC22.2 \\
+\hline
+RFO-32    & L'utente modifica il proprio cognome dall'app e salva il nuovo cognome nel database & UC22.3 \\
+\hline
+RFO-33    & L'utente modifica il proprio UID Satispay e salva il nuovo UID nel database & UC22.4 \\
+\hline
+RFD-34    & Viene chiesto a ChatGPT una possibile ricetta da proporre a pranzo & UC23 \\
+\hline
+RFD-35    & Si aggiunge la ricetta proposta da ChatGPT nel menu e si salva la ricetta nel database & UC24 \\
+\hline
+\end{tabularx}
+\end{table}%
+
+\newpage
+
+\subsection{Requisiti qualitativi}
+
+\begin{table}[htb]%
+\caption{Tabella del tracciamento dei requisiti qualitativi}
+\label{tab:requisiti-qualitativi}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
+\hline\hline
+RQN-1    & Il codice \emph{front-end} deve essere coperto da test di unità & - \\
+\hline
+\end{tabularx}
+\end{table}%
+
+\subsection{Requisiti di vincolo}
+
+\begin{table}[htb]%
+\caption{Tabella del tracciamento dei requisiti di vincolo}
+\label{tab:requisiti-vincolo}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
+\hline\hline
+RVO-1    & L'applicazione deve essere sviluppato con il \emph{framework} Flutter & - \\
+\hline
+RVO-2    & Bisogna sviluppare il database con la piattaforma Firebase & - \\
+\hline
+RVO-3    & L'applicazione deve essere accessibile su cellulari con sistema operativo Android e iOS & - \\
+\hline
+RVO-4    & La mail che l'utente deve utilizzare per registrarsi nel database e accedere all'app deve essere fornita da RiskAPP & - \\
+\hline
+RVO-5    & La mail dell'utente non deve essere modificabile tramite app & - \\
+\hline
+\end{tabularx}
+\end{table}%
