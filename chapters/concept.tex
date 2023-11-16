@@ -57,7 +57,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{L'utente non ha effettuato l'autenticazione}
     \usecasedesc{L'utente inserisce la propria mail e la propria password per effettuare l'accesso}
     \usecasepost{L'utente è stato autenticato}
-%    \label{uc:scenario-principale}
+    \label{uc:autenticazione-utente}
 \end{usecase}
 
 \begin{usecase}{2}{Registrazione utente}
@@ -65,7 +65,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{L'utente non è registrato nel database}
     \usecasedesc{L'utente inserisce i propri dati per registrarsi nel database}
     \usecasepost{L'utente è registrato nel database}
-%    \label{uc:scenario-principale}
+    \label{uc:registrazione-utente}
 \end{usecase}
 
 \begin{usecase}{3}{Visualizzazione \emph{\gls{cassacomuneg}}}
@@ -73,7 +73,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La \emph{\gls{cassacomuneg}} non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la \emph{\gls{cassacomuneg}}}
     \usecasepost{L'utente visualizza la \emph{\gls{cassacomuneg}}}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-casacomune}
 \end{usecase}
 
 \begin{usecase}{4}{Visualizzazione \emph{\gls{quotastornatag}} utente}
@@ -81,7 +81,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La \emph{\gls{quotastornatag}} dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la propria \emph{\gls{quotastornatag}}}
     \usecasepost{L'utente visualizza la propria \emph{\gls{quotastornatag}}}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-quotastornata}
 \end{usecase}
 
 \begin{usecase}{5}{Visualizzazione piatti proposti}
@@ -89,7 +89,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La lista dei piatti proposti del giorno non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare i piatti proposti del giorno}
     \usecasepost{L'utente visualizza la lista dei piatti proposti del giorno}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-piattiproposti}
 \end{usecase}
 
 \newpage
@@ -105,7 +105,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La lista delle transazioni non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la lista delle transazioni}
     \usecasepost{L'utente visualizza la lista delle transazioni}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-transazioni}
 \end{usecase}
 
 \begin{usecase}{7}{Aggiunta transazione}
@@ -113,7 +113,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La transazione non è presente nel database e non è visibile nella lista delle transazioni}
     \usecasedesc{L'utente inserisce i dati della transazione interessata e la salva nel database}
     \usecasepost{La transazione è presente nel database e visibile nella lista delle transazioni}
-%    \label{uc:scenario-principale}
+    \label{uc:aggiungi-transazione}
 \end{usecase}
 
 \begin{usecase}{7.1}{Aggiunta transazione spesa effettuata da uno stagista}
@@ -121,7 +121,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La spesa effettuata da uno stagista non è presente nel database e non è visibile nella lista delle transazioni}
     \usecasedesc{L'amministratore inserisce i dati della spesa effettuata da uno stagista e la salva nel database}
     \usecasepost{La spesa effettuata da uno stagista è presente nel database e visibile nella lista delle transazioni}
-%    \label{uc:scenario-principale}
+    \label{uc:aggiungi-spesastagista}
 \end{usecase}
 
 \begin{usecase}{7.2}{Aggiunta transazione spesa effettuata}
@@ -129,7 +129,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La spesa effettuata dall'utente non è presente nel database e non è visibile nella lista delle transazioni}
     \usecasedesc{L'utente inserisce i dati della spesa effettuata e la salva nel database}
     \usecasepost{La spesa dell'utente è presente nel database e visibile nella lista delle transazioni}
-%    \label{uc:scenario-principale}
+    \label{uc:aggiungi-spesa}
 \end{usecase}
 
 \begin{usecase}{7.3}{Aggiunta transazione di invio soldi a un altro utente}
@@ -137,7 +137,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{L'invio dei soldi tra due utenti non è presente nel database e non è visibile nella lista delle transazioni}
     \usecasedesc{L'utente inserisce i dati dell'invio dei soldi a un altro utente e lo salva nel database}
     \usecasepost{L'invio dei soldi tra due utenti è presente nel database e visibile nella lista delle transazioni}
-%    \label{uc:scenario-principale}
+    \label{uc:aggiungi-inviosoldi}
 \end{usecase}
 
 \begin{usecase}{8}{Elimina transazione}
@@ -145,7 +145,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La transazione è presente nel database e visibile nella lista delle transazioni}
     \usecasedesc{L'utente elimina la transazione interessata dall'app e viene eliminata dal database}
     \usecasepost{La transazione non è presente nel database e non è visibile nella lista delle transazioni}
-%    \label{uc:scenario-principale}
+    \label{uc:elimina-transazione}
 \end{usecase}
 
 \newpage
@@ -161,7 +161,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{Il menu non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il menu}
     \usecasepost{L'utente visualizza la lista dei piatti presenti nel menu}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-menu}
 \end{usecase}
 
 \begin{usecase}{10}{Aggiunta piatto}
@@ -169,7 +169,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{Il piatto non è presente nel database e non è visibile dal menu}
     \usecasedesc{L'utente inserisce i dati del piatto e lo salva nel database}
     \usecasepost{Il piatto è presente nel database e visibile dal menu}
-%    \label{uc:scenario-principale}
+    \label{uc:aggiungi-piatto}
 \end{usecase}
 
 \begin{usecase}{11}{Elimina piatto}
@@ -177,7 +177,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{Il piatto è presente nel database e visibile dal menu}
     \usecasedesc{L'utente elimina il piatto interessato dall'app e viene eliminato dal database}
     \usecasepost{Il piatto non è presente nel database e non è visibile dal menu}
-%    \label{uc:scenario-principale}
+    \label{uc:elimina-piatto}
 \end{usecase}
 
 \begin{usecase}{12}{Proporre piatto del giorno}
@@ -185,7 +185,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{Il piatto non è indicato come piatto proposto del giorno}
     \usecasedesc{L'utente propone il piatto interessato come piatto del giorno}
     \usecasepost{Il piatto è indicato come piatto proposto del giorno}
-%    \label{uc:scenario-principale}
+    \label{uc:proponi-piatto}
 \end{usecase}
 
 \newpage
@@ -201,7 +201,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La \emph{\gls{quotapastog}} non è visibile}
     \usecasedesc{L'amministratore entra nell'app per visualizzare la \emph{\gls{quotapastog}}}
     \usecasepost{L'amministratore visualizza la \emph{\gls{quotapastog}}}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-quotapasto}
 \end{usecase}
 
 \begin{usecase}{14}{Modifica \emph{\gls{quotapastog}}}
@@ -209,7 +209,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La \emph{\gls{quotapastog}} è salvata nel database con il vecchio valore}
     \usecasedesc{L'amministratore modifica la \emph{\gls{quotapastog}} con il nuovo valore}
     \usecasepost{La \emph{\gls{quotapastog}} è salvata nel database con il nuovo valore}
-%    \label{uc:scenario-principale}
+    \label{uc:modifica-quotapasto}
 \end{usecase}
 
 \begin{usecase}{15}{Visualizzazione \emph{\gls{quotastornatag}} stagisti}
@@ -217,7 +217,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La \emph{\gls{quotastornatag}} dei stagisti non è visibile}
     \usecasedesc{L'amministratore entra nell'app per visualizzare la \emph{\gls{quotastornatag}} dei stagisti}
     \usecasepost{L'amministratore visualizza la \emph{\gls{quotastornatag}} dei stagisti}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-quotastornatastagisti}
 \end{usecase}
 
 \begin{usecase}{16}{Visualizzazione presenza stagisti}
@@ -225,7 +225,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La lista delle presenze dei stagisti non è visibile}
     \usecasedesc{L'amministratore entra nell'app per visualizzare la lista delle presenze dei stagisti}
     \usecasepost{L'amministratore visualizza la lista delle presenze dei stagisti}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-presenzastagisti}
 \end{usecase}
 
 \begin{usecase}{17}{Modifica presenza stagisti}
@@ -233,7 +233,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La lista delle presenze dei stagisti è salvata nel database con i vecchi valori}
     \usecasedesc{L'amministratore modifica la lista delle presenze dei stagisti con i nuovi valori}
     \usecasepost{La lista delle presenze dei stagisti è salvata nel database con i nuovi valori}
-%    \label{uc:scenario-principale}
+    \label{uc:modifica-presenzastagisti}
 \end{usecase}
 
 \begin{usecase}{18}{Visualizzazione presenza}
@@ -241,7 +241,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La lista delle presenze dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la lista delle proprie presenze}
     \usecasepost{L'utente visualizza la lista delle proprie presenze}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-presenza}
 \end{usecase}
 
 \begin{usecase}{19}{Modifica presenza}
@@ -249,7 +249,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La lista delle presenze dell'utente è salvata nel database con i vecchi valori}
     \usecasedesc{L'utente modifica la lista delle proprie presenze con i nuovi valori}
     \usecasepost{La lista delle presenze dell'utente è salvata nel database con i nuovi valori}
-%    \label{uc:scenario-principale}
+    \label{uc:modifica-presenza}
 \end{usecase}
 
 \newpage
@@ -265,7 +265,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{L'utente è autenticato nell'app}
     \usecasedesc{L'utente si disconnette dalla sessione corrente}
     \usecasepost{L'utente non è autenticato}
-%    \label{uc:scenario-principale}
+    \label{uc:disconnessione-utente}
 \end{usecase}
 
 \begin{usecase}{21}{Visualizzazione dati utente}
@@ -273,7 +273,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{I dati dell'utente non sono visibili}
     \usecasedesc{L'utente entra nell'app per visualizzare i propri dati}
     \usecasepost{L'utente visualizza i propri dati}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-dati}
 \end{usecase}
 
 \begin{usecase}{21.1}{Visualizzazione mail utente}
@@ -281,7 +281,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La mail dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la propria mail}
     \usecasepost{L'utente visualizza la propria mail}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-mail}
 \end{usecase}
 
 \begin{usecase}{21.2}{Visualizzazione nome utente}
@@ -289,7 +289,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{Il nome dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il proprio nome}
     \usecasepost{L'utente visualizza il proprio nome}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-nome}
 \end{usecase}
 
 \begin{usecase}{21.3}{Visualizzazione cognome utente}
@@ -297,7 +297,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{Il cognome dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il proprio cognome}
     \usecasepost{L'utente visualizza il proprio cognome}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-cognome}
 \end{usecase}
 
 \begin{usecase}{21.4}{Visualizzazione UID Satispay utente}
@@ -305,7 +305,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{L'UID Satispay dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il proprio UID Satispay}
     \usecasepost{L'utente visualizza il proprio UID Satispay}
-%    \label{uc:scenario-principale}
+    \label{uc:visualizza-uid}
 \end{usecase}
 
 \begin{usecase}{22}{Modifica dati utente}
@@ -313,7 +313,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{I dati dell'utente sono salvati nel database con i vecchi valori}
     \usecasedesc{L'utente modifica i propri dati con i nuovi valori}
     \usecasepost{I dati dell'utente sono salvati nel database con i nuovi valori}
-%    \label{uc:scenario-principale}
+    \label{uc:modifica-dati}
 \end{usecase}
 
 \begin{usecase}{22.1}{Modifica password utente}
@@ -321,7 +321,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{La password dell'utente è salvata nel database con il vecchio valore}
     \usecasedesc{L'utente modifica la propria password con il nuovo valore}
     \usecasepost{La password dell'utente è salvata nel database con il nuovo valore}
-%    \label{uc:scenario-principale}
+    \label{uc:modifica-password}
 \end{usecase}
 
 \begin{usecase}{22.2}{Modifica nome utente}
@@ -329,7 +329,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{Il nome dell'utente è salvato nel database con il vecchio valore}
     \usecasedesc{L'utente modifica il proprio nome con il nuovo valore}
     \usecasepost{Il nome dell'utente è salvato nel database con il nuovo valore}
-%    \label{uc:scenario-principale}
+    \label{uc:modifica-nome}
 \end{usecase}
 
 \begin{usecase}{22.3}{Modifica cognome utente}
@@ -337,7 +337,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{Il cognome dell'utente è salvato nel database con il vecchio valore}
     \usecasedesc{L'utente modifica il proprio cognome con il nuovo valore}
     \usecasepost{Il cognome dell'utente è salvato nel database con il nuovo valore}
-%    \label{uc:scenario-principale}
+    \label{uc:modifica-cognome}
 \end{usecase}
 
 \begin{usecase}{22.4}{Modifica UID Satispay utente}
@@ -345,7 +345,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{L'UID di Satispay dell'utente è salvato nel database con il vecchio valore}
     \usecasedesc{L'utente modifica il proprio UID Satispay con il nuovo valore}
     \usecasepost{L'UID Satispay dell'utente è salvato nel database con il nuovo valore}
-%    \label{uc:scenario-principale}
+    \label{uc:modifica-uid}
 \end{usecase}
 
 \newpage
@@ -361,7 +361,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{L'utente vuole una nuova ricetta}
     \usecasedesc{L'utente chiede a ChatGPT una ricetta}
     \usecasepost{ChatGPT restituisce una possibile ricetta all'utente}
-%    \label{uc:scenario-principale}
+    \label{uc:chatgpt-richiestaricetta}
 \end{usecase}
 
 \begin{usecase}{24}{Aggiunta ricetta di ChatGPT nel Menu}
@@ -369,7 +369,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepre{ChatGPT ha consigliato una ricetta all'utente}
     \usecasedesc{L'utente aggiunge la ricetta ricevuta da ChatGPT come nuovo piatto al menu e salva il piatto nel database}
     \usecasepost{La ricetta consigliata da ChatGPT è salvata nel database e visibile dal menu}
-%    \label{uc:scenario-principale}
+    \label{uc:chatgpt-aggiuntaricetta}
 \end{usecase}
 
 \newpage
