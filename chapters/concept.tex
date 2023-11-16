@@ -1,7 +1,7 @@
 \chapter{Analisi dei requisiti}
 \label{cap:analisi-requisiti}
 
-%\intro{Breve introduzione al capitolo}\\
+\intro{Di seguito viene riportata l'Analisi dei Requisiti del prodotto software, partendo dai casi d'uso e poi a seguire il tracciamento dei requisiti concordati con il proponente.}\\
 
 \section{Casi d'uso}
 
@@ -36,11 +36,11 @@ Dove UC indica \emph{Use Case} e i due codici sono:
 \subsection{Attori}
 Gli attori principali che andranno ad interagire con l'applicazione sono i seguenti:
 \begin{itemize}
-    \item Utente non autenticato
-    \item Utente
-    \item Amministratore
+    \item \textbf{Utente non autenticato}
+    \item \textbf{Utente}
+    \item \textbf{Amministratore}
 \end{itemize}
-Nell'analisi è stato identificato un quarto attore ovvero ChatGPT, perchè tra i requisiti desiderabili c'è l'integrazione di ChatGPT per consigliare delle ricette, ma alla fine dello stage questa integrazione non è stata svolta, preferendo dare priorità ai requisiti obbligatori e al funzionamento vero e proprio dell'applicazione.
+Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in quanto tra i requisiti desiderabili era prevista l'integrazione dello stesso per consigliare le ricette, ma alla fine dello stage questa integrazione non è stata svolta, preferendo dare priorità ai requisiti obbligatori e al funzionamento vero e proprio dell'applicazione.
 
 \newpage
 
@@ -118,9 +118,9 @@ Nell'analisi è stato identificato un quarto attore ovvero ChatGPT, perchè tra 
 
 \begin{usecase}{7.1}{Aggiunta transazione spesa effettuata da uno stagista}
     \usecaseactors{Amministratore}
-    \usecasepre{La spesa effettuata da un stagista non è presente nel database e non è visibile nella lista delle transazioni}
-    \usecasedesc{L'amministratore inserisce i dati della spesa effettuata da un stagista e la salva nel database}
-    \usecasepost{La spesa effettuata da un stagista è presente nel database e visibile nella lista delle transazioni}
+    \usecasepre{La spesa effettuata da uno stagista non è presente nel database e non è visibile nella lista delle transazioni}
+    \usecasedesc{L'amministratore inserisce i dati della spesa effettuata da uno stagista e la salva nel database}
+    \usecasepost{La spesa effettuata da uno stagista è presente nel database e visibile nella lista delle transazioni}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -175,7 +175,7 @@ Nell'analisi è stato identificato un quarto attore ovvero ChatGPT, perchè tra 
 \begin{usecase}{11}{Elimina piatto}
     \usecaseactors{Utente}
     \usecasepre{Il piatto è presente nel database e visibile dal menu}
-    \usecasedesc{L'utente elimina il piatto interessata dall'app e viene eliminato dal database}
+    \usecasedesc{L'utente elimina il piatto interessato dall'app e viene eliminato dal database}
     \usecasepost{Il piatto non è presente nel database e non è visibile dal menu}
 %    \label{uc:scenario-principale}
 \end{usecase}
@@ -230,9 +230,9 @@ Nell'analisi è stato identificato un quarto attore ovvero ChatGPT, perchè tra 
 
 \begin{usecase}{17}{Modifica presenza stagisti}
     \usecaseactors{Amministratore}
-    \usecasepre{La lista delle presenze dei stagisti è salvato nel database con i vecchi valori}
+    \usecasepre{La lista delle presenze dei stagisti è salvata nel database con i vecchi valori}
     \usecasedesc{L'amministratore modifica la lista delle presenze dei stagisti con i nuovi valori}
-    \usecasepost{La lista delle presenze dei stagisti è salvato nel database con i nuovi valori}
+    \usecasepost{La lista delle presenze dei stagisti è salvata nel database con i nuovi valori}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -246,9 +246,9 @@ Nell'analisi è stato identificato un quarto attore ovvero ChatGPT, perchè tra 
 
 \begin{usecase}{19}{Modifica presenza}
     \usecaseactors{Utente}
-    \usecasepre{La lista delle presenze dell'utente è salvato nel database con i vecchi valori}
+    \usecasepre{La lista delle presenze dell'utente è salvata nel database con i vecchi valori}
     \usecasedesc{L'utente modifica la lista delle proprie presenze con i nuovi valori}
-    \usecasepost{La lista delle presenze dell'utente è salvato nel database con i nuovi valori}
+    \usecasepost{La lista delle presenze dell'utente è salvata nel database con i nuovi valori}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -263,7 +263,7 @@ Nell'analisi è stato identificato un quarto attore ovvero ChatGPT, perchè tra 
 \begin{usecase}{20}{Disconnessione}
     \usecaseactors{Utente}
     \usecasepre{L'utente è autenticato nell'app}
-    \usecasedesc{L'utente disconnette l'accesso effettuato}
+    \usecasedesc{L'utente si disconnette dalla sessione corrente}
     \usecasepost{L'utente non è autenticato}
 %    \label{uc:scenario-principale}
 \end{usecase}
@@ -318,9 +318,9 @@ Nell'analisi è stato identificato un quarto attore ovvero ChatGPT, perchè tra 
 
 \begin{usecase}{22.1}{Modifica password utente}
     \usecaseactors{Utente}
-    \usecasepre{La password dell'utente è salvato nel database con il vecchio valore}
+    \usecasepre{La password dell'utente è salvata nel database con il vecchio valore}
     \usecasedesc{L'utente modifica la propria password con il nuovo valore}
-    \usecasepost{La password dell'utente è salvato nel database con il nuovo valore}
+    \usecasepost{La password dell'utente è salvata nel database con il nuovo valore}
 %    \label{uc:scenario-principale}
 \end{usecase}
 
@@ -412,7 +412,7 @@ RFO-5     & Si visualizza la lista dei piatti proposti del giorno nell'app & UC5
 \hline
 RFO-6     & Si visualizza la lista delle transazioni nell'app & UC6 \\
 \hline
-RFO-7     & L'utente aggiunge una nuova transazione nell'app, indicando i soldi e la data e la salva nel database & UC7 \\
+RFO-7     & L'utente aggiunge una nuova transazione nell'app, indicando i soldi e la data e salva la transazione nel database & UC7 \\
 \hline
 RFO-8     & L'utente amministratore aggiunge la spesa effettuata da uno stagista nell'app, indicando la data e quanto ha speso e lo salva nel database & UC7.1 \\
 \hline
@@ -450,11 +450,11 @@ RFO-19    & L'amministratore visualizza la lista con indicato i giorni di presen
 \hline
 RFO-20    & L'amministratore modifica la lista con indicato i giorni di presenza degli stagisti dall'app e salva le modifiche nel database & UC17 \\
 \hline
-RFO-21    & L'utente visualizza la lista con indicato i propri giorni di presenza a pranzo dall'app & UC18 \\
+RFO-21    & L'utente visualizza la lista con indicati i propri giorni di presenza a pranzo dall'app & UC18 \\
 \hline
-RFO-22    & L'utente modifica la lista con indicato i propri giorni di presenza a pranzo dall'app e salva le modifiche nel database & UC19 \\
+RFO-22    & L'utente modifica la lista con indicati i propri giorni di presenza a pranzo dall'app e salva le modifiche nel database & UC19 \\
 \hline
-RFO-23    & L'utente si disconette dall'app & UC20 \\
+RFO-23    & L'utente si disconnette dall'app & UC20 \\
 \hline
 RFO-24    & L'utente visualizza i propri dati dall'app & UC21 \\
 \hline
@@ -510,7 +510,7 @@ RQN-1    & Il codice \emph{front-end} deve essere coperto da test di unità & - 
 \hline\hline
 RVO-1    & L'applicazione deve essere sviluppato con il \emph{framework} Flutter & - \\
 \hline
-RVO-2    & Bisogna sviluppare il database con la piattaforma Firebase & - \\
+RVO-2    & L'applicazione deve essere sviluppato con la piattaforma Firebase & - \\
 \hline
 RVO-3    & L'applicazione deve essere accessibile su cellulari con sistema operativo Android e iOS & - \\
 \hline
