@@ -67,7 +67,10 @@ In \textbf{Accedi} è presente il messaggio "\emph{Hai dimenticato la password?}
 \newpage
 
 \subsection{Database}
-
+Per quanto riguarda la basi di dati (Figura \ref{fig:database}), ho pensato a una struttura semplice, mettendo al centro l'utente che può inserire dei piatti, delle transazioni oppure segnare le proprie presenze.\newline
+Poi ho pensato a una entità isolata che ha il solo scopo di contenere le variabili globali, ovvero la \emph{\gls{cassacomuneg}}, la \emph{\gls{quotapastog}} e la \emph{\gls{quotastornatag}} degli stagisti.\newline
+Per quanto riguarda gli stagisti, inizialmente si pensava se considerarli come un utente oppure se rappresentarli come un'altra entità, alla fine è stato deciso di lavorare in modo diverso, dato che gli stagisti si ipotizza che non utilizzino l'app.\newline
+Gli utenti amministratori possono aggiungere le spese e le presenze degli stagisti, mentre la loro \emph{\gls{quotastornatag}} è stato deciso di indicarla nell'entità Cassa Comune dato che si tratta di un dato unico per tutti gli stagisti.\newline
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.9\columnwidth]{database} 
