@@ -1,15 +1,15 @@
 \chapter{Progettazione e codifica}
 \label{cap:progettazione-codifica}
 
-\intro{Questo capitolo tratta della fase di progettazione e della fase di codifica dell'app, riportando tutto quello che è stato fatto e le difficoltà incontrare.}\\ %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\intro{Questo capitolo tratta della fase di progettazione e della fase di codifica dell'app, riportando tutto quello che è stato fatto e le difficoltà incontrate.}\\ 
 
 \section{Progettazione}
 \label{sec:progettazione}
 
 \subsection{Struttura dell'app}
 
-Dopo una prima parte di stage, dove ho studiato le tecnologie riportare al \hyperref[sec:tecnologie]{secondo capitolo}, ho pensato come sviluppare l'applicazione richiesta.\newline
-Di prassi in RiskAPP si utilizza Figma per poter avere una idea più chiara del lavoro che si desidera fare, quindi per prima cosa ho progettato la grafica e la struttura dell'app con l'aiuto di questo software di progettazione.\newline
+Dopo una prima parte di stage, dove ho studiato le tecnologie riportate al \hyperref[sec:tecnologie]{secondo capitolo}, ho pensato come sviluppare l'applicazione richiesta.\newline
+Di prassi, in RiskAPP si utilizza Figma per poter avere una idea più chiara del lavoro che si desidera fare, quindi per prima cosa ho progettato la grafica e la struttura dell'app con l'aiuto di questo software di progettazione.\newline
 Avendo una idea visiva, questo rendeva più facile spiegare al mio tutor come pensavo di impostare l'applicazione, andando poi a modificare e sistemare in base alle esigenze dell'azienda.\newline
 \newline
 Nella Figura \ref{fig:schermatefigma} ci sono tre schermate progettate in Figma, ovvero le schermate \textbf{Utente}, \textbf{Impostazioni} e infine \textbf{Home}.\newline
@@ -17,14 +17,14 @@ Dai \emph{mockup} capiamo che la struttura delle pagine è la seguente:
 \begin{itemize}
     \item una barra superiore, dove è possibile eseguire una o due azioni;
     \item una schermata con le informazioni interessate;
-    \item una barra inferiore che permette di navigare tra le schermate, fatta eccezzione per la schermata \textbf{Impostazioni} che non ha questa barra.
+    \item una barra inferiore che permette di navigare tra le schermate, fatta eccezione per la schermata \textbf{Impostazioni} che non ha questa barra.
 \end{itemize}
 Tramite la barra inferiore è possibile navigare tra le schermate:
 \begin{itemize}
-    \item \textbf{Home} dove sarà visibile la \emph{\gls{cassacomuneg}}, la \emph{\gls{quotastornatag}} dell'utente e infine il piatto del giorno (successivamente cambiato in \emph{Proposte del giorno} per permettere la scelta di più piatti dal menu);
-    \item \textbf{Spese} che permette di visualizzare tutte le transazioni di tutti gli utenti e aggiungere delle nuove transazioni o eliminarle;
-    \item \textbf{Menu} dove è possibile consultare i piatti, aggiungerli oppure proporli come possibili piatti del giorno;
-    \item \textbf{Utente} la visualizzazione cambia tra utente semplice e utente amministratore ed è stata modificata durante la fase di codifica, ma principalmente serve per visualizzare e modificare le proprie presenze o, nel caso dell'amministratore, visualizzare e modificare le presenze degli stagisti o della \emph{\gls{quotapastog}}.
+    \item \textbf{Home}, dove sarà visibile la \emph{\gls{cassacomuneg}}, la \emph{\gls{quotastornatag}} dell'utente e infine il piatto del giorno (successivamente cambiato in \emph{Proposte del giorno} per permettere la scelta di più piatti dal menu);
+    \item \textbf{Spese}, che permette di visualizzare tutte le transazioni di tutti gli utenti e aggiungere delle nuove transazioni o eliminarle;
+    \item \textbf{Menu}, dove è possibile consultare i piatti, aggiungerli oppure proporli come possibili piatti del giorno;
+    \item \textbf{Utente}, la visualizzazione cambia tra utente semplice e utente amministratore. Quest'ultima è stata modificata durante la fase di codifica, ma principalmente serve per visualizzare e modificare le proprie presenze o, nel caso dell'amministratore, visualizzare e modificare le presenze degli stagisti o della \emph{\gls{quotapastog}}.
 \end{itemize}
 \begin{figure}[!h]
     \centering 
@@ -41,7 +41,7 @@ In queste due schermate non sono presenti barre superiori o inferiori, ma solo u
 Per ritornare alla schermata \textbf{Accedi}, il procedimento è analogo, ovvero si tocca il link presente sotto il pulsante Registrati, dove è riportato il messaggio "\emph{Hai già un account? ACCEDI}".\newline
 Invece, per andare in \textbf{Home}, bisognerà compilare correttamente i campi e poi toccare il pulsante verde presente.\newline
 \newline
-In \textbf{Accedi} è presente il messaggio "\emph{Hai dimenticato la password?}", questo doveva contenere un link che permetteva all'utente di recuperare la propria password, ma poi è stato tolto, in accordo con il tutor, perchè non aveva alcuna utilità.\newline
+In \textbf{Accedi} è presente il messaggio "\emph{Hai dimenticato la password?}", questo doveva contenere un link che permetteva all'utente di recuperare la propria password, funzionalità prima prevista, poi ritenuta non più necessaria.\newline
 %qui poi si dovrà riportare le schermate a 0.7 in base all'introduzione ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{figure}[!h] 
     \centering 
@@ -67,16 +67,16 @@ In \textbf{Accedi} è presente il messaggio "\emph{Hai dimenticato la password?}
 \newpage
 
 \subsection{Database}
-Per quanto riguarda la basi di dati (Figura \ref{fig:database}), ho pensato a una struttura semplice, mettendo al centro l'utente che può inserire dei piatti, delle transazioni oppure segnare le proprie presenze.\newline
-Poi ho pensato a una entità isolata che ha il solo scopo di contenere le variabili globali, ovvero la \emph{\gls{cassacomuneg}}, la \emph{\gls{quotapastog}} e la \emph{\gls{quotastornatag}} degli stagisti.\newline
-Per quanto riguarda gli stagisti, inizialmente si pensava se considerarli come un utente oppure se rappresentarli come un'altra entità, alla fine è stato deciso di lavorare in modo diverso, dato che gli stagisti si ipotizza che non utilizzino l'app.\newline
-Gli utenti amministratori possono aggiungere le spese e le presenze degli stagisti, mentre la loro \emph{\gls{quotastornatag}} è stato deciso di indicarla nell'entità Cassa Comune dato che si tratta di un dato unico per tutti gli stagisti.\newline
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=0.9\columnwidth]{database} 
-    \caption{Il database progettato per l'applicazione}
-    \label{fig:database}
-\end{figure}
+%Per quanto riguarda la basi di dati (Figura \ref{fig:database}), ho pensato a una struttura semplice, mettendo al centro l'utente che può inserire dei piatti, delle transazioni oppure segnare le proprie presenze.\newline
+%Poi ho pensato a una entità isolata che ha il solo scopo di contenere le variabili globali, ovvero la \emph{\gls{cassacomuneg}}, la \emph{\gls{quotapastog}} e la \emph{\gls{quotastornatag}} degli stagisti.\newline
+%Per quanto riguarda gli stagisti, inizialmente si pensava se considerarli come un utente oppure se rappresentarli come un'altra entità, alla fine è stato deciso di lavorare in modo diverso, dato che gli stagisti si ipotizza che non utilizzino l'app.\newline
+%Gli utenti amministratori possono aggiungere le spese e le presenze degli stagisti, mentre la loro \emph{\gls{quotastornatag}} è stato deciso di indicarla nell'entità Cassa Comune dato che si tratta di un dato unico per tutti gli stagisti.\newline
+%\begin{figure}[!h] 
+%    \centering 
+%    \includegraphics[width=0.9\columnwidth]{database} 
+%    \caption{Il database progettato per l'applicazione}
+%    \label{fig:database}
+%\end{figure}
 
 \newpage
 
