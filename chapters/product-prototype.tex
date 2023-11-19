@@ -67,16 +67,77 @@ In \textbf{Accedi} è presente il messaggio "\emph{Hai dimenticato la password?}
 \newpage
 
 \subsection{Database}
-%Per quanto riguarda la basi di dati (Figura \ref{fig:database}), ho pensato a una struttura semplice, mettendo al centro l'utente che può inserire dei piatti, delle transazioni oppure segnare le proprie presenze.\newline
-%Poi ho pensato a una entità isolata che ha il solo scopo di contenere le variabili globali, ovvero la \emph{\gls{cassacomuneg}}, la \emph{\gls{quotapastog}} e la \emph{\gls{quotastornatag}} degli stagisti.\newline
-%Per quanto riguarda gli stagisti, inizialmente si pensava se considerarli come un utente oppure se rappresentarli come un'altra entità, alla fine è stato deciso di lavorare in modo diverso, dato che gli stagisti si ipotizza che non utilizzino l'app.\newline
-%Gli utenti amministratori possono aggiungere le spese e le presenze degli stagisti, mentre la loro \emph{\gls{quotastornatag}} è stato deciso di indicarla nell'entità Cassa Comune dato che si tratta di un dato unico per tutti gli stagisti.\newline
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.9\columnwidth]{database} 
-%    \caption{Il database progettato per l'applicazione}
-%    \label{fig:database}
-%\end{figure}
+Per quanto riguarda la base di dati (Figura \ref{fig:database}), ho pensato a una struttura semplice, mettendo al centro l'utente che può inserire dei piatti, delle transazioni oppure segnare le proprie presenze.\newline
+Si è poi pensato ad un'entità isolata, che ha il solo scopo di contenere le variabili globali, ovvero la \emph{\gls{cassacomuneg}}, la \emph{\gls{quotapastog}} e la \emph{\gls{quotastornatag}} degli stagisti.\newline
+Per quanto riguarda gli stagisti, inizialmente si pensava se considerarli come un utente oppure se rappresentarli come un'altra entità; alla fine, è stato deciso di lavorare in modo diverso, dato che gli stagisti si ipotizza che non utilizzino l'app.\newline
+Gli utenti amministratori possono aggiungere le spese e le presenze degli stagisti, mentre la loro \emph{\gls{quotastornatag}} è stato deciso di indicarla nell'entità Cassa Comune, dato che si tratta di un dato unico per tutti gli stagisti.\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\columnwidth]{database} 
+    \caption{Il database progettato per l'applicazione}
+    \label{fig:database}
+\end{figure}
+\newline
+Lavorando con Firebase, un database noSQL, i dati sono stati gestiti in modo leggermente diverso, ma rimanendo fedeli alle entità riportate in Figura \ref{fig:database}.\newline
+Questo perchè Firebase organizza i dati in \emph{raccolte}, ogni raccolta contiene dei \emph{documenti} e ogni documento è composto da \emph{campi}.\newline
+Se dovessimo tradurre a livello teorico:
+\begin{itemize}
+    \item le \emph{raccolte} sono le entità;
+    \item i \emph{documenti} sono le \emph{tuple}, cioè se dovessimo rappresentare le entità come una tabella, un documento è una riga di informazioni dell'entità;
+    \item i \emph{campi} sono gli attributi, ovvero un singolo dato della \emph{tupla}.
+\end{itemize}
+Con Firebase si possono gestire i dati in modo diverso da quanto descritto, perchè i \emph{documenti} non sono rigidi, cioè i \emph{documenti} all'interno di una \emph{raccolta} possono avere quantità e tipi diversi di \emph{campi}, permettendo una struttura dinamica e lasciando al programmatore la libertà di decidere come gestire le informazioni.\newline
+\newline
+Per convenzione, è stato deciso di strutturare i dati come è stato descritto nell'elenco puntato, perchè risultava più semplice capire l'ordine delle informazioni e ha permesso una semplice gestione dei dati a livello di codice.\newline
+Di seguito si riporta la struttura finale del database, riportando per ogni \textbf{raccolta} i \emph{campi} che ogni documento deve contenere.\newline
+
+\newpage
+
+\textbf{cassaComune}
+\begin{itemize}
+    \item \emph{cassaComune}, di tipo number (numerico)
+    \item \emph{quotaPasti}, di tipo number
+    \item \emph{quotaStornataStagisti}, di tipo number
+\end{itemize}
+Per questa raccolta esiste un solo \emph{documento} con codice identificativo "cassaComune".\newline
+\newline
+\textbf{utenti}
+\begin{itemize}
+    \item \emph{email}, di tipo string (stringa)
+    \item \emph{nome}, di tipo string
+    \item \emph{cognome}, di tipo string
+    \item \emph{UID}, di tipo string; questo rappresenta il codice UID Satispay dell'utente
+    \item \emph{quotaStornta}, di tipo string
+    \item \emph{admin}, di tipo boolean (booleano)
+\end{itemize}
+
+\textbf{piatti}
+\begin{itemize}
+    \item \emph{nome}, di tipo string
+    \item \emph{ingredienti}, di tipo string
+    \item \emph{ricetta}, di tipo string
+    \item \emph{propostoOggi}, di tipo timestamp; questo permette di capire quando è stata l'ultima volta che il piatto è stato proposto; se riporta la data odierna, il piatto dovrà comparire nella Home
+    \item \emph{utente}, di tipo string; serve per capire quale utente ha inserito il piatto
+\end{itemize}
+
+\textbf{presenze}
+\begin{itemize}
+    \item \emph{data}, di tipo timestamp
+    \item \emph{utente}, di tipo string
+    \item \emph{quotaPasto}, di tipo number; indica quanto riportava la \emph{\gls{quotapastog}} il giorno in cui l'utente è stato presente a pranzo
+    \item \emph{stagisti}, di tipo boolean; se impostato a \emph{true} vuol dire che la presenza indicata riporta la presenza degli stagisti e non dell'utente
+    \item \emph{numStagisti}, di tipo number; se \emph{stagisti} è impostato a \emph{true} riporta quanti stagisti erano presenti nella data indicata
+\end{itemize}
+\newpage
+\textbf{transazioni}
+\begin{itemize}
+    \item \emph{soldi}, di tipo number
+    \item \emph{data}, di tipo timestamp
+    \item \emph{utente}, di tipo sting
+    \item \emph{stagista}, di tipo boolean; indica se è stato lo stgista ad effettuare la spesa (\emph{true}) o l'utente (\emph{false})
+    \item \emph{spesa}, di tipo boolean; se \emph{true} indica che la transazione riportata è una spesa, altrimenti si tratta dell'invio dei soldi ad un altro utente
+    \item \emph{utenteRiceveInvioSoldi}, di tipo string; se \emph{spesa} è impostato a \emph{false}, questo riporta l'utente che riceve i soldi
+\end{itemize}
 
 \newpage
 
