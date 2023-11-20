@@ -141,9 +141,67 @@ Per questa raccolta esiste un solo \emph{documento} con codice identificativo "c
 
 \newpage
 
-\section{Design Pattern utilizzati}
+%\section{Design Pattern utilizzati}
 %forse parlare dell'MVVM o BLoC patttern
 
 \section{Codifica} %riportare qui il database?
 %In questa sezione riporto la struttura della cartella lib, parlerò delle componenti e, del file firebase_option e delle classi
 %riportare anche le immagine dell'app creata
+
+\subsection{Struttura delle cartelle}
+Per il progetto è stato installato il \emph{\gls{sdk}}\glsfirstoccur di Flutter nella versione 3.13.6.\newline  
+\newline
+La prima cosa che si nota quando si crea un progetto Flutter, è la struttura preimpostata dal \emph{framework} (Figura \ref{fig:directory-flutter}):
+\begin{itemize}
+    \item all'interno del file \emph{.metadata} si trovano le proprietà del codice Flutter; questo file \textbf{non} bisogna modificarlo perchè contiene i metadati del progetto;
+    \item il file \emph{analysis\textunderscore options.yaml} serve per analizzare il codice Dart e controllare che non ci siano errori quando si compila il codice; come è intuibile, anche questo file \textbf{non} bisogna toccarlo;
+    \item il file principale che controlla le librerie da installare è \emph{pubspec.yaml}; se si desidera aggiungere un pacchetto, impostare un font specifico o anche indicare la cartella dove bisogna reperire i video e le immagini, bisogna indicarli dentro a questo file;
+    \item per ogni piattaforma (android, ios, linux, macos, web e windows), è presente una cartella apposita con all'interno tutto l'occorente per far funzionare il progetto nel sistema operativo desiderato;
+    \item il codice principale lo si scrive all'interno della cartella \emph{lib};
+    \item FLutter preimposta la cartella \emph{test} dove poter svolgere i test di unità.
+\end{itemize}
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.4\columnwidth]{FlutterStructure} 
+    \caption{La struttura del progetto preimpostata da Flutter}
+    \label{fig:directory-flutter}
+\end{figure}
+Per questo progetto, ho lavorato principalmente nella cartella \emph{lib} e ho creato una cartella \emph{assets} per inserire il logo dell'azienda RiskAPP, visibile nella pagine Acccedi e Registrati dell'app (se fossero state presenti altre immagini, sarebbero state inserite all'interno di questa cartella).\newline
+Poche volte ho toccato le cartelle \emph{andorid} e \emph{ios}, principalmente per sistemare qualche libreria di Flutter che dava problemi su uno dei due sistemi operativi, ma anche per modificare il nome dell'app e il logo. 
+\newpage
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5\columnwidth]{libDirectory} 
+    \caption{La struttura della cartella lib}
+    \label{fig:directory-lib}
+\end{figure}
+Come si può vedere in Figura \ref{fig:directory-lib}, ho creato tre cartelle per suddividere i file:
+\begin{itemize}
+    \item nella cartella \textbf{Control}, sono state definite le classi per poter gestire le variabili locali dell'app, che sono solo di supporto per poter gestire alcune informazioni, come per esempio impostare la data nel formato italiano, implementato nella classe ControlloData() creata nel file \emph{controllo\textunderscore  data.dart};
+    \item all'interno di \textbf{Database}, sono presenti tutte le classi con le funzioni appropriate per poter comunicare e gestire il database di Firebase;
+    \item all'interno della cartella \textbf{View}, viene gestita la parte grafica dell'app; per ogni pagina è stata creato un file apposito, l'unica eccezione è per \emph{principale.dart} che ha il solo scopo di visualizzare la barra inferiore dell'app.
+\end{itemize}
+Il file \emph{firebase\textunderscore options.dart} contiene le istruzioni fondamentali per collegare il progetto alla console di Firebase e viene generato automaticamente da FlutterFire CLI.\newline
+\newline
+In \emph{main.dart} si decide quale pagina deve visualizzare l'utente quando apre l'app, in base se è stato eseguito làaccesso le volte precedenti o meno.
+\newpage
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5 \columnwidth]{ComponentsDirectory} 
+    \caption{La struttura della cartella Components}
+    \label{fig:directory-components}
+\end{figure}
+In \textbf{View} è presente la cartella \textbf{Components} (Figura \ref{fig:directory-components}), questa contiene le componenti, ovvero degli elementi preimpostati che vengono utilizzati più volte all'interno del codice.\newline
+Per esempio, il file \emph{caricamento.dart} definisce la schermata che dovrà essere visibile mentre viene eseguito un caricamento dei dati da Firebase; questo componente viene richiamato da quasi tutte le pagine create in \textbf{View}.
+
+\newpage
+
+\subsection{Le librerie di Firebase}
+
+\subsection{Il calendario delle presenze}
+
+\subsection{Come funziona l'applicazione}
+
+\subsection{Modificare il nome e il logo}
+
+\subsection{Aprire l'app tramite QrCode}
