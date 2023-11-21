@@ -156,9 +156,9 @@ La prima cosa che si nota quando si crea un progetto Flutter, è la struttura pr
     \item all'interno del file \emph{.metadata} si trovano le proprietà del codice Flutter; questo file \textbf{non} bisogna modificarlo perchè contiene i metadati del progetto;
     \item il file \emph{analysis\textunderscore options.yaml} serve per analizzare il codice Dart e controllare che non ci siano errori quando si compila il codice; come è intuibile, anche questo file \textbf{non} bisogna toccarlo;
     \item il file principale che controlla le librerie da installare è \emph{pubspec.yaml}; se si desidera aggiungere un pacchetto, impostare un font specifico o anche indicare la cartella dove bisogna reperire i video e le immagini, bisogna indicarli dentro a questo file;
-    \item per ogni piattaforma (android, ios, linux, macos, web e windows), è presente una cartella apposita con all'interno tutto l'occorente per far funzionare il progetto nel sistema operativo desiderato;
+    \item per ogni piattaforma (Android, iOS, Linux, MacOS, Web e Windows), è presente una cartella apposita con all'interno tutto l'occorente per far funzionare il progetto nel sistema operativo desiderato;
     \item il codice principale lo si scrive all'interno della cartella \emph{lib};
-    \item FLutter preimposta la cartella \emph{test} dove poter svolgere i test di unità.
+    \item Flutter preimposta la cartella \emph{test} dove poter svolgere i test di unità.
 \end{itemize}
 \begin{figure}[!h] 
     \centering 
@@ -167,7 +167,7 @@ La prima cosa che si nota quando si crea un progetto Flutter, è la struttura pr
     \label{fig:directory-flutter}
 \end{figure}
 Per questo progetto, ho lavorato principalmente nella cartella \emph{lib} e ho creato una cartella \emph{assets} per inserire il logo dell'azienda RiskAPP, visibile nella pagine Acccedi e Registrati dell'app (se fossero state presenti altre immagini, sarebbero state inserite all'interno di questa cartella).\newline
-Poche volte ho toccato le cartelle \emph{andorid} e \emph{ios}, principalmente per sistemare qualche libreria di Flutter che dava problemi su uno dei due sistemi operativi, ma anche per modificare il nome dell'app e il logo. 
+Poche volte ho toccato le cartelle \emph{andorid} e \emph{ios}, principalmente per sistemare qualche libreria di Flutter che dava problemi su uno dei due sistemi operativi. 
 \newpage
 \begin{figure}[!h] 
     \centering 
@@ -181,9 +181,8 @@ Come si può vedere in Figura \ref{fig:directory-lib}, ho creato tre cartelle pe
     \item all'interno di \textbf{Database}, sono presenti tutte le classi con le funzioni appropriate per poter comunicare e gestire il database di Firebase;
     \item all'interno della cartella \textbf{View}, viene gestita la parte grafica dell'app; per ogni pagina è stata creato un file apposito, l'unica eccezione è per \emph{principale.dart} che ha il solo scopo di visualizzare la barra inferiore dell'app.
 \end{itemize}
-Il file \emph{firebase\textunderscore options.dart} contiene le istruzioni fondamentali per collegare il progetto alla console di Firebase e viene generato automaticamente da FlutterFire CLI.\newline
-\newline
-In \emph{main.dart} si decide quale pagina deve visualizzare l'utente quando apre l'app, in base se è stato eseguito làaccesso le volte precedenti o meno.
+Il file \emph{firebase\textunderscore options.dart} contiene le istruzioni fondamentali per collegare il progetto alla console di Firebase e viene generato automaticamente da \emph{FlutterFire \gls{clig}\glsfirstoccur}, un tool che mette a disposizione diversi comandi per installare \emph{FlutterFire} e permettere di collegare il proprio progetto a Firebase.\newline
+In \emph{main.dart} si decide quale pagina deve visualizzare l'utente quando apre l'app, in base se è stato eseguito l'accesso le volte precedenti o no.
 \newpage
 \begin{figure}[!h] 
     \centering 
@@ -197,6 +196,46 @@ Per esempio, il file \emph{caricamento.dart} definisce la schermata che dovrà e
 \newpage
 
 \subsection{Le librerie di Firebase}
+Quando si collega un progetto a Firebase, si scaricano i pacchetti \emph{Firebase \gls{clig}} e \emph{FlutterFire \gls{clig}}, questi permettono di collegare il progetto alla console di Firebase e creano il file \emph{firebase\textunderscore option.dart} che dovrà poi essere importato nel file \emph{main.dart}.\newline
+Infine, basta scrivere le righe di codice riporte in Figura \ref{fig:code-firebase} per poter permettere ad ogni piattaforma di interagire con il database.
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9 \columnwidth]{code/firebase} 
+    \caption{Istruzione per collegare Firebase}
+    \label{fig:code-firebase}
+\end{figure}
+
+Quando si eseguono i passaggi appena descritti, si installa in automatico il pacchetto \emph{firebase\textunderscore core}, ma per poter permettere l'autenticazione degli utenti e lavorare con il database, sono stati installati manualmente i pacchetti \emph{firebase\textunderscore auth} e \emph{cloud\textunderscore firestore}.\newline
+\newline
+Ci sono diversi modi che Firebase Authentication mette a disposizione per la registrazione di un utente, ma per questo progetto è stato addottato il metodo più semplice, ovvero tramite mail e password.\newline
+Per permettere la registrazione, l'accesso e la disconnessione di un utente, è stato creata la classe \emph{Database} che al suo interno contiene solo i metodi con le funzioni appena descritte (in Figura \ref{fig:code-authentication} sono riportate le funzioni \emph{accedi} e \emph{disconettiti}).
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.95 \columnwidth]{code/firebaseauth} 
+    \caption{Le funzioni di accesso e di disconnesione di un utente}
+    \label{fig:code-authentication}
+\end{figure}
+
+\newpage
+
+Per poter lavorare con il Cloud di Firestore, è stata creata una classe per ogni entità.\newline
+Ogni classe contiene un metodo per creare una nuova istanza (Figura \ref{fig:code-aggiungi}), metodi \emph{set} e \emph{get} per ogni campo (Figura \ref{fig:code-query}) e alcune funzioni di supporto.
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=1.0 \columnwidth]{code/aggiuntautente} 
+    \caption{La funzione di aggiunta di un utente nel database}
+    \label{fig:code-aggiungi}
+\end{figure}
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9 \columnwidth]{code/query-set} 
+    \caption{Una funzione \emph{get} e \emph{set} della classe \emph{Utenti}}
+    \label{fig:code-query}
+\end{figure}
+
+Attraverso la console di Firebase è possibile vedere gli utenti che si sono registrati, i dati presenti nel database ed è possibile anche modificare i permessi di lettura o modifica dei dati, per un controllo più attento anche a livello di codice. 
+
+\newpage
 
 \subsection{Il calendario delle presenze}
 
