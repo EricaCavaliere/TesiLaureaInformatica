@@ -162,7 +162,7 @@ La prima cosa che si nota quando si crea un progetto Flutter, è la struttura pr
 \end{itemize}
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.4\columnwidth]{FlutterStructure} 
+    \includegraphics[width=0.35\columnwidth]{FlutterStructure} 
     \caption{La struttura del progetto preimpostata da Flutter}
     \label{fig:directory-flutter}
 \end{figure}
@@ -171,7 +171,7 @@ Poche volte ho toccato le cartelle \emph{andorid} e \emph{ios}, principalmente p
 \newpage
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.5\columnwidth]{libDirectory} 
+    \includegraphics[width=0.45\columnwidth]{libDirectory} 
     \caption{La struttura della cartella lib}
     \label{fig:directory-lib}
 \end{figure}
@@ -186,7 +186,7 @@ In \emph{main.dart} si decide quale pagina deve visualizzare l'utente quando apr
 \newpage
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.5 \columnwidth]{ComponentsDirectory} 
+    \includegraphics[width=0.45 \columnwidth]{ComponentsDirectory} 
     \caption{La struttura della cartella Components}
     \label{fig:directory-components}
 \end{figure}
@@ -200,7 +200,7 @@ Quando si collega un progetto a Firebase, si scaricano i pacchetti \emph{Firebas
 Infine, basta scrivere le righe di codice riporte in Figura \ref{fig:code-firebase} per poter permettere ad ogni piattaforma di interagire con il database.
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.9 \columnwidth]{code/firebase} 
+    \includegraphics[width=0.95 \columnwidth]{code/firebase} 
     \caption{Istruzione per collegare Firebase}
     \label{fig:code-firebase}
 \end{figure}
@@ -211,7 +211,7 @@ Ci sono diversi modi che Firebase Authentication mette a disposizione per la reg
 Per permettere la registrazione, l'accesso e la disconnessione di un utente, è stato creata la classe \emph{Database} che al suo interno contiene solo i metodi con le funzioni appena descritte (in Figura \ref{fig:code-authentication} sono riportate le funzioni \emph{accedi} e \emph{disconettiti}).
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.95 \columnwidth]{code/firebaseauth} 
+    \includegraphics[width=1.05 \columnwidth]{code/firebaseauth} 
     \caption{Le funzioni di accesso e di disconnesione di un utente}
     \label{fig:code-authentication}
 \end{figure}
@@ -222,13 +222,13 @@ Per poter lavorare con il Cloud di Firestore, è stata creata una classe per ogn
 Ogni classe contiene un metodo per creare una nuova istanza (Figura \ref{fig:code-aggiungi}), metodi \emph{set} e \emph{get} per ogni campo (Figura \ref{fig:code-query}) e alcune funzioni di supporto.
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=1.0 \columnwidth]{code/aggiuntautente} 
+    \includegraphics[width=1.1 \columnwidth]{code/aggiuntautente} 
     \caption{La funzione di aggiunta di un utente nel database}
     \label{fig:code-aggiungi}
 \end{figure}
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.9 \columnwidth]{code/query-set} 
+    \includegraphics[width=1.00 \columnwidth]{code/query-set} 
     \caption{Una funzione \emph{get} e \emph{set} della classe \emph{Utenti}}
     \label{fig:code-query}
 \end{figure}
@@ -238,8 +238,32 @@ Attraverso la console di Firebase è possibile vedere gli utenti che si sono reg
 \newpage
 
 \subsection{Il calendario delle presenze}
+Per permettere la gestione delle presenze, è stato installato il pacchetto \emph{table\textunderscore calendar}, che permette di creare il \emph{widget} TableCalendar, cioè l'elemento grafico che vediamo in Figura \ref{fig:calendario}.
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5 \columnwidth]{calendario} 
+    \caption{Il calendario che l'utente utilizza per gestire le presenze}
+    \label{fig:calendario}
+\end{figure}
 
-\subsection{Come funziona l'applicazione}
+Il \emph{widget} offre una serie di opzioni che consentono di modificarlo, come per esempio scegliere se visualizzare il calendario nel formato settimanale (come in immagine), con due settimane oppure tutto un mese.\newline
+Si può modificare come viene visualizzata la data selezionata (anche la data odierna) attraverso l'uso del \emph{CalendarBuilder}: si tratta di un costruttore (\emph{builder}) con il compito di impostare la grafica dell'elemento indicato, in questo caso ha il compito di impostare la grafica delle date evidenziate.\newline
+\newline
+Questo calendario è presente nella pagina Utente, dove sono visibili i tre \emph{widget} grigi, il primo apre il calendario per modificare le proprie presenze (Figura \ref{fig:utente-presenze}), il secondo, visibile per gli amministratori, apre il calendario per modificare e monitorare le presenze degli stagisti.\newline
+Il terzo \emph{widget} consente solo di visualizzare e modificare la \emph{\gls{quotapastog}}.\newline
+Non sono stati inseriti altri calendari nell'applicazione.\newline
+\newline
+Una funzione fondamentale di TableCalendar è \emph{onDaySelected}: questa permette di modificare il calendario selezionato, rendendo la selezione iterativa; se non viene definita questa funzione, il calendario rimane statico e non sarà possibili cambiare la data selezionata, ma rimarrà evidenziata la data indicata inizialmente nella variabile \emph{focusedDay}.
+\newpage
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.8 \columnwidth]{Utente} 
+    \caption{La finestra Utente e il calendario delle presenze}
+    \label{fig:utente-presenze}
+\end{figure}
+\newpage
+
+\subsection{Altre schermate dell'app}
 
 \subsection{Modificare il nome e il logo}
 
