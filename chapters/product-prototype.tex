@@ -307,3 +307,12 @@ Il procedimento per modificare il nome dell'applicazione non si discosta molto d
 \newpage
 
 \subsection{Aprire l'app tramite QrCode}
+Per poter gestire le presenze in modo veloce, si pensava di utilizzare un QrCode che permettesse di segnare la presenza dell'utente quando veniva scannerizzato.\newline
+Purtroppo, non è stato possibile implementare questa funzione perchè sono state incontrate diverse difficoltà nel creare quanto richiesto, ma è stato un caso di studio interessate che potrebbe essere approfondito in futuro.\newline
+\newline
+Per poter creare un qualsiasi QrCode, è stato installato il pacchetto \emph{qr\textunderscore flutter}, questo permette di creare il \emph{widget QrImageView} che si occupa di far vedere direttamente nell'applicazione un QrCode, generato da una stringa impostata dal programmatore.\newline
+Il dubbio a questo punto sorge spontaneo, se bisogna passare una parola, una frase, un qualsiasi testo per creare un QrCode, qual è la stringa che permette di aprire la propria applicazione Flutter?\newline
+La risposta in realtà è molto semplice a parole, ma nella pratica incontra qualche difficoltà, perchè per aprire un'applicazione, bisogna creare un URL identificativo per l'app e questa sarà la stringa che bisognerà passare a \emph{QrImageView} per generare il QrCode desiderato.\newline
+\newline
+Creare un URL è molto semplice, ci sono diversi servizi online che ti permettono di creare il proprio sito e affidarti così un indirizzo web.\newline
+In accordo con il mio tutor, è stato scelto di utilizzare il servizio Hosting di Firebase; il passaggio successivo consiste nel collegare il proprio progetto Flutter all'URL creato.
