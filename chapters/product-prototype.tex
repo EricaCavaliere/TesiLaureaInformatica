@@ -139,7 +139,7 @@ Per questa raccolta esiste un solo \emph{documento} con codice identificativo "c
     \item \emph{utenteRiceveInvioSoldi}, di tipo string; se \emph{spesa} è impostato a \emph{false}, questo riporta l'utente che riceve i soldi
 \end{itemize}
 
-%\newpage
+\newpage
 
 %\section{Design Pattern utilizzati}
 %forse parlare dell'MVVM o BLoC patttern
@@ -284,5 +284,26 @@ Lo \textbf{StreamBuilder} è stato utilizzato anche nella Home, per permettere a
 \newpage
 
 \subsection{Modificare il nome e il logo}
+Quando si crea un'applicazione, di default Flutter imposta il suo logo.\newline
+Per poter modificare e utilizzare il proprio logo è molto semplice, prima di tutto bisogna creare più formati dell'immagine che si desidera attribuire all'app, poi bisogna riportarli tutti all'interno della cartella del sistema operativo interessato e preimpostato da Flutter.
+\begin{itemize}
+    \item In Android bisogna salvare il logo e tutti i suoi formati nel percorso\newline andorid/app/src/main/res
+    \item Per iOS bisogna salvare il logo e tutti i suoi formati nel percorso\newline ios/Runner/Assets.xcassets/AppIcon.appiconset
+\end{itemize}
+Il logo per questo progetto è stato creato in Figma (Figura \ref{fig:logo-nome}).\newline
+\newline
+Il procedimento per modificare il nome dell'applicazione non si discosta molto dal procedimento appena descritto per il logo.
+\begin{itemize}
+    \item In Android bisogna modificare il parametro \emph{label} presente nel file\newline \emph{AndroidManifest.xml} che si trova nel percorso andorid/app/src/main.
+    \item Per iOS bisogna modificare il nome contenuto nel parametro\newline \emph{CFBundleDisplayName} nel file \emph{Info.plist} presente nel percorso ios/Runner.
+\end{itemize}
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.2 \columnwidth]{GestionePranzi} 
+    \caption{Il nome e il logo dell'applicazione creata}
+    \label{fig:logo-nome}
+\end{figure}
+
+\newpage
 
 \subsection{Aprire l'app tramite QrCode}
