@@ -139,7 +139,7 @@ Per questa raccolta esiste un solo \emph{documento} con codice identificativo "c
     \item \emph{utenteRiceveInvioSoldi}, di tipo string; se \emph{spesa} è impostato a \emph{false}, questo riporta l'utente che riceve i soldi
 \end{itemize}
 
-\newpage
+%\newpage
 
 %\section{Design Pattern utilizzati}
 %forse parlare dell'MVVM o BLoC patttern
@@ -167,7 +167,7 @@ La prima cosa che si nota quando si crea un progetto Flutter, è la struttura pr
     \label{fig:directory-flutter}
 \end{figure}
 Per questo progetto, ho lavorato principalmente nella cartella \emph{lib} e ho creato una cartella \emph{assets} per inserire il logo dell'azienda RiskAPP, visibile nella pagine Acccedi e Registrati dell'app (se fossero state presenti altre immagini, sarebbero state inserite all'interno di questa cartella).\newline
-Poche volte ho toccato le cartelle \emph{andorid} e \emph{ios}, principalmente per sistemare qualche libreria di Flutter che dava problemi su uno dei due sistemi operativi. 
+Poche volte ho toccato le cartelle \emph{android} e \emph{ios}, principalmente per sistemare qualche libreria di Flutter che dava problemi su uno dei due sistemi operativi. 
 \newpage
 \begin{figure}[!h] 
     \centering 
@@ -183,13 +183,14 @@ Come si può vedere in Figura \ref{fig:directory-lib}, ho creato tre cartelle pe
 \end{itemize}
 Il file \emph{firebase\textunderscore options.dart} contiene le istruzioni fondamentali per collegare il progetto alla console di Firebase e viene generato automaticamente da \emph{FlutterFire \gls{clig}\glsfirstoccur}, un tool che mette a disposizione diversi comandi per installare \emph{FlutterFire} e permettere di collegare il proprio progetto a Firebase.\newline
 In \emph{main.dart} si decide quale pagina deve visualizzare l'utente quando apre l'app, in base se è stato eseguito l'accesso le volte precedenti o no.
-\newpage
+%\newpage
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.45 \columnwidth]{ComponentsDirectory} 
     \caption{La struttura della cartella Components}
     \label{fig:directory-components}
 \end{figure}
+
 In \textbf{View} è presente la cartella \textbf{Components} (Figura \ref{fig:directory-components}), questa contiene le componenti, ovvero degli elementi preimpostati che vengono utilizzati più volte all'interno del codice.\newline
 Per esempio, il file \emph{caricamento.dart} definisce la schermata che dovrà essere visibile mentre viene eseguito un caricamento dei dati da Firebase; questo componente viene richiamato da quasi tutte le pagine create in \textbf{View}.
 
@@ -207,7 +208,7 @@ Infine, basta scrivere le righe di codice riporte in Figura \ref{fig:code-fireba
 
 Quando si eseguono i passaggi appena descritti, si installa in automatico il pacchetto \emph{firebase\textunderscore core}, ma per poter permettere l'autenticazione degli utenti e lavorare con il database, sono stati installati manualmente i pacchetti \emph{firebase\textunderscore auth} e \emph{cloud\textunderscore firestore}.\newline
 \newline
-Ci sono diversi modi che Firebase Authentication mette a disposizione per la registrazione di un utente, ma per questo progetto è stato addottato il metodo più semplice, ovvero tramite mail e password.\newline
+Ci sono diversi modi che Firebase Authentication mette a disposizione per la registrazione di un utente, ma per questo progetto è stato adottato il metodo di autenticazione tramite mail e password.\newline
 Per permettere la registrazione, l'accesso e la disconnessione di un utente, è stato creata la classe \emph{Database} che al suo interno contiene solo i metodi con le funzioni appena descritte (in Figura \ref{fig:code-authentication} sono riportate le funzioni \emph{accedi} e \emph{disconettiti}).
 \begin{figure}[!h] 
     \centering 
@@ -247,23 +248,40 @@ Per permettere la gestione delle presenze, è stato installato il pacchetto \emp
 \end{figure}
 
 Il \emph{widget} offre una serie di opzioni che consentono di modificarlo, come per esempio scegliere se visualizzare il calendario nel formato settimanale (come in immagine), con due settimane oppure tutto un mese.\newline
-Si può modificare come viene visualizzata la data selezionata (anche la data odierna) attraverso l'uso del \emph{CalendarBuilder}: si tratta di un costruttore (\emph{builder}) con il compito di impostare la grafica dell'elemento indicato, in questo caso ha il compito di impostare la grafica delle date evidenziate.\newline
+Si può modificare come viene visualizzata la data selezionata (anche la data odierna) attraverso l'uso del \emph{CalendarBuilder}: si tratta di un costruttore (\emph{builder}) con il compito di impostare la grafica dell'elemento indicato; in questo caso ha il compito di impostare la grafica delle date evidenziate.\newline
 \newline
 Questo calendario è presente nella pagina Utente, dove sono visibili i tre \emph{widget} grigi, il primo apre il calendario per modificare le proprie presenze (Figura \ref{fig:utente-presenze}), il secondo, visibile per gli amministratori, apre il calendario per modificare e monitorare le presenze degli stagisti.\newline
 Il terzo \emph{widget} consente solo di visualizzare e modificare la \emph{\gls{quotapastog}}.\newline
 Non sono stati inseriti altri calendari nell'applicazione.\newline
 \newline
-Una funzione fondamentale di TableCalendar è \emph{onDaySelected}: questa permette di modificare il calendario selezionato, rendendo la selezione iterativa; se non viene definita questa funzione, il calendario rimane statico e non sarà possibili cambiare la data selezionata, ma rimarrà evidenziata la data indicata inizialmente nella variabile \emph{focusedDay}.
+Una funzione fondamentale di TableCalendar è \emph{onDaySelected}: questa permette di modificare il calendario selezionato, rendendo la selezione iterativa; se non viene definita questa funzione, il calendario rimane statico e non sarà possibile cambiare la data selezionata, ma rimarrà evidenziata la data indicata inizialmente nella variabile \emph{focusedDay}.
 \newpage
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.8 \columnwidth]{Utente} 
-    \caption{La finestra Utente e il calendario delle presenze}
+    \includegraphics[width=0.7 \columnwidth]{Utente} 
+    \caption{La schermata Utente e il calendario delle presenze}
     \label{fig:utente-presenze}
+\end{figure}
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.7 \columnwidth]{SpeseMenu} 
+    \caption{Le schermate Spese e Menu}
+    \label{fig:spese-menu}
 \end{figure}
 \newpage
 
 \subsection{Altre schermate dell'app}
+Per questo progetto è stata richiesta un'app che permettesse, oltre un controllo e una gestione delle presenze, anche un controllo delle spese e la presenza di un menu comune per tutti, dove è possibile proporre un piatto per il pranzo odierno (Figura \ref{fig:spese-menu}).\newline
+Tramite la barra superiore di entrambe le schermate, è possibile aggiungere un elemento alla lista oppure utilizzare il filtro per visualizzare solo alcuni elementi specifici.\newline
+\newline
+Quando si effettua una aggiunta o si applica un filtro, il lavoro che l'app svolge è aggiornare il database o richiedere degli elementi specifici nel cloud di Firebase, per poi aggiornare graficamente la lista interessata.\newline
+Ogni modifica in Firebase, viene ripotata in tempo reale su tutti i dispositivi che utilizzano l'app; per permettere questo, sono stati utilizzati gli \textbf{StreamBuilder} (\cite{site:flutter-streambuilder}).\newline
+Dato uno \emph{stream} di dati, lo \textbf{StreamBuilder} si occupa di creare e aggiornare dei \emph{widget} specifici, in questo caso si occupa di aggiornare le liste presenti nelle schermate Spesa e Menu.\newline
+\newline
+Lo \textbf{StreamBuilder} è stato utilizzato anche nella Home, per permettere all'utente di monitorare in tempo reale i piatti proposti, la \emph{\gls{cassacomuneg}} e la propria \emph{\gls{quotastornatag}}, quest'ultimi due sono in continuo aggiornamento in base alle modifiche riportate nella schermata Spese o tramite le presenze segnate nel calendario (per ogni presenza viene effettuata una modifica pari alla quantità di soldi indicata nella \emph{\gls{quotapastog}}).\newline
+È stato utilizzato lo \textbf{StreamBuilder} anche nella schermata Utente per il controllo in tempo reale della \emph{\gls{quotastornatag}} degli stagisti.
+
+\newpage
 
 \subsection{Modificare il nome e il logo}
 
