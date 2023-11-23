@@ -275,7 +275,7 @@ Per questo progetto è stata richiesta un'app che permettesse, oltre un controll
 Tramite la barra superiore di entrambe le schermate, è possibile aggiungere un elemento alla lista oppure utilizzare il filtro per visualizzare solo alcuni elementi specifici.\newline
 \newline
 Quando si effettua una aggiunta o si applica un filtro, il lavoro che l'app svolge è aggiornare il database o richiedere degli elementi specifici nel cloud di Firebase, per poi aggiornare graficamente la lista interessata.\newline
-Ogni modifica in Firebase, viene ripotata in tempo reale su tutti i dispositivi che utilizzano l'app; per permettere questo, sono stati utilizzati gli \textbf{StreamBuilder} (\cite{site:flutter-streambuilder}).\newline
+Ogni modifica in Firebase viene ripotata in tempo reale su tutti i dispositivi che utilizzano l'app; per permettere questo, sono stati utilizzati gli \textbf{StreamBuilder} (\cite{site:flutter-streambuilder}).\newline
 Dato uno \emph{stream} di dati, lo \textbf{StreamBuilder} si occupa di creare e aggiornare dei \emph{widget} specifici, in questo caso si occupa di aggiornare le liste presenti nelle schermate Spesa e Menu.\newline
 \newline
 Lo \textbf{StreamBuilder} è stato utilizzato anche nella Home, per permettere all'utente di monitorare in tempo reale i piatti proposti, la \emph{\gls{cassacomuneg}} e la propria \emph{\gls{quotastornatag}}, quest'ultimi due sono in continuo aggiornamento in base alle modifiche riportate nella schermata Spese o tramite le presenze segnate nel calendario (per ogni presenza viene effettuata una modifica pari alla quantità di soldi indicata nella \emph{\gls{quotapastog}}).\newline
@@ -287,15 +287,15 @@ Lo \textbf{StreamBuilder} è stato utilizzato anche nella Home, per permettere a
 Quando si crea un'applicazione, di default Flutter imposta il suo logo.\newline
 Per poter modificare e utilizzare il proprio logo è molto semplice, prima di tutto bisogna creare più formati dell'immagine che si desidera attribuire all'app, poi bisogna riportarli tutti all'interno della cartella del sistema operativo interessato e preimpostato da Flutter.
 \begin{itemize}
-    \item Per Android bisogna salvare il logo e tutti i suoi formati nel percorso\newline andorid/app/src/main/res
-    \item Per iOS bisogna salvare il logo e tutti i suoi formati nel percorso\newline ios/Runner/Assets.xcassets/AppIcon.appiconset
+    \item Per Android bisogna salvare il logo e tutti i suoi formati nel percorso\newline \emph{android/app/src/main/res}
+    \item Per iOS bisogna salvare il logo e tutti i suoi formati nel percorso\newline \emph{ios/Runner/Assets.xcassets/AppIcon.appiconset}
 \end{itemize}
 Il logo per questo progetto è stato creato in Figma (Figura \ref{fig:logo-nome}).\newline
 \newline
 Il procedimento per modificare il nome dell'applicazione non si discosta molto dal procedimento appena descritto.
 \begin{itemize}
-    \item Per Android bisogna modificare il parametro \emph{label} presente nel file\newline \emph{AndroidManifest.xml} che si trova nel percorso andorid/app/src/main.
-    \item Per iOS bisogna modificare il parametro \emph{CFBundleDisplayName} nel file \emph{Info.plist} presente nel percorso ios/Runner.
+    \item Per Android bisogna modificare il parametro \emph{label} presente nel file\newline \emph{AndroidManifest.xml} che si trova nel percorso \emph{android/app/src/main}.
+    \item Per iOS bisogna modificare il parametro \emph{CFBundleDisplayName} nel file \emph{Info.plist} presente nel percorso \emph{ios/Runner}.
 \end{itemize}
 \begin{figure}[!h] 
     \centering 
@@ -308,11 +308,30 @@ Il procedimento per modificare il nome dell'applicazione non si discosta molto d
 
 \subsection{Aprire l'app tramite QrCode}
 Per poter gestire le presenze in modo veloce, si pensava di utilizzare un QrCode che permettesse di segnare la presenza dell'utente quando veniva scannerizzato.\newline
-Purtroppo, non è stato possibile implementare questa funzione perchè sono state incontrate diverse difficoltà nel creare quanto richiesto, ma è stato un caso di studio interessate che potrebbe essere approfondito in futuro.\newline
+Purtroppo, non è stato possibile implementare questa funzione perchè sono state incontrate diverse difficoltà nel creare quanto richiesto, ma è stato un caso di studio interessante che potrebbe essere approfondito in futuro.\newline
 \newline
-Per poter creare un qualsiasi QrCode, è stato installato il pacchetto \emph{qr\textunderscore flutter}, questo permette di creare il \emph{widget QrImageView} che si occupa di far vedere direttamente nell'applicazione un QrCode, generato da una stringa impostata dal programmatore.\newline
-Il dubbio a questo punto sorge spontaneo, se bisogna passare una parola, una frase, un qualsiasi testo per creare un QrCode, qual è la stringa che permette di aprire la propria applicazione Flutter?\newline
-La risposta in realtà è molto semplice a parole, ma nella pratica incontra qualche difficoltà, perchè per aprire un'applicazione, bisogna creare un URL identificativo per l'app e questa sarà la stringa che bisognerà passare a \emph{QrImageView} per generare il QrCode desiderato.\newline
+Per poter creare un qualsiasi QrCode, è stato installato il pacchetto \emph{qr\textunderscore flutter}; quest'ultimo permette di creare il \emph{widget QrImageView}, che si occupa di far vedere direttamente nell'applicazione un QrCode, generato da una stringa impostata dal programmatore.\newline
+Il dubbio a questo punto sorge spontaneo: se bisogna passare una parola, una frase, un qualsiasi testo per creare un QrCode, qual è la stringa che permette di aprire la propria applicazione Flutter?\newline
+La risposta, in realtà, è molto semplice a parole, ma nella pratica incontra qualche difficoltà.\newline
+Per aprire un'applicazione, bisogna creare un URL identificativo per l'app e questa sarà la stringa che bisognerà passare a \emph{QrImageView} per generare il QrCode desiderato.\newline
 \newline
-Creare un URL è molto semplice, ci sono diversi servizi online che ti permettono di creare il proprio sito e affidarti così un indirizzo web.\newline
-In accordo con il mio tutor, è stato scelto di utilizzare il servizio Hosting di Firebase; il passaggio successivo consiste nel collegare il proprio progetto Flutter all'URL creato.
+Creare un URL è molto semplice, ci sono diversi servizi online che permettono di creare il proprio sito e ottenere così un indirizzo web.\newline
+In accordo con il mio tutor, è stato scelto di utilizzare il servizio Hosting di Firebase; il passaggio successivo consiste nel collegare il proprio progetto Flutter all'URL creato.\newline
+\newline
+Per configurare correttamente la propria app Flutter, bisogna utilizzare la navigazione tramite \emph{route}, ovvero associando un percorso per ogni pagina che si desidera aprire, oppure installando la libreria \emph{go\textunderscore route}.\newline
+Questo è stato il mio primo errore per testare il QrCode, perchè per gestire la navigazione tra pagine, ho utilizzato il \emph{widget Navigator}; per questo motivo è stata installata successivamente la libreria richiesta e ho creato un file di test, ovvero una schermata contenente un messaggio di conferma presenza.\newline
+\newline
+Dopo aver configurato il percorso di ogni schermata, bisogna modificare il file \emph{AndroidManifest.xml} per Android e il file \emph{Info.plist} per iOS, aggiungendo delle istruzioni specifiche che permettono la navigazione tramite i \textbf{Deep Link}.\newline
+\newline
+I \textbf{Deep Link} sono un modo semplice per connettere le pagine di un'app.\newline
+Con questo metodo è possibile collegare la propria app ad altre, ma anche direzionare gli utenti a specifiche pagine in-app.\newline
+Questa tecnologia aiuta l’ecosistema mobile a diventare più connesso, piuttosto che creare una serie di applicazioni che non possono “comunicare” tra di loro.\newline
+Da non confondere con i \textbf{Dynamic link}, che sono sempre dei \textbf{Deep Link}, ma permettono di personalizzare il comportamento di questi.\newline
+Ad esempio, lo stesso link può portare ad una determinata sezione dell'app per Android ma ad una diversa sezione dell'app per iOS oppure, se l'utente non ha l'app installata, può spedirlo allo store (di Google, o di Apple) per scaricare l'applicazione.\newline
+Dopo l'installazione il link porta a termine il suo compito aprendo la sezione giusta dell'app oppure, se preferiamo, possiamo chiedere al link di inviare al nostro sito Web l'utente che non ha l'app installata sul suo smartphone.\newline
+\newline
+Dopo aver configurato la propria applicazione, creato l'URL e connesso l'app al sito, ora è possibile creare un QrCode che permette di aprire direttamente l'applicazione o, se l'app non è installata, aprire la pagina web.\newline
+Questo è tutto quello che sono riuscita a fare, ho seguito tutti i passaggi appena descritti, creato il QrCode passando come stringa l'URL dell'app e, se si scannerrizza il QrCode con un qualsiasi lettore di codici Qr, aprire l'applicazione.\newline
+\newline
+Considerando quanto fatto, possiamo definirlo un successo, perchè sono riuscita a studiare e a fare una cosa per me nuova, ma non una vittoria, perchè il QrCode non doveva solo aprire l'applicazione, doveva anche direzionare l'utente ad una pagina specifica e permettere così di segnare la propria presenza a pranzo nella giornata odierna.\newline
+Per questo ultimo passaggio sono state incontrate diverse difficoltà, decidendo così di abbandonare l'idea, dato che è già possibile segnare manualmente la propria presenza tramite il calendario, ma sarà una sfida che affronterò ancora in futuro.
