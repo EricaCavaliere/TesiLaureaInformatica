@@ -25,6 +25,8 @@ Il personale aziendale lavora costantemente per migliorare i propri servizi, rag
     \caption{Logo dell'azienda RiskApp}\label{fig:riskapp}
 \end{figure}
 
+\newpage
+
 \section{L'idea}
 
 Per poter gestire le spese per i pasti, che preparano in azienda, è stato scelto di sviluppare un'app mobile che permetta di monitorare i versamenti degli utenti, scegliere il piatto del giorno da un menu condiviso e monitorare la \emph{\gls{cassacomuneg}}\glsfirstoccur.\newline
@@ -33,7 +35,47 @@ Ogni utente potrà aggiungere un piatto nel menu, proporre il pasto del giorno, 
 L'amministratore potrà anche gestire le presenze e le spese effettuate dagli stagisti.
 L'applicazione dovrà essere sviluppata con \emph{\gls{flutterg}}\glsfirstoccur, \emph{\gls{dartg}}\glsfirstoccur  e \emph{\gls{firebaseg}}\glsfirstoccur.
 
-%da modificare - vedere alla fine ----------------------------------------------------------
+\section{Obiettivi}
+\label{sec:obbiettivi}
+
+Si farà riferimento ai requisiti secondo le seguenti notazioni:
+\begin{itemize}
+    \item O per i requisiti obbligatori, vincolanti in quanto obiettivi primari richiesti dal committente;
+    \item D per i requisiti desiderabili, non vincolanti o strettamente necessari, ma dal riconoscibile valore aggiunto;
+    \item F per i requisiti facoltativi, rappresentanti valore aggiunto non strettamente competitivo.
+\end{itemize}
+Le sigle precedentemente indicate saranno seguite da una coppia sequenziale di numeri, identificativo del requisito.\newline
+
+\begin{table}[htb]%
+    \caption{Tabella degli obiettivi}
+    \label{tab:obiettivi-richiesti}
+    \begin{tabularx}{\textwidth}{lX}
+    \hline
+    \textbf{Obiettivo} & \textbf{Descrizione} \\
+    \hline\hline
+    O01     & accesso tramite credenziali \\
+    \hline
+    O02     & pannello di controllo degli utenti \\
+    \hline
+    O03     & modifica o aggiunta delle spese \\
+    \hline
+    O04     & monitoraggio della cassa comune \\
+    \hline
+    O05     & controllo presenza in azienda di una persona durante i pranzi \\
+    \hline
+    O06     & impostare il menu del giorno \\
+    \hline
+    O07     & scelta di un piatto dal menu \\
+    \hline
+    D01     & integrazione di chatGPT per consigliare alcune ricette \\
+    \hline
+    F01     & test a livello di frontend \\
+    \hline
+    \end{tabularx}
+\end{table}%
+
+\newpage
+
 \section{Organizzazione del testo}
 
 \begin{description}

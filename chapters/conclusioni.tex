@@ -1,10 +1,185 @@
 \chapter{Conclusioni}
 \label{cap:conclusioni}
 
-%\section{Consuntivo finale}
+\intro{In conclusione a tutto il percorso di stage, questo capitolo riporta un resoconto degli obiettivi e dei requisiti raggiunti, seguito poi da un'analisi personale del progetto svolto.}\\ 
 
-%\section{Raggiungimento degli obiettivi}
+\section{Raggiungimento degli obiettivi}
+In riferimento alle notazioni indicate nel \hyperref[sec:obbiettivi]{primo capitolo} e nel \hyperref[sec:requisiti]{terzo capitolo} e in riferimento alle Tabelle \ref{tab:obiettivi-richiesti}, \ref{tab:requisiti-funzionaliuno}, \ref{tab:requisiti-funzionalidue}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo}, di seguito sono riportati gli obbiettivi e i requisiti con il loro stato di completamento.\newline
+Alcuni obbiettivi e alcuni requisiti non sono stati soddisfatti perchè è stato deciso di impiegare più tempo per il raggiungimento degli obiettivi obbligatori, dedicando più tempo allo studio e cercando di migliorare alcune funzioni dell'applicazione rischiesta.\newline
+
+\subsection{Obiettivi raggiunti}
+%Si farà riferimento ai requisiti secondo le seguenti notazioni:
+%\begin{itemize}
+%    \item O per i requisiti obbligatori, vincolanti in quanto obiettivo primario richiesto dal committente;
+%    \item D per i requisiti desiderabili, non vincolanti o strettamente necessari, ma dal riconoscibile valore aggiunto;
+%    \item F per i requisiti facoltativi, rappresentanti valore aggiunto non strettamente competitivo.
+%\end{itemize}
+%Le sigle precedentemente indicate saranno seguite da una coppia sequenziale di numeri, identificativo del requisito.
+
+\begin{table}[htb]%
+    \caption{Tabella degli obiettivi raggiunti}
+    \label{tab:obiettivi-raggiunti}
+    \begin{tabularx}{\textwidth}{lXl}
+    \hline
+    \textbf{Obiettivo} & \textbf{Descrizione} & \textbf{Stato}\\
+    \hline\hline
+    O01     & accesso tramite credenziali & Soddisfatto \\
+    \hline
+    O02     & pannello di controllo degli utenti; & Soddisfatto \\
+    \hline
+    O03     & modifica o aggiunta delle spese & Soddisfatto \\
+    \hline
+    O04     & monitoraggio della cassa comune & Soddisfatto \\
+    \hline
+    O05     & controllo presenza in azienda di una persona durante i pranzi & Soddisfatto \\
+    \hline
+    O06     & impostare il menu del giorno & Soddisfatto \\
+    \hline
+    O07     & scelta di un piatto dal menu & Soddisfatto \\
+    \hline
+    D01     & integrazione di chatGPT per consigliare alcune ricette & Non soddisfatto \\
+    \hline
+    F01     & test a livello di frontend & Non soddisfatto \\
+    \hline
+    \end{tabularx}
+\end{table}%
+
+\newpage
+
+\subsection{Requisiti funzionali raggiunti}
+
+\begin{table}[htb]%
+\caption{Tabella del tracciamento dei requisti funzionali dall'1 al 17 raggiunti}
+\label{tab:reqfunzionali-raggiunti}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Stato}\\
+\hline\hline
+RFO-1     & L'utente effettua l'accesso all'app inserendo la propria password e la propria mail & Soddisfatto \\
+\hline
+RFO-2     & L'utente si registra nel database inserendo il proprio nome, cognome, mail e password & Soddisfatto\\
+\hline
+RFO-3     & Si visualizza la \emph{\gls{cassacomuneg}} salvata nel database nell'app & Soddisfatto \\
+\hline
+RFO-4     & L'utente visualizza la propria \emph{\gls{quotastornatag}} salvata nel database nell'app & Soddisfatto \\
+\hline
+RFO-5     & Si visualizza la lista dei piatti proposti del giorno nell'app & Soddisfatto \\
+\hline
+RFO-6     & Si visualizza la lista delle transazioni nell'app & Soddisfatto \\
+\hline
+RFO-7     & L'utente aggiunge una nuova transazione nell'app, indicando i soldi e la data e salva la transazione nel database & Soddisfatto \\
+\hline
+RFO-8     & L'utente amministratore aggiunge la spesa effettuata da uno stagista nell'app, indicando la data e quanto ha speso e lo salva nel database & Soddisfatto \\
+\hline
+RFO-9     & L'utente indica la spesa che ha effettuato nell'app, riportando i soldi e la data e lo salva nel database & Soddisfatto \\
+\hline
+RFO-10    & L'utente indica nell'app i soldi che ha inviato a un altro utente registrato nel database e salva la transazione nel database & Soddisfatto \\
+\hline
+RFO-11    & L'utente elimina una transazione presente nel database dall'app & Soddisfatto \\
+\hline
+RFO-12    & Si visualizza il menu che contiene la lista dei piatti dall'app & Soddisfatto \\
+\hline
+RFO-13    & L'utente aggiunge un nuovo piatto nell'app, indicando il nome del piatto, gli ingredienti e la ricetta e lo salva nel database & Soddisfatto \\
+\hline
+RFO-14    & L'utente elimina un piatto presente nel database dall'app & Soddisfatto \\
+\hline
+RFO-15    & L'utente propone un piatto da mangiare a pranzo selezionandolo dal menu & Soddisfatto \\
+\hline
+RFO-16    & L'amministratore visualizza la \emph{\gls{quotapastog}} dall'app & Soddisfatto \\
+\hline
+RFO-17    & L'amministratore modifica la \emph{\gls{quotapastog}} dall'app e salva il nuovo valore nel database & Soddisfatto \\
+\hline
+\end{tabularx}
+\end{table}%
+
+\begin{table}%
+\caption{Tabella del tracciamento dei requisti funzionali dal 18 al 35 raggiunti}
+%\label{tab:requisiti-funzionali}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Stato}\\
+\hline\hline
+RFO-18    & L'amministratore visualizza la \emph{\gls{quotastornatag}} degli stagisti dall'app & Soddisfatto \\
+\hline
+RFO-19    & L'amministratore visualizza la lista con indicato i giorni di presenza degli stagisti dall'app & Soddisfatto \\
+\hline
+RFO-20    & L'amministratore modifica la lista con indicato i giorni di presenza degli stagisti dall'app e salva le modifiche nel database & Soddisfatto \\
+\hline
+RFO-21    & L'utente visualizza la lista con indicati i propri giorni di presenza a pranzo dall'app & Soddisfatto \\
+\hline
+RFO-22    & L'utente modifica la lista con indicati i propri giorni di presenza a pranzo dall'app e salva le modifiche nel database & Soddisfatto \\
+\hline
+RFO-23    & L'utente si disconnette dall'app & Soddisfatto \\
+\hline
+RFO-24    & L'utente visualizza i propri dati dall'app & Soddisfatto \\
+\hline
+RFO-25    & L'utente visualizza la propria mail dall'app & Soddisfatto \\
+\hline
+RFO-26    & L'utente visualizza il proprio nome dall'app & Soddisfatto \\
+\hline
+RFO-27    & L'utente visualizza il proprio cognome dall'app & Soddisfatto \\
+\hline
+RFO-28    & L'utente visualizza il proprio UID Satispay dall'app & Soddisfatto \\
+\hline
+RFO-29    & L'utente modifica i propri dati dall'app e salva le modifiche nel database & Soddisfatto \\
+\hline
+RFO-30    & L'utente modifica la propria password dall'app e salva la nuova password nel database & Soddisfatto \\
+\hline
+RFO-31    & L'utente modifica il proprio nome dall'app e salva il nuovo nome nel database & Soddisfatto \\
+\hline
+RFO-32    & L'utente modifica il proprio cognome dall'app e salva il nuovo cognome nel database & Soddisfatto \\
+\hline
+RFO-33    & L'utente modifica il proprio UID Satispay e salva il nuovo UID nel database & Soddisfatto \\
+\hline
+RFD-34    & Viene chiesto a ChatGPT una possibile ricetta da proporre a pranzo & Non soddisfatto \\
+\hline
+RFD-35    & Si aggiunge la ricetta proposta da ChatGPT nel menu e si salva la ricetta nel database & Non soddisfatto \\
+\hline
+\end{tabularx}
+\end{table}%
+
+\newpage
+
+\subsection{Requisiti qualitativi raggiunti}
+
+\begin{table}[htb]%
+\caption{Tabella del tracciamento dei requisiti qualitativi raggiunti}
+\label{tab:reqqualitativi-raggiunti}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Stato}\\
+\hline\hline
+RQN-1    & Il codice \emph{front-end} deve essere coperto da test di unità & Non soddisfatto \\
+\hline
+\end{tabularx}
+\end{table}%
+
+\subsection{Requisiti di vincolo raggiunti}
+
+\begin{table}[htb]%
+\caption{Tabella del tracciamento dei requisiti di vincolo raggiunti}
+\label{tab:reqvincolo-raggiunti}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Stato}\\
+\hline\hline
+RVO-1    & L'applicazione deve essere sviluppato con il \emph{framework} Flutter & Soddisfatto \\
+\hline
+RVO-2    & L'applicazione deve essere sviluppato con la piattaforma Firebase & Soddisfatto \\
+\hline
+RVO-3    & L'applicazione deve essere accessibile su cellulari con sistema operativo Android e iOS & Soddisfatto \\
+\hline
+RVO-4    & La mail che l'utente deve utilizzare per registrarsi nel database e accedere all'app deve essere fornita da RiskAPP & Soddisfatto \\
+\hline
+RVO-5    & La mail dell'utente non deve essere modificabile tramite app & Soddisfatto \\
+\hline
+\end{tabularx}
+\end{table}%
 
 %\section{Conoscenze acquisite}
 
-%\section{Valutazione personale}
+\section{Valutazione personale}
+Considerando che ho affrontato questo progetto, partendo senza avere conoscenze di Flutter o di Firebase, posso dire di essere soddisfatta del lavoro svolto, perchè ho imparato e studiato qualcosa di nuovo.\newline
+Non nego che ci sono state diverse difficoltà, in particolare con Firebase, perchè non riuscivo a capire come collegare la console Firestore e lavorare sul database tramite codice Dart, ma con calma, pazienza e diversi test e ricerche, sono riuscita a capire come implementare le funzioni utili per permettere un corretto funzionamento dell'app, rendendola usabile per tutti i dispositivi.\newline
+Ho imparato Flutter, Firebase, ho capito quanto sia utile progettare il modello di un software tramite Figma, perchè avere una idea visiva del progetto da creare, può aiutare a capire e a far capire su cosa si lavora e i relativi problemi da affrontare.\newline
+Devo ringraziare il team di RiskApp, perchè sono stati pazienti e mi aiutavano quando lo chiedevo, permettendomi anche di lavorare in un ambiente tranquillo; se avessi lavorato in un ambiente diverso, probabilmente avrei trovato qualche difficoltà nello studio e nella creazione dell'app, perchè il clima che si creava in ufficio era un clima calmo, mantenendo il silenzio per consentire a tutti di lavorare e parlando ogni tanto solo per fare qualche commento o per confrontarsi sul lavoro da svolgere.\newline
