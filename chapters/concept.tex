@@ -46,10 +46,21 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
 
 \subsection{Diagrammi e descrizione}
 
+\begin{itemize}
+    \item In Figura \ref{fig:uc-accessoehome} sono riportati i casi d'uso riguardanti le azioni che può svolgere un utente la prima volta che apre l'app; sono riportati anche i casi d'uso della pagina Home.
+    \item Nella Figura \ref{fig:uc-spese} sono riportati i casi d'uso della pagina Spese e i sottocasi d'uso di \ref{uc:aggiungi-transazione}.
+    \item In Figura \ref{fig:uc-menu} sono riportati tutti i casi d'uso riguardanti il Menu.
+    \item Nella Figura \ref{fig:uc-utente} sono riportati i casi d'uso, con la distinzione di cosa può fare \textbf{Utente} e cosa l'\textbf{Amministratore}, nella pagina Utente.
+    \item Nella Figura \ref{fig:uc-impostazioni} sono riportati i casi d'uso di riferimento per la pagina Impostazioni, con i relativi sottocasi d'uso di \ref{uc:visualizza-dati} e di \ref{uc:modifica-dati}.
+    \item Infine, nella Figura \ref{fig:uc-chatgpt} sono riportati i casi d'uso relativi a ChatGPT.
+\end{itemize}
+
+
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.9\columnwidth]{usecase/usecase-1} 
     \caption{Use Case - Primo accesso e Home}
+    \label{fig:uc-accessoehome}
 \end{figure}
 
 \begin{usecase}{1}{Autenticazione utente}
@@ -92,12 +103,13 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \label{uc:visualizza-piattiproposti}
 \end{usecase}
 
-\newpage
+%\newpage
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=1.0\columnwidth]{usecase/usecase-2} 
     \caption{Use Case - Spese e UC7}
+    \label{fig:uc-spese}
 \end{figure}
 
 \begin{usecase}{6}{Visualizzazione transazioni}
@@ -148,12 +160,13 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \label{uc:elimina-transazione}
 \end{usecase}
 
-\newpage
+%\newpage
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.8\columnwidth]{usecase/usecase-3} 
     \caption{Use Case - Menu}
+    \label{fig:uc-menu}
 \end{figure}
 
 \begin{usecase}{9}{Visualizzazione menu}
@@ -188,12 +201,13 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \label{uc:proponi-piatto}
 \end{usecase}
 
-\newpage
+%\newpage
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.9\columnwidth]{usecase/usecase-4} 
     \caption{Use Case - Utente}
+    \label{fig:uc-utente}
 \end{figure}
 
 \begin{usecase}{13}{Visualizzazione \emph{\gls{quotapastog}}\glsfirstoccur}
@@ -203,6 +217,8 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \usecasepost{L'amministratore visualizza la \emph{\gls{quotapastog}}}
     \label{uc:visualizza-quotapasto}
 \end{usecase}
+
+\newpage
 
 \begin{usecase}{14}{Modifica \emph{\gls{quotapastog}}}
     \usecaseactors{Amministratore}
@@ -252,12 +268,13 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \label{uc:modifica-presenza}
 \end{usecase}
 
-\newpage
+%\newpage
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=1.0\columnwidth]{usecase/usecase-5} 
     \caption{Use Case - Impostazioni, UC21 e UC22}
+    \label{fig:uc-impostazioni}
 \end{figure}
 
 \begin{usecase}{20}{Disconnessione}
@@ -348,12 +365,13 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \label{uc:modifica-uid}
 \end{usecase}
 
-\newpage
+%\newpage
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.7\columnwidth]{usecase/usecase-6} 
     \caption{Use Case - ChatGPT}
+    \label{fig:uc-chatgpt}
 \end{figure}
 
 \begin{usecase}{23}{Richiesta di una ricetta a ChatGPT}
@@ -372,7 +390,7 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
     \label{uc:chatgpt-aggiuntaricetta}
 \end{usecase}
 
-\newpage
+%\newpage
 
 \section{Tracciamento dei requisiti}
 \label{sec:requisiti}
@@ -392,10 +410,10 @@ Il codice dei requisiti è così strutturato R(F/Q/V)(O/D/N) dove:
 %Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.\newline
 
 %\newpage
-\subsection{Requisiti funzionali}
+%\subsection{Requisiti funzionali}
 
 \begin{table}[htb]%
-\caption{Tabella del tracciamento dei requisiti funzionali dall'1 all'11}
+\caption{Tabella del tracciamento dei requisiti funzionali dall'1 al 7}
 \label{tab:requisiti-funzionaliuno}
 \begin{tabularx}{\textwidth}{lXl}
 \hline
@@ -405,16 +423,26 @@ RFO-1     & L'utente effettua l'accesso all'app inserendo la propria password e 
 \hline
 RFO-2     & L'utente si registra nel database inserendo il proprio nome, cognome, mail e password & UC2 \\
 \hline
-RFO-3     & Si visualizza la \emph{\gls{cassacomuneg}} salvata nel database nell'app & UC3 \\
+RFO-3     & Viene visualizzata la \emph{\gls{cassacomuneg}} salvata nel database nell'app & UC3 \\
 \hline
 RFO-4     & L'utente visualizza la propria \emph{\gls{quotastornatag}} salvata nel database nell'app & UC4 \\
 \hline
-RFO-5     & Si visualizza la lista dei piatti proposti del giorno nell'app & UC5 \\
+RFO-5     & Viene visualizzata la lista dei piatti proposti del giorno nell'app & UC5 \\
 \hline
-RFO-6     & Si visualizza la lista delle transazioni nell'app & UC6 \\
+RFO-6     & Viene visualizzata la lista delle transazioni nell'app & UC6 \\
 \hline
 RFO-7     & L'utente aggiunge una nuova transazione nell'app, indicando i soldi e la data e salva la transazione nel database & UC7 \\
 \hline
+\end{tabularx}
+\end{table}%
+
+\begin{table}%
+\caption{Tabella del tracciamento dei requisiti funzionali dall'8 al 31}
+\label{tab:requisiti-funzionalidue}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
+\hline\hline
 RFO-8     & L'utente amministratore aggiunge la spesa effettuata da uno stagista nell'app, indicando la data e quanto ha speso e lo salva nel database & UC7.1 \\
 \hline
 RFO-9     & L'utente indica la spesa che ha effettuato nell'app, riportando i soldi e la data e lo salva nel database & UC7.2 \\
@@ -423,17 +451,7 @@ RFO-10    & L'utente indica nell'app i soldi che ha inviato a un altro utente re
 \hline
 RFO-11    & L'utente elimina una transazione presente nel database dall'app & UC8 \\
 \hline
-\end{tabularx}
-\end{table}%
-
-\begin{table}%
-\caption{Tabella del tracciamento dei requisiti funzionali dal 12 al 35}
-\label{tab:requisiti-funzionalidue}
-\begin{tabularx}{\textwidth}{lXl}
-\hline
-\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-\hline\hline
-RFO-12    & Si visualizza il menu che contiene la lista dei piatti dall'app & UC9 \\
+RFO-12    & Viene visualizzato il menu che contiene la lista dei piatti dall'app & UC9 \\
 \hline
 RFO-13    & L'utente aggiunge un nuovo piatto nell'app, indicando il nome del piatto, gli ingredienti e la ricetta e lo salva nel database & UC10 \\
 \hline
@@ -473,6 +491,18 @@ RFO-30    & L'utente modifica la propria password dall'app e salva la nuova pass
 \hline
 RFO-31    & L'utente modifica il proprio nome dall'app e salva il nuovo nome nel database & UC22.2 \\
 \hline
+\end{tabularx}
+\end{table}%
+
+\newpage
+
+\begin{table}[htb]%
+\caption{Tabella del tracciamento dei requisiti funzionali dal 32 al 35}
+\label{tab:requisiti-funzionalitre}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
+\hline\hline
 RFO-32    & L'utente modifica il proprio cognome dall'app e salva il nuovo cognome nel database & UC22.3 \\
 \hline
 RFO-33    & L'utente modifica il proprio UID Satispay e salva il nuovo UID nel database & UC22.4 \\
@@ -484,9 +514,7 @@ RFD-35    & Si aggiunge la ricetta proposta da ChatGPT nel menu e si salva la ri
 \end{tabularx}
 \end{table}%
 
-\newpage
-
-\subsection{Requisiti qualitativi}
+%\subsection{Requisiti qualitativi}
 
 \begin{table}[htb]%
 \caption{Tabella del tracciamento dei requisiti qualitativi}
@@ -500,7 +528,7 @@ RQN-1    & Il codice \emph{front-end} deve essere coperto da test di unità & - 
 \end{tabularx}
 \end{table}%
 
-\subsection{Requisiti di vincolo}
+%\subsection{Requisiti di vincolo}
 
 \begin{table}[htb]%
 \caption{Tabella del tracciamento dei requisiti di vincolo}
@@ -509,9 +537,9 @@ RQN-1    & Il codice \emph{front-end} deve essere coperto da test di unità & - 
 \hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline\hline
-RVO-1    & L'applicazione deve essere sviluppato con il \emph{framework} Flutter & - \\
+RVO-1    & L'applicazione deve essere sviluppata con il \emph{framework} Flutter & - \\
 \hline
-RVO-2    & L'applicazione deve essere sviluppato con la piattaforma Firebase & - \\
+RVO-2    & L'applicazione deve essere sviluppata con la piattaforma Firebase & - \\
 \hline
 RVO-3    & L'applicazione deve essere accessibile su cellulari con sistema operativo Android e iOS & - \\
 \hline

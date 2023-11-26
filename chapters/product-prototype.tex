@@ -78,7 +78,7 @@ Gli utenti amministratori possono aggiungere le spese e le presenze degli stagis
     \label{fig:database}
 \end{figure}
 \newline
-Lavorando con Firebase, un database noSQL, i dati sono stati gestiti in modo leggermente diverso, ma rimanendo fedeli alle entità riportate in Figura \ref{fig:database}.\newline
+Lavorando con Firebase, un database NoSQL, i dati sono stati gestiti in modo leggermente diverso, ma rimanendo fedeli alle entità riportate in Figura \ref{fig:database}.\newline
 Questo perchè Firebase organizza i dati in \emph{raccolte}, ogni raccolta contiene dei \emph{documenti} e ogni documento è composto da \emph{campi}.\newline
 Se dovessimo tradurre a livello teorico:
 \begin{itemize}
@@ -134,12 +134,12 @@ Per questa raccolta esiste un solo \emph{documento} con codice identificativo "c
     \item \emph{soldi}, di tipo number
     \item \emph{data}, di tipo timestamp
     \item \emph{utente}, di tipo sting
-    \item \emph{stagista}, di tipo boolean; indica se è stato lo stgista ad effettuare la spesa (\emph{true}) o l'utente (\emph{false})
+    \item \emph{stagista}, di tipo boolean; indica se è stato lo stagista ad effettuare la spesa (\emph{true}) o l'utente (\emph{false})
     \item \emph{spesa}, di tipo boolean; se \emph{true} indica che la transazione riportata è una spesa, altrimenti si tratta dell'invio dei soldi ad un altro utente
     \item \emph{utenteRiceveInvioSoldi}, di tipo string; se \emph{spesa} è impostato a \emph{false}, questo riporta l'utente che riceve i soldi
 \end{itemize}
 
-\newpage
+%\newpage
 
 %\section{Design Pattern utilizzati}
 %forse parlare dell'MVVM o BLoC patttern
@@ -150,7 +150,14 @@ Per questa raccolta esiste un solo \emph{documento} con codice identificativo "c
 
 \subsection{Struttura delle cartelle}
 Per il progetto è stato installato il \emph{\gls{sdk}}\glsfirstoccur di Flutter nella versione 3.13.6.\newline  
-\newline
+%\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.35\columnwidth]{FlutterStructure} 
+    \caption{La struttura del progetto preimpostata da Flutter}
+    \label{fig:directory-flutter}
+\end{figure}
+
 La prima cosa che si nota quando si crea un progetto Flutter, è la struttura preimpostata dal \emph{framework} (Figura \ref{fig:directory-flutter}):
 \begin{itemize}
     \item all'interno del file \emph{.metadata} si trovano le proprietà del codice Flutter; questo file \textbf{non} bisogna modificarlo perchè contiene i metadati del progetto;
@@ -160,21 +167,16 @@ La prima cosa che si nota quando si crea un progetto Flutter, è la struttura pr
     \item il codice principale lo si scrive all'interno della cartella \emph{lib};
     \item Flutter preimposta la cartella \emph{test} dove poter svolgere i test di unità.
 \end{itemize}
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=0.35\columnwidth]{FlutterStructure} 
-    \caption{La struttura del progetto preimpostata da Flutter}
-    \label{fig:directory-flutter}
-\end{figure}
 Per questo progetto, ho lavorato principalmente nella cartella \emph{lib} e ho creato una cartella \emph{assets} per inserire il logo dell'azienda RiskAPP, visibile nella pagine Accedi e Registrati dell'app (se fossero state presenti altre immagini, sarebbero state inserite all'interno di questa cartella).\newline
 Poche volte ho toccato le cartelle \emph{android} e \emph{ios}, principalmente per sistemare qualche libreria di Flutter che dava problemi su uno dei due sistemi operativi. 
-\newpage
+%\newpage
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.45\columnwidth]{libDirectory} 
     \caption{La struttura della cartella lib}
     \label{fig:directory-lib}
 \end{figure}
+
 Come si può vedere in Figura \ref{fig:directory-lib}, ho creato tre cartelle per suddividere i file:
 \begin{itemize}
     \item nella cartella \textbf{Control}, sono state definite le classi per poter gestire le variabili locali dell'app, che sono solo di supporto per poter gestire alcune informazioni, come per esempio impostare la data nel formato italiano, implementato nella classe ControlloData() creata nel file \emph{controllo\textunderscore  data.dart};
@@ -281,7 +283,7 @@ Dato uno \emph{stream} di dati, lo \textbf{StreamBuilder} si occupa di creare e 
 Lo \textbf{StreamBuilder} è stato utilizzato anche nella Home, per permettere all'utente di monitorare in tempo reale i piatti proposti, la \emph{\gls{cassacomuneg}} e la propria \emph{\gls{quotastornatag}}, quest'ultimi due sono in continuo aggiornamento in base alle modifiche riportate nella schermata Spese o tramite le presenze segnate nel calendario (per ogni presenza viene effettuata una modifica pari alla quantità di soldi indicata nella \emph{\gls{quotapastog}}).\newline
 È stato utilizzato lo \textbf{StreamBuilder} anche nella schermata Utente per il controllo in tempo reale della \emph{\gls{quotastornatag}} degli stagisti.
 
-\newpage
+%\newpage
 
 \subsection{Modificare il nome e il logo}
 Quando si crea un'applicazione, di default Flutter imposta il suo logo.\newline
@@ -304,7 +306,7 @@ Il procedimento per modificare il nome dell'applicazione non si discosta molto d
     \label{fig:logo-nome}
 \end{figure}
 
-\newpage
+%\newpage
 
 \subsection{Aprire l'app tramite QrCode}
 Per poter gestire le presenze in modo veloce, si pensava di utilizzare un QrCode che permettesse di segnare la presenza dell'utente quando veniva scannerizzato.\newline
