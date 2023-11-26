@@ -156,7 +156,7 @@ La prima cosa che si nota quando si crea un progetto Flutter, è la struttura pr
     \item all'interno del file \emph{.metadata} si trovano le proprietà del codice Flutter; questo file \textbf{non} bisogna modificarlo perchè contiene i metadati del progetto;
     \item il file \emph{analysis\textunderscore options.yaml} serve per analizzare il codice Dart e controllare che non ci siano errori quando si compila il codice; come è intuibile, anche questo file \textbf{non} bisogna toccarlo;
     \item il file principale che controlla le librerie da installare è \emph{pubspec.yaml}; se si desidera aggiungere un pacchetto, impostare un font specifico o anche indicare la cartella dove bisogna reperire i video e le immagini, bisogna indicarli dentro a questo file;
-    \item per ogni piattaforma (Android, iOS, Linux, MacOS, Web e Windows), è presente una cartella apposita con all'interno tutto l'occorente per far funzionare il progetto nel sistema operativo desiderato;
+    \item per ogni piattaforma (Android, iOS, Linux, MacOS, Web e Windows), è presente una cartella apposita con all'interno tutto l'occorrente per far funzionare il progetto nel sistema operativo desiderato;
     \item il codice principale lo si scrive all'interno della cartella \emph{lib};
     \item Flutter preimposta la cartella \emph{test} dove poter svolgere i test di unità.
 \end{itemize}
@@ -166,7 +166,7 @@ La prima cosa che si nota quando si crea un progetto Flutter, è la struttura pr
     \caption{La struttura del progetto preimpostata da Flutter}
     \label{fig:directory-flutter}
 \end{figure}
-Per questo progetto, ho lavorato principalmente nella cartella \emph{lib} e ho creato una cartella \emph{assets} per inserire il logo dell'azienda RiskAPP, visibile nella pagine Acccedi e Registrati dell'app (se fossero state presenti altre immagini, sarebbero state inserite all'interno di questa cartella).\newline
+Per questo progetto, ho lavorato principalmente nella cartella \emph{lib} e ho creato una cartella \emph{assets} per inserire il logo dell'azienda RiskAPP, visibile nella pagine Accedi e Registrati dell'app (se fossero state presenti altre immagini, sarebbero state inserite all'interno di questa cartella).\newline
 Poche volte ho toccato le cartelle \emph{android} e \emph{ios}, principalmente per sistemare qualche libreria di Flutter che dava problemi su uno dei due sistemi operativi. 
 \newpage
 \begin{figure}[!h] 
@@ -213,7 +213,7 @@ Per permettere la registrazione, l'accesso e la disconnessione di un utente, è 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=1.05 \columnwidth]{code/firebaseauth} 
-    \caption{Le funzioni di accesso e di disconnesione di un utente}
+    \caption{Le funzioni di accesso e di disconnessione di un utente}
     \label{fig:code-authentication}
 \end{figure}
 
@@ -331,7 +331,7 @@ Ad esempio, lo stesso link può portare ad una determinata sezione dell'app per 
 Dopo l'installazione il link porta a termine il suo compito aprendo la sezione giusta dell'app oppure, se preferiamo, possiamo chiedere al link di inviare al nostro sito Web l'utente che non ha l'app installata sul suo smartphone.\newline
 \newline
 Dopo aver configurato la propria applicazione, creato l'URL e connesso l'app al sito, ora è possibile creare un QrCode che permette di aprire direttamente l'applicazione o, se l'app non è installata, aprire la pagina web.\newline
-Questo è tutto quello che sono riuscita a fare, ho seguito tutti i passaggi appena descritti, creato il QrCode passando come stringa l'URL dell'app e, se si scannerrizza il QrCode con un qualsiasi lettore di codici Qr, aprire l'applicazione.\newline
+Questo è tutto quello che sono riuscita a fare, ho seguito tutti i passaggi appena descritti, creato il QrCode passando come stringa l'URL dell'app e, se si scannerizza il QrCode con un qualsiasi lettore di codici Qr, aprire l'applicazione.\newline
 \newline
 Considerando quanto fatto, possiamo definirlo un successo, perchè sono riuscita a studiare e a fare una cosa per me nuova, ma non una vittoria, perchè il QrCode non doveva solo aprire l'applicazione, doveva anche direzionare l'utente ad una pagina specifica e permettere così di segnare la propria presenza a pranzo nella giornata odierna.\newline
 Per questo ultimo passaggio sono state incontrate diverse difficoltà, decidendo così di abbandonare l'idea, dato che è già possibile segnare manualmente la propria presenza tramite il calendario, ma sarà una sfida che affronterò ancora in futuro.
