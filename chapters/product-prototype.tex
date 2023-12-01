@@ -277,7 +277,7 @@ Per questo progetto è stata richiesta un'app che permettesse, oltre un controll
 Tramite la barra superiore di entrambe le schermate, è possibile aggiungere un elemento alla lista oppure utilizzare il filtro per visualizzare solo alcuni elementi specifici.\newline
 \newline
 Quando si effettua una aggiunta o si applica un filtro, il lavoro che l'app svolge è aggiornare il database o richiedere degli elementi specifici nel cloud di Firebase, per poi aggiornare graficamente la lista interessata.\newline
-Ogni modifica in Firebase viene ripotata in tempo reale su tutti i dispositivi che utilizzano l'app; per permettere questo, sono stati utilizzati gli \textbf{StreamBuilder} (\cite{site:flutter-streambuilder}).\newline
+Ogni modifica in Firebase viene ripotata in tempo reale su tutti i dispositivi che utilizzano l'app; per permettere questo, sono stati utilizzati gli \textbf{StreamBuilder}.\newline
 Dato uno \emph{stream} di dati, lo \textbf{StreamBuilder} si occupa di creare e aggiornare dei \emph{widget} specifici, in questo caso si occupa di aggiornare le liste presenti nelle schermate Spesa e Menu.\newline
 \newline
 Lo \textbf{StreamBuilder} è stato utilizzato anche nella Home, per permettere all'utente di monitorare in tempo reale i piatti proposti, la \emph{\gls{cassacomuneg}} e la propria \emph{\gls{quotastornatag}}, quest'ultimi due sono in continuo aggiornamento in base alle modifiche riportate nella schermata Spese o tramite le presenze segnate nel calendario (per ogni presenza viene effettuata una modifica pari alla quantità di soldi indicata nella \emph{\gls{quotapastog}}).\newline
@@ -336,4 +336,4 @@ Dopo aver configurato la propria applicazione, creato l'URL e connesso l'app al 
 Questo è tutto quello che sono riuscita a fare, ho seguito tutti i passaggi appena descritti, creato il QrCode passando come stringa l'URL dell'app e, se si scannerizza il QrCode con un qualsiasi lettore di codici Qr, aprire l'applicazione.\newline
 \newline
 Considerando quanto fatto, possiamo definirlo un successo, perchè sono riuscita a studiare e a fare una cosa per me nuova, ma non una vittoria, perchè il QrCode non doveva solo aprire l'applicazione, doveva anche direzionare l'utente ad una pagina specifica e permettere così di segnare la propria presenza a pranzo nella giornata odierna.\newline
-Per questo ultimo passaggio sono state incontrate diverse difficoltà, decidendo così di abbandonare l'idea, dato che è già possibile segnare manualmente la propria presenza tramite il calendario, ma sarà una sfida che affronterò ancora in futuro.
+Per questo ultimo passaggio sono state incontrate diverse difficoltà, tanto che abbiamo deciso di abbandonare l'idea, dato che è già possibile segnare manualmente la propria presenza tramite il calendario, ma sarà una sfida che affronterò ancora in futuro.
