@@ -234,7 +234,7 @@ Per permettere la registrazione, l'accesso e la disconnessione di un utente, è 
 
 \newpage
 
-Per poter lavorare con il Cloud di Firestore, è stata creata una classe per ogni entità.\newline
+Per poter lavorare con il Cloud di Firestore, è stata creata una classe per ogni entità (CassaComune, Utenti, Piatti, Presenze e Transazioni).\newline
 Ogni classe contiene un metodo per creare una nuova istanza (Figura \ref{fig:code-aggiungi}), metodi \emph{set} e \emph{get} per ogni campo (Figura \ref{fig:code-query}) e alcune funzioni di supporto.
 \begin{figure}[!h] 
     \centering 
@@ -254,6 +254,7 @@ Attraverso la console di Firebase è possibile vedere gli utenti che si sono reg
 \newpage
 
 \subsection{Il calendario delle presenze}
+
 Per permettere la gestione delle presenze, è stato installato il pacchetto \emph{table\textunderscore calendar}, che permette di creare il \emph{widget} TableCalendar, cioè l'elemento grafico che vediamo in Figura \ref{fig:calendario}.
 \begin{figure}[!h] 
     \centering 
@@ -266,11 +267,19 @@ Il \emph{widget} offre una serie di opzioni che consentono di modificarlo, come 
 Si può modificare come viene visualizzata la data selezionata (anche la data odierna) attraverso l'uso del \emph{CalendarBuilder}: si tratta di un costruttore (\emph{builder}) con il compito di impostare la grafica dell'elemento indicato; in questo caso ha il compito di impostare la grafica delle date evidenziate.\newline
 \newline
 Questo calendario è presente nella pagina Utente, dove sono visibili i tre \emph{widget} grigi, il primo apre il calendario per modificare le proprie presenze (Figura \ref{fig:utente-presenze}), il secondo, visibile per gli amministratori, apre il calendario per modificare e monitorare le presenze degli stagisti.\newline
-Il terzo \emph{widget} consente solo di visualizzare e modificare la \emph{\gls{quotapastog}}.\newline
+Il terzo \emph{widget} consente solo di visualizzare e modificare la \emph{\gls{quotapastog}}, anche questo visbile solo agli amministratori.\newline
 Non sono stati inseriti altri calendari nell'applicazione.\newline
 \newline
-Una funzione fondamentale di TableCalendar è \emph{onDaySelected}: questa permette di modificare il calendario selezionato, rendendo la selezione iterativa; se non viene definita questa funzione, il calendario rimane statico e non sarà possibile cambiare la data selezionata, ma rimarrà evidenziata la data indicata inizialmente nella variabile \emph{focusedDay}.
+Una funzione fondamentale di TableCalendar è \emph{onDaySelected} (Figura \ref{fig:funzione-ondayselected}): questa permette di modificare il calendario selezionato, rendendo la selezione iterativa; se non viene definita questa funzione, il calendario rimane statico e non sarà possibile cambiare la data selezionata, ma rimarrà evidenziata la data indicata inizialmente nella variabile \emph{focusedDay}.\newline
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.6 \columnwidth]{onDaySelected} 
+    \caption{La funzione onDeySelected definita per il progetto}
+    \label{fig:funzione-ondayselected}
+\end{figure}
+
 \newpage
+
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.7 \columnwidth]{Utente} 
