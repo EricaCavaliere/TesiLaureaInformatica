@@ -34,6 +34,7 @@ Dove UC indica \emph{Use Case} e i due codici sono:
 %\end{usecase}
 
 \subsection{Attori}
+
 Gli attori principali che andranno ad interagire con l'applicazione sono i seguenti:
 \begin{itemize}
     \item \textbf{Utente non autenticato}
@@ -46,17 +47,10 @@ Nell'analisi è stato identificato un quarto attore, ovvero \textbf{ChatGPT}, in
 
 \subsection{Diagrammi e descrizione}
 
-%\begin{itemize}
-%    \item In Figura \ref{fig:uc-accessoehome} sono riportati i casi d'uso riguardanti le azioni che può svolgere un utente la prima volta che apre l'app; sono riportati anche i casi d'uso della pagina Home.
-%    \item Nella Figura \ref{fig:uc-spese} sono riportati i casi d'uso della pagina Spese e i sottocasi d'uso di \ref{uc:aggiungi-transazione}.
-%    \item In Figura \ref{fig:uc-menu} sono riportati tutti i casi d'uso riguardanti il Menu.
-%    \item Nella Figura \ref{fig:uc-utente} sono riportati i casi d'uso, con la distinzione di cosa può fare \textbf{Utente} e cosa l'\textbf{Amministratore}, nella pagina Utente.
-%    \item Nella Figura \ref{fig:uc-impostazioni} sono riportati i casi d'uso di riferimento per la pagina Impostazioni, con i relativi sottocasi d'uso di \ref{uc:visualizza-dati} e di \ref{uc:modifica-dati}.
-%    \item Infine, nella Figura \ref{fig:uc-chatgpt} sono riportati i casi d'uso relativi a ChatGPT.
-%\end{itemize}
-
-Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta eccezione per il \emph{Primo accesso} (Figura \ref{fig:uc-accessoehome}) e per i sottocasi d'uso.\newline
-
+Di seguito sono riportati i casi d'uso nel dettaglio, analizzando per ogni caso gli attori principali, la descrizione, la precondizione e la postcondizione; gli ultimi due riportano lo stato dell'applicazione, o lo stato di un attore, rispettivamente prima e dopo l'esecuzione del caso d'uso studiato.\newline
+\newline
+Gli \emph{use case} sono stati divisi in base alle azioni che devono essere svolte in ogni schermata dell'app (Home, Spese, Menu, Utente e Impostazioni), viene fatta eccezione per gli \emph{use case} riguardanti il Primo Accesso e a ChatGPT perchè possono essere gestiti in schermate distinte o integrate nelle schermate principali.\newline
+Sono stati analizzati in modo distinto anche i sottocasi d'uso; per gli \emph{use case} padre si elenca la generalizzazione dei propri sotto casi.\newline
 
 \begin{figure}[!h] 
     \centering 
@@ -65,7 +59,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{fig:uc-accessoehome}
 \end{figure}
 
-\begin{usecase}{1}{Autenticazione utente} - Figura \ref{fig:uc-accessoehome}
+\begin{usecase}{1}{Autenticazione utente - Figura \ref{fig:uc-accessoehome}}
     \usecaseactors{Utente non autenticato}
     \usecasepre{L'utente non ha effettuato l'autenticazione}
     \usecasedesc{L'utente inserisce la propria mail e la propria password per effettuare l'accesso}
@@ -73,7 +67,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:autenticazione-utente}
 \end{usecase}
 
-\begin{usecase}{2}{Registrazione utente} - Figura \ref{fig:uc-accessoehome}
+\begin{usecase}{2}{Registrazione utente - Figura \ref{fig:uc-accessoehome}} 
     \usecaseactors{Utente non autenticato}
     \usecasepre{L'utente non è registrato nel database}
     \usecasedesc{L'utente inserisce i propri dati per registrarsi nel database}
@@ -81,7 +75,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:registrazione-utente}
 \end{usecase}
 
-\begin{usecase}{3}{Visualizzazione \emph{\gls{cassacomuneg}}} - Figura \ref{fig:uc-accessoehome}
+\begin{usecase}{3}{Visualizzazione \emph{\gls{cassacomuneg}} - Figura \ref{fig:uc-accessoehome}}
     \usecaseactors{Utente}
     \usecasepre{La \emph{\gls{cassacomuneg}} non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la \emph{\gls{cassacomuneg}}}
@@ -89,7 +83,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-casacomune}
 \end{usecase}
 
-\begin{usecase}{4}{Visualizzazione \emph{\gls{quotastornatag}} utente} - Figura \ref{fig:uc-accessoehome}
+\begin{usecase}{4}{Visualizzazione \emph{\gls{quotastornatag}} utente - Figura \ref{fig:uc-accessoehome}}
     \usecaseactors{Utente}
     \usecasepre{La \emph{\gls{quotastornatag}} dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la propria \emph{\gls{quotastornatag}}}
@@ -97,15 +91,13 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-quotastornata}
 \end{usecase}
 
-\begin{usecase}{5}{Visualizzazione piatti proposti} - Figura \ref{fig:uc-accessoehome}
+\begin{usecase}{5}{Visualizzazione piatti proposti - Figura \ref{fig:uc-accessoehome}}
     \usecaseactors{Utente}
     \usecasepre{La lista dei piatti proposti del giorno non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare i piatti proposti del giorno}
     \usecasepost{L'utente visualizza la lista dei piatti proposti del giorno}
     \label{uc:visualizza-piattiproposti}
 \end{usecase}
-
-%\newpage
 
 \begin{figure}[!h] 
     \centering 
@@ -114,7 +106,9 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{fig:uc-spese}
 \end{figure}
 
-\begin{usecase}{6}{Visualizzazione transazioni} - Figura \ref{fig:uc-spese}
+\newpage
+
+\begin{usecase}{6}{Visualizzazione transazioni - Figura \ref{fig:uc-spese}}
     \usecaseactors{Utente}
     \usecasepre{La lista delle transazioni non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la lista delle transazioni}
@@ -122,7 +116,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-transazioni}
 \end{usecase}
 
-\begin{usecase}{7}{Aggiunta transazione} - Figura \ref{fig:uc-spese}
+\begin{usecase}{7}{Aggiunta transazione - Figura \ref{fig:uc-spese}}
     \usecaseactors{Utente}
     \usecasepre{La transazione non è presente nel database e non è visibile nella lista delle transazioni}
     \usecasedesc{L'utente inserisce i dati della transazione interessata e la salva nel database}
@@ -132,12 +126,12 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
 
 \noindent \textbf{Generalizzazioni:}
 \begin{itemize}
-    \item Aggiunta transazione spesa effettuata da uno stagista - \ref{uc:aggiungi-spesastagista}
-    \item Aggiunta transazione spesa effettuata - \ref{uc:aggiungi-spesa}
-    \item Aggiunta transazione di invio soldi a un altro utente - \ref{uc:aggiungi-inviosoldi}
+    \item \ref{uc:aggiungi-spesastagista} - Aggiunta transazione spesa effettuata da uno stagista
+    \item \ref{uc:aggiungi-spesa} - Aggiunta transazione spesa effettuata
+    \item \ref{uc:aggiungi-inviosoldi} - Aggiunta transazione di invio soldi a un altro utente
 \end{itemize}
 
-\begin{usecase}{7.1}{Aggiunta transazione spesa effettuata da uno stagista} - Figura \ref{fig:uc-spese}
+\begin{usecase}{7.1}{Aggiunta transazione spesa effettuata da uno stagista - Figura \ref{fig:uc-spese}}
     \usecaseactors{Amministratore}
     \usecasepre{La spesa effettuata da uno stagista non è presente nel database e non è visibile nella lista delle transazioni}
     \usecasedesc{L'amministratore inserisce i dati della spesa effettuata da uno stagista e la salva nel database}
@@ -145,7 +139,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:aggiungi-spesastagista}
 \end{usecase}
 
-\begin{usecase}{7.2}{Aggiunta transazione spesa effettuata} - Figura \ref{fig:uc-spese}
+\begin{usecase}{7.2}{Aggiunta transazione spesa effettuata - Figura \ref{fig:uc-spese}}
     \usecaseactors{Utente}
     \usecasepre{La spesa effettuata dall'utente non è presente nel database e non è visibile nella lista delle transazioni}
     \usecasedesc{L'utente inserisce i dati della spesa effettuata e la salva nel database}
@@ -153,7 +147,9 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:aggiungi-spesa}
 \end{usecase}
 
-\begin{usecase}{7.3}{Aggiunta transazione di invio soldi a un altro utente} - Figura \ref{fig:uc-spese}
+\newpage
+
+\begin{usecase}{7.3}{Aggiunta transazione di invio soldi a un altro utente - Figura \ref{fig:uc-spese}}
     \usecaseactors{Utente}
     \usecasepre{L'invio dei soldi tra due utenti non è presente nel database e non è visibile nella lista delle transazioni}
     \usecasedesc{L'utente inserisce i dati dell'invio dei soldi a un altro utente e lo salva nel database}
@@ -161,15 +157,13 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:aggiungi-inviosoldi}
 \end{usecase}
 
-\begin{usecase}{8}{Elimina transazione} - Figura \ref{fig:uc-spese}
+\begin{usecase}{8}{Elimina transazione - Figura \ref{fig:uc-spese}}
     \usecaseactors{Utente}
     \usecasepre{La transazione è presente nel database e visibile nella lista delle transazioni}
     \usecasedesc{L'utente elimina la transazione interessata dall'app e viene eliminata dal database}
     \usecasepost{La transazione non è presente nel database e non è visibile nella lista delle transazioni}
     \label{uc:elimina-transazione}
 \end{usecase}
-
-%\newpage
 
 \begin{figure}[!h] 
     \centering 
@@ -178,7 +172,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{fig:uc-menu}
 \end{figure}
 
-\begin{usecase}{9}{Visualizzazione menu} - Figura \ref{fig:uc-menu}
+\begin{usecase}{9}{Visualizzazione menu - Figura \ref{fig:uc-menu}}
     \usecaseactors{Utente}
     \usecasepre{Il menu non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il menu}
@@ -186,7 +180,9 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-menu}
 \end{usecase}
 
-\begin{usecase}{10}{Aggiunta piatto} - Figura \ref{fig:uc-menu}
+\newpage
+
+\begin{usecase}{10}{Aggiunta piatto - Figura \ref{fig:uc-menu}}
     \usecaseactors{Utente}
     \usecasepre{Il piatto non è presente nel database e non è visibile dal menu}
     \usecasedesc{L'utente inserisce i dati del piatto e lo salva nel database}
@@ -194,7 +190,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:aggiungi-piatto}
 \end{usecase}
 
-\begin{usecase}{11}{Elimina piatto} - Figura \ref{fig:uc-menu}
+\begin{usecase}{11}{Elimina piatto - Figura \ref{fig:uc-menu}}
     \usecaseactors{Utente}
     \usecasepre{Il piatto è presente nel database e visibile dal menu}
     \usecasedesc{L'utente elimina il piatto interessato dall'app e viene eliminato dal database}
@@ -202,15 +198,13 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:elimina-piatto}
 \end{usecase}
 
-\begin{usecase}{12}{Proporre piatto del giorno} - Figura \ref{fig:uc-menu}
+\begin{usecase}{12}{Proporre piatto del giorno - Figura \ref{fig:uc-menu}}
     \usecaseactors{Utente}
     \usecasepre{Il piatto non è indicato come piatto proposto del giorno}
     \usecasedesc{L'utente propone il piatto interessato come piatto del giorno}
     \usecasepost{Il piatto è indicato come piatto proposto del giorno}
     \label{uc:proponi-piatto}
 \end{usecase}
-
-%\newpage
 
 \begin{figure}[!h] 
     \centering 
@@ -219,7 +213,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{fig:uc-utente}
 \end{figure}
 
-\begin{usecase}{13}{Visualizzazione \emph{\gls{quotapastog}}\glsfirstoccur} - Figura \ref{fig:uc-utente}
+\begin{usecase}{13}{Visualizzazione \emph{\gls{quotapastog}}\glsfirstoccur\space - Figura \ref{fig:uc-utente}}
     \usecaseactors{Amministratore}
     \usecasepre{La \emph{\gls{quotapastog}} non è visibile}
     \usecasedesc{L'amministratore entra nell'app per visualizzare la \emph{\gls{quotapastog}}}
@@ -227,7 +221,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-quotapasto}
 \end{usecase}
 
-\begin{usecase}{14}{Modifica \emph{\gls{quotapastog}}} - Figura \ref{fig:uc-utente}
+\begin{usecase}{14}{Modifica \emph{\gls{quotapastog}} - Figura \ref{fig:uc-utente}}
     \usecaseactors{Amministratore}
     \usecasepre{La \emph{\gls{quotapastog}} è salvata nel database con il vecchio valore}
     \usecasedesc{L'amministratore modifica la \emph{\gls{quotapastog}} con il nuovo valore}
@@ -235,7 +229,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:modifica-quotapasto}
 \end{usecase}
 
-\begin{usecase}{15}{Visualizzazione \emph{\gls{quotastornatag}} stagisti} - Figura \ref{fig:uc-utente}
+\begin{usecase}{15}{Visualizzazione \emph{\gls{quotastornatag}} stagisti - Figura \ref{fig:uc-utente}}
     \usecaseactors{Amministratore}
     \usecasepre{La \emph{\gls{quotastornatag}} dei stagisti non è visibile}
     \usecasedesc{L'amministratore entra nell'app per visualizzare la \emph{\gls{quotastornatag}} dei stagisti}
@@ -243,7 +237,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-quotastornatastagisti}
 \end{usecase}
 
-\begin{usecase}{16}{Visualizzazione presenza stagisti} - Figura \ref{fig:uc-utente}
+\begin{usecase}{16}{Visualizzazione presenza stagisti - Figura \ref{fig:uc-utente}}
     \usecaseactors{Amministratore}
     \usecasepre{La lista delle presenze dei stagisti non è visibile}
     \usecasedesc{L'amministratore entra nell'app per visualizzare la lista delle presenze dei stagisti}
@@ -251,7 +245,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-presenzastagisti}
 \end{usecase}
 
-\begin{usecase}{17}{Modifica presenza stagisti} - Figura \ref{fig:uc-utente}
+\begin{usecase}{17}{Modifica presenza stagisti - Figura \ref{fig:uc-utente}}
     \usecaseactors{Amministratore}
     \usecasepre{La lista delle presenze dei stagisti è salvata nel database con i vecchi valori}
     \usecasedesc{L'amministratore modifica la lista delle presenze dei stagisti con i nuovi valori}
@@ -259,7 +253,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:modifica-presenzastagisti}
 \end{usecase}
 
-\begin{usecase}{18}{Visualizzazione presenza} - Figura \ref{fig:uc-utente}
+\begin{usecase}{18}{Visualizzazione presenza - Figura \ref{fig:uc-utente}}
     \usecaseactors{Utente}
     \usecasepre{La lista delle presenze dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la lista delle proprie presenze}
@@ -267,15 +261,13 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-presenza}
 \end{usecase}
 
-\begin{usecase}{19}{Modifica presenza} - Figura \ref{fig:uc-utente}
+\begin{usecase}{19}{Modifica presenza - Figura \ref{fig:uc-utente}}
     \usecaseactors{Utente}
     \usecasepre{La lista delle presenze dell'utente è salvata nel database con i vecchi valori}
     \usecasedesc{L'utente modifica la lista delle proprie presenze con i nuovi valori}
     \usecasepost{La lista delle presenze dell'utente è salvata nel database con i nuovi valori}
     \label{uc:modifica-presenza}
 \end{usecase}
-
-%\newpage
 
 \begin{figure}[!h] 
     \centering 
@@ -284,7 +276,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{fig:uc-impostazioni}
 \end{figure}
 
-\begin{usecase}{20}{Disconnessione} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{20}{Disconnessione - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{L'utente è autenticato nell'app}
     \usecasedesc{L'utente si disconnette dalla sessione corrente}
@@ -292,7 +284,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:disconnessione-utente}
 \end{usecase}
 
-\begin{usecase}{21}{Visualizzazione dati utente} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{21}{Visualizzazione dati utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{I dati dell'utente non sono visibili}
     \usecasedesc{L'utente entra nell'app per visualizzare i propri dati}
@@ -302,13 +294,13 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
 
 \noindent \textbf{Generalizzazioni:}
 \begin{itemize}
-    \item Visualizzazione mail utente - \ref{uc:visualizza-mail}
-    \item Visualizzazione nome utente - \ref{uc:visualizza-nome}
-    \item Visualizzazione cognome utente - \ref{uc:visualizza-cognome}
-    \item Visualizzazione UID Satispay utente - \ref{uc:visualizza-uid}
+    \item \ref{uc:visualizza-mail} - Visualizzazione mail utente
+    \item \ref{uc:visualizza-nome} - Visualizzazione nome utente
+    \item \ref{uc:visualizza-cognome} - Visualizzazione cognome utente
+    \item \ref{uc:visualizza-uid} - Visualizzazione UID Satispay utente
 \end{itemize}
 
-\begin{usecase}{21.1}{Visualizzazione mail utente} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{21.1}{Visualizzazione mail utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{La mail dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare la propria mail}
@@ -316,7 +308,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-mail}
 \end{usecase}
 
-\begin{usecase}{21.2}{Visualizzazione nome utente} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{21.2}{Visualizzazione nome utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{Il nome dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il proprio nome}
@@ -324,7 +316,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-nome}
 \end{usecase}
 
-\begin{usecase}{21.3}{Visualizzazione cognome utente} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{21.3}{Visualizzazione cognome utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{Il cognome dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il proprio cognome}
@@ -332,7 +324,9 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-cognome}
 \end{usecase}
 
-\begin{usecase}{21.4}{Visualizzazione UID Satispay utente} - Figura \ref{fig:uc-impostazioni}
+\newpage
+
+\begin{usecase}{21.4}{Visualizzazione UID Satispay utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{L'UID Satispay dell'utente non è visibile}
     \usecasedesc{L'utente entra nell'app per visualizzare il proprio UID Satispay}
@@ -340,7 +334,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:visualizza-uid}
 \end{usecase}
 
-\begin{usecase}{22}{Modifica dati utente} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{22}{Modifica dati utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{I dati dell'utente sono salvati nel database con i vecchi valori}
     \usecasedesc{L'utente modifica i propri dati con i nuovi valori}
@@ -350,13 +344,13 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
 
 \noindent \textbf{Generalizzazioni:}
 \begin{itemize}
-    \item Modifica password utente - \ref{uc:modifica-password}
-    \item Modifica nome utente - \ref{uc:modifica-nome}
-    \item Modifica cognome utente - \ref{uc:modifica-cognome}
-    \item Modifica UID Satispay utente - \ref{uc:modifica-uid}
+    \item \ref{uc:modifica-password} - Modifica password utente
+    \item \ref{uc:modifica-nome} - Modifica nome utente
+    \item \ref{uc:modifica-cognome} - Modifica cognome utente
+    \item \ref{uc:modifica-uid} - Modifica UID Satispay utente
 \end{itemize} 
 
-\begin{usecase}{22.1}{Modifica password utente} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{22.1}{Modifica password utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{La password dell'utente è salvata nel database con il vecchio valore}
     \usecasedesc{L'utente modifica la propria password con il nuovo valore}
@@ -364,7 +358,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:modifica-password}
 \end{usecase}
 
-\begin{usecase}{22.2}{Modifica nome utente} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{22.2}{Modifica nome utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{Il nome dell'utente è salvato nel database con il vecchio valore}
     \usecasedesc{L'utente modifica il proprio nome con il nuovo valore}
@@ -372,7 +366,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:modifica-nome}
 \end{usecase}
 
-\begin{usecase}{22.3}{Modifica cognome utente} - Figura \ref{fig:uc-impostazioni}
+\begin{usecase}{22.3}{Modifica cognome utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{Il cognome dell'utente è salvato nel database con il vecchio valore}
     \usecasedesc{L'utente modifica il proprio cognome con il nuovo valore}
@@ -380,15 +374,15 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:modifica-cognome}
 \end{usecase}
 
-\begin{usecase}{22.4}{Modifica UID Satispay utente} - Figura \ref{fig:uc-impostazioni}
+\newpage
+
+\begin{usecase}{22.4}{Modifica UID Satispay utente - Figura \ref{fig:uc-impostazioni}}
     \usecaseactors{Utente}
     \usecasepre{L'UID di Satispay dell'utente è salvato nel database con il vecchio valore}
     \usecasedesc{L'utente modifica il proprio UID Satispay con il nuovo valore}
     \usecasepost{L'UID Satispay dell'utente è salvato nel database con il nuovo valore}
     \label{uc:modifica-uid}
 \end{usecase}
-
-%\newpage
 
 \begin{figure}[!h] 
     \centering 
@@ -397,7 +391,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{fig:uc-chatgpt}
 \end{figure}
 
-\begin{usecase}{23}{Richiesta di una ricetta a ChatGPT} - Figura \ref{fig:uc-chatgpt}
+\begin{usecase}{23}{Richiesta di una ricetta a ChatGPT - Figura \ref{fig:uc-chatgpt}}
     \usecaseactors{Utente, ChatGPT}
     \usecasepre{L'utente vuole una nuova ricetta}
     \usecasedesc{L'utente chiede a ChatGPT una ricetta}
@@ -405,7 +399,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:chatgpt-richiestaricetta}
 \end{usecase}
 
-\begin{usecase}{24}{Aggiunta ricetta di ChatGPT nel Menu} - Figura \ref{fig:uc-chatgpt}
+\begin{usecase}{24}{Aggiunta ricetta di ChatGPT nel Menu - Figura \ref{fig:uc-chatgpt}}
     \usecaseactors{Utente}
     \usecasepre{ChatGPT ha consigliato una ricetta all'utente}
     \usecasedesc{L'utente aggiunge la ricetta ricevuta da ChatGPT come nuovo piatto al menu e salva il piatto nel database}
@@ -413,7 +407,7 @@ Di seguito sono riportati i casi d'uso divisi per ogni schermata dell'app, fatta
     \label{uc:chatgpt-aggiuntaricetta}
 \end{usecase}
 
-%\newpage
+\newpage
 
 \section{Tracciamento dei requisiti}
 \label{sec:requisiti}
@@ -456,16 +450,6 @@ RFO-6     & Viene visualizzata la lista delle transazioni nell'app & UC6 \\
 \hline
 RFO-7     & L'utente aggiunge una nuova transazione nell'app, indicando i soldi e la data e salva la transazione nel database & UC7 \\
 \hline
-\end{tabularx}
-\end{table}%
-
-\begin{table}%
-\caption{Tabella del tracciamento dei requisiti funzionali dall'8 al 31}
-\label{tab:requisiti-funzionalidue}
-\begin{tabularx}{\textwidth}{lXl}
-\hline
-\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-\hline\hline
 RFO-8     & L'utente amministratore aggiunge la spesa effettuata da uno stagista nell'app, indicando la data e quanto ha speso e lo salva nel database & UC7.1 \\
 \hline
 RFO-9     & L'utente indica la spesa che ha effettuato nell'app, riportando i soldi e la data e lo salva nel database & UC7.2 \\
@@ -476,6 +460,16 @@ RFO-11    & L'utente elimina una transazione presente nel database dall'app & UC
 \hline
 RFO-12    & Viene visualizzato il menu che contiene la lista dei piatti dall'app & UC9 \\
 \hline
+\end{tabularx}
+\end{table}%
+
+\begin{table}%
+\caption{Tabella del tracciamento dei requisiti funzionali dall'8 al 31}
+\label{tab:requisiti-funzionalidue}
+\begin{tabularx}{\textwidth}{lXl}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
+\hline\hline
 RFO-13    & L'utente aggiunge un nuovo piatto nell'app, indicando il nome del piatto, gli ingredienti e la ricetta e lo salva nel database & UC10 \\
 \hline
 RFO-14    & L'utente elimina un piatto presente nel database dall'app & UC11 \\
@@ -514,18 +508,6 @@ RFO-30    & L'utente modifica la propria password dall'app e salva la nuova pass
 \hline
 RFO-31    & L'utente modifica il proprio nome dall'app e salva il nuovo nome nel database & UC22.2 \\
 \hline
-\end{tabularx}
-\end{table}%
-
-\newpage
-
-\begin{table}[htb]%
-\caption{Tabella del tracciamento dei requisiti funzionali dal 32 al 35}
-\label{tab:requisiti-funzionalitre}
-\begin{tabularx}{\textwidth}{lXl}
-\hline
-\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-\hline\hline
 RFO-32    & L'utente modifica il proprio cognome dall'app e salva il nuovo cognome nel database & UC22.3 \\
 \hline
 RFO-33    & L'utente modifica il proprio UID Satispay e salva il nuovo UID nel database & UC22.4 \\
@@ -536,6 +518,8 @@ RFD-35    & Si aggiunge la ricetta proposta da ChatGPT nel menu e si salva la ri
 \hline
 \end{tabularx}
 \end{table}%
+
+\newpage
 
 %\subsection{Requisiti qualitativi}
 
