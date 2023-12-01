@@ -294,20 +294,37 @@ Una funzione fondamentale di TableCalendar è \emph{onDaySelected} (Figura \ref{
 \end{figure}
 \newpage
 
-\subsection{Altre schermate dell'app}
+\subsection{Le schermate Spese e Menu}
+
 Per questo progetto è stata richiesta un'app che permettesse, oltre un controllo e una gestione delle presenze, anche un controllo delle spese e la presenza di un menu comune per tutti, dove è possibile proporre un piatto per il pranzo odierno (Figura \ref{fig:spese-menu}).\newline
-Tramite la barra superiore di entrambe le schermate, è possibile aggiungere un elemento alla lista oppure utilizzare il filtro per visualizzare solo alcuni elementi specifici.\newline
+Le due schermate che si occupano di queste funzioni, sono la schermata Spese, che permette di monitorare, aggiungere o eliminare le transazioni, e la schermata Menu, che permette di selezionare, aggiungere o proporre un piatto.\newline
+\newline
+La struttura di queste due pagine è uguale alla struttura delle pagine Home e Utente, ovvero contengono una barra superiore, una barra inferiore per navigare e una schermata, ma se si analizza le due pagine Spese e Menu, si nota che sono state progettate in modo molto simile tra loro.\newline
+La barra di navigazione non cambia, per questo ci concentreremo di più sulla barra superiore e alla schermata principale.
+\begin{itemize}
+    \item Tramite la barra superiore, è possibile aggiungere un elemento alla lista oppure utilizzare il filtro per visualizzare solo alcuni elementi specifici.
+    \item Nella schermata principale, è possibile monitorare una lista di dati, nel caso di Spese si tratta della lista transazioni, per il Menu invese si tratta di tutti i piatti salvati dagli utenti, sempre gestita come una lista.
+\end{itemize}
+In Spese, le transazioni sono di tre colori distinti, ovvero verde nel caso in cui l'utente riceve dei soldi da altri utenti, rosso per le spese o se l'utente ha inviato i soldi ad altri e, infine, grigio per tutti gli altri casi.\newline
+Le transazioni sono inizialmente in ordine di data decrescente, ma è possibile cambiare l'ordine e i dati visualizzati tramite il filtro.\newline
+Le transazioni inserite dall'utente portano l'icona di un cestino, se cliccato permette di aprire una chimata modale di conferma di eliminazione della transazione; per tutti gli altri \emph{badge} che non sono stati inseriti dall'Utente, questa icona non compare.\newline
+In ogni badge è visibile chi effettua la transazione, la data di esecuzione, i soldi spesi (si tratta del font più grande) e infine se l'utente ha effettuato una spesa o ha inviato i soldi a qualcuno.\newline
+\newline
+Nel Menu, i piatti si presentano tutti uguali, ovvero sono dei \emph{badge} a sfondo blu con un pulsante verde con scritto PROPONI.\newline
+Tutti i piatti inizialmente sono in ordine alfabetico, ma è possibile cambiare l'ordine o guardare dei piatti specificando tramite il filtro.\newline
+Se viene premuto il pulsante PROPONI, il piatto viene aggiunto alla lista dei piatti proposti visibile in Home, ma il piatto non scomparirà dal menu; l'utente quando clicca il pulsante, verrà riportato direttamente in Home per visualizzare la lista aggiornata.\newline
+Ogni badge riporta il nome del piatto e l'utente che lo ha inserito; se si preme lo sfondo blu, verrà aperta una chiamata modale che riporta gli ingredienti, la ricetta e eventualmente un'area per modificare i dati del piatto.\newline
 \newline
 Quando si effettua una aggiunta o si applica un filtro, il lavoro che l'app svolge è aggiornare il database o richiedere degli elementi specifici nel cloud di Firebase, per poi aggiornare graficamente la lista interessata.\newline
 Ogni modifica in Firebase viene ripotata in tempo reale su tutti i dispositivi che utilizzano l'app; per permettere questo, sono stati utilizzati gli \textbf{StreamBuilder}.\newline
-Dato uno \emph{stream} di dati, lo \textbf{StreamBuilder} si occupa di creare e aggiornare dei \emph{widget} specifici, in questo caso si occupa di aggiornare le liste presenti nelle schermate Spesa e Menu.\newline
+Dato uno \emph{stream} di dati, lo \textbf{StreamBuilder} si occupa di creare e aggiornare dei dati specifici; in questo caso, per il progetto creato, si occupa di aggiornare le liste presenti nelle schermate Spese e Menu.\newline
 \newline
 Lo \textbf{StreamBuilder} è stato utilizzato anche nella Home, per permettere all'utente di monitorare in tempo reale i piatti proposti, la \emph{\gls{cassacomuneg}} e la propria \emph{\gls{quotastornatag}}, quest'ultimi due sono in continuo aggiornamento in base alle modifiche riportate nella schermata Spese o tramite le presenze segnate nel calendario (per ogni presenza viene effettuata una modifica pari alla quantità di soldi indicata nella \emph{\gls{quotapastog}}).\newline
 È stato utilizzato lo \textbf{StreamBuilder} anche nella schermata Utente per il controllo in tempo reale della \emph{\gls{quotastornatag}} degli stagisti.
 
-%\newpage
 
 \subsection{Modificare il nome e il logo}
+
 Quando si crea un'applicazione, di default Flutter imposta il suo logo.\newline
 Per poter modificare e utilizzare il proprio logo è molto semplice, prima di tutto bisogna creare più formati dell'immagine che si desidera attribuire all'app, poi bisogna riportarli tutti all'interno della cartella del sistema operativo interessato e preimpostato da Flutter.
 \begin{itemize}
