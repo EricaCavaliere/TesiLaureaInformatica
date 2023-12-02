@@ -1,24 +1,39 @@
 \chapter{Conclusioni}
 \label{cap:conclusioni}
 
-\intro{In conclusione a tutto il percorso di stage, vien fatto un resoconto di tutti gli obbiettivi raggiunti, cosa si potrebbe migliorare e le difficoltà incontrate.}\\
+\intro{In conclusione a tutto il percorso di stage, in questo capitolo viene fatto un resoconto di tutti gli obbiettivi raggiunti, riportando anche una valutazione personale di tutto il lavoro svolto, analizzando difficoltà successi e possibili punti da migliorare in futuro nel progetto.}\\
 
-\intro{Durante il mio lavoro, anche un altro stagista ha lavorato ad un'applicazione per gestire i pranzi in azienda, ma con qualche differenza,}\\
+%\intro{Durante il mio lavoro, anche un altro stagista ha lavorato ad un'applicazione per gestire i pranzi in azienda, ma con qualche differenza,}\\
 
-\intro{In questo capitolo, si riporta un resoconto degli obiettivi e dei requisiti raggiunti, seguito poi da un'analisi personale del progetto svolto.}\\ 
+%\intro{In questo capitolo, si riporta un resoconto degli obiettivi e dei requisiti raggiunti, seguito poi da un'analisi personale del progetto svolto.}\\ 
+
+\section{Valutazione personale}
+
+Il progetto che ho sviluppato tratta di una bozza di una applicazione per gestire i pranzi aziendali.\newline
+Ho lavorato in solitaria, ma con il sostegno del mio tutor che è sempre stato disponibile quando chiedevo aiuto o consigli.\newline
+\newline
+Durante la mia permanenza in azienda, ci sono stati altri due stagisti che hanno lavorato al mio stesso progetto, ma concentrandosi su funzioni diverse.\newline
+Nel mio caso, dovevo creare una gestione automatizzata per permettere il controllo della presenza a pranzo, un secondo stagista ha lavorato con ChatGPT per poter creare e eventualmente aggiungere dei piatti nel menu, mentre l'ultimo ha integrato Satispay all'app, per poter così gestire meglio le transazioni.\newline
+\newline
+Il motivo di questa distinzione  è per creare delle piccole bozze di una applicazione importante, capendo se le funzioni sviluppate possono essere utili per i dipendenti dell'azienda o se sono da scartare e quindi da non implementare nell'applicazione finale.\newline
+\newline
+Nonostante si tratta di una bozza, sono lo stesso contenta di aver affortontato questo progetto, perchè mi ha permesso di conoscere il linguaggio Dart con Flutter e il funzionamento di Firebase.\newline
+Le prime due settimane sono state spese sullo studio delle tecnologie, poi ho dedicato un paio di settimene alla progettazione su Figma e poi ho sempre lavorato sulla codifica dell'app.\newline
+\newline
+Essendo un linguaggio nuovo per me, durante la fase di codifica ho avuto un po' di difficoltà, in particolare con Firebase, perchè non riuscivo a capire come collegare la console Firestore e lavorare sul database tramite codice Dart; ho risolto dopo una settimana di ricerche e di prove, anche con l'aiuto del mio tutor aziendale.\newline
+\newline
+Valutando tutto il lavoro svolto, ci sono alcune cose dell'app che cambierei, un esempio è la pagina transazione, andrei a gestire in modo diverso la visualizzazione dei dati nella lista, togliendo il messaggio di spesa o di invio soldi.\newline
+Anche il \hyperref[sec:calendario]{calendario} modificherei, nonostante risponda alle esigenze dell'utente, se viene utilizzato tutti i giorni e se in un futuro si decide di fare delle modifche in uno o più giornate passate, questo può risultare pesante perchè, per come ho progettato il lavoro, si può modificare solo una data alla volta, facendo risultare all'utente un lavoro noioso e macchinoso.\newline
+È stata una sfida anche implementare il \hyperref[sec:qrcode]{QrCode}, anche se non sono riuscita a implementare la funzione desiderata, sono lo stesso contenta del risultato ottenuto.\newline
+%\newline
+%Ci sono alcune funzioni o elementi che invece non cambierei, come la schermata Impostazioni perchè, anche se si tratta di una schermatata semplice, è stata una delle prime finestre che sono riuscita a creare senza tanti problemi e per l'utente finale risulta facile capire le funzioni presenti.\newline
+\newline
+Nonostante ci siano ancora molti punti su cui lavorare, sono riuscita a rispettare gli obiettivi obbligatori, sviluppando le funzioni principali richieste.\newline
 
 \section{Raggiungimento degli obiettivi}
-In riferimento alle notazioni indicate nel \hyperref[sec:obbiettivi]{primo capitolo} e nel \hyperref[sec:requisiti]{terzo capitolo} e in riferimento alle Tabelle \ref{tab:obiettivi-richiesti}, \ref{tab:requisiti-funzionaliuno}, \ref{tab:requisiti-funzionalidue}, \ref{tab:requisiti-funzionalitre}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo}, di seguito sono riportati gli obbiettivi e i requisiti con il loro stato di completamento.\newline
-Alcuni obbiettivi e alcuni requisiti non sono stati soddisfatti perchè è stato deciso di impiegare più tempo per il raggiungimento degli obiettivi obbligatori, dedicando più tempo allo studio e cercando di migliorare alcune funzioni dell'applicazione richiesta.\newline
 
-%\subsection{Obiettivi raggiunti}
-%Si farà riferimento ai requisiti secondo le seguenti notazioni:
-%\begin{itemize}
-%    \item O per i requisiti obbligatori, vincolanti in quanto obiettivo primario richiesto dal committente;
-%    \item D per i requisiti desiderabili, non vincolanti o strettamente necessari, ma dal riconoscibile valore aggiunto;
-%    \item F per i requisiti facoltativi, rappresentanti valore aggiunto non strettamente competitivo.
-%\end{itemize}
-%Le sigle precedentemente indicate saranno seguite da una coppia sequenziale di numeri, identificativo del requisito.
+In riferimento alle notazioni indicate nel \hyperref[sec:obbiettivi]{primo capitolo} e nel \hyperref[sec:requisiti]{terzo capitolo} e in riferimento alle Tabelle \ref{tab:obiettivi-richiesti}, \ref{tab:requisiti-funzionaliuno}, \ref{tab:requisiti-funzionalidue}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo}, di seguito sono riportati gli obbiettivi e i requisiti con il loro stato di completamento.\newline
+Alcuni obbiettivi e alcuni requisiti non sono stati soddisfatti perchè è stato deciso di impiegare più tempo per il raggiungimento degli obiettivi obbligatori, dedicando più tempo allo studio e cercando di migliorare alcune funzioni dell'applicazione richiesta.\newline
 
 \begin{table}[htb]%
     \caption{Tabella degli obiettivi raggiunti}
@@ -142,9 +157,7 @@ RFD-35    & Si aggiunge la ricetta proposta da ChatGPT nel menu e si salva la ri
 \end{tabularx}
 \end{table}%
 
-%\newpage
-
-%\subsection{Requisiti qualitativi raggiunti}
+\newpage
 
 \begin{table}[htb]%
 \caption{Tabella del tracciamento dei requisiti qualitativi raggiunti}
@@ -157,8 +170,6 @@ RQN-1    & Il codice \emph{front-end} deve essere coperto da test di unità & No
 \hline
 \end{tabularx}
 \end{table}%
-
-%\subsection{Requisiti di vincolo raggiunti}
 
 \begin{table}[htb]%
 \caption{Tabella del tracciamento dei requisiti di vincolo raggiunti}
@@ -180,15 +191,3 @@ RVO-5    & La mail dell'utente non deve essere modificabile tramite app & Soddis
 \end{tabularx}
 \end{table}%
 
-%\section{Conoscenze acquisite}
-
-\newpage
-
-\section{Valutazione personale}
-Considerando che ho affrontato questo progetto, partendo senza avere conoscenze di Flutter o di Firebase, posso dire di essere soddisfatta del lavoro svolto, perchè ho imparato e studiato qualcosa di nuovo.\newline
-\newline
-Non nego che ci sono state diverse difficoltà, in particolare con Firebase, perchè non riuscivo a capire come collegare la console Firestore e lavorare sul database tramite codice Dart, ma con calma, pazienza, affrontando diverse ricerche e con l'aiuto del mio tutor, sono riuscita a capire come implementare le funzioni utili per permettere un corretto funzionamento dell'app, rendendola usabile per tutti i dispositivi.\newline
-\newline
-Ho imparato Flutter, Firebase, ho capito quanto sia utile progettare il modello di un software tramite Figma, perchè avere una idea visiva del progetto da creare può aiutare a capire e a far capire su cosa si lavora e i relativi problemi da affrontare.\newline
-\newline
-Valutando il prodotto finale, ci sono molti punti che si possono migliorare, ma rispetta tutti gli obbiettivi e i requisiti obbligatori richiesti e l'azienda non ha trovato difficoltà nell'utilizzare l'applicazione creata.\newline
