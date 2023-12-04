@@ -100,7 +100,7 @@ Per questa raccolta esiste un solo \emph{documento} con codice identificativo "c
     \item \emph{cognome}, di tipo string; riporta il cognome dell'utente
     \item \emph{UID}, di tipo string; questo rappresenta il codice UID Satispay dell'utente
     \item \emph{quotaStornta}, di tipo string; indica la \emph{\gls{quotastornatag}} dell'utente riferito
-    \item \emph{admin}, di tipo boolean (booleano); riporta se l'uttente è un amministratore o un utente semplice
+    \item \emph{admin}, di tipo boolean (booleano); riporta se l'utente è un amministratore o un utente semplice
 \end{itemize}
 
 \noindent \textbf{piatti}
@@ -197,7 +197,7 @@ Anche il file \emph{caricamento\textunderscore messaggi.dart} definisce il testo
 Sono stati creati diversi componenti per permettere di visualizzare i dati, si tratta di tutti i file nell'elenco della cartella \textbf{Components} che iniziano con la parola \emph{badge}.\newline
 Questo perchè, per ogni schermata dell'app, i dati compariranno in modo leggeremente diverso oppure è possibile eseguire delle azioni che in altre schermate non sono presenti.\newline
 Per esempio, i file \emph{badge\textunderscore piatto.dart} e \emph{badge\textunderscore piatto\textunderscore modifica.dart} riportano come devono apparire i piatti nel Menu, distinguendo tra i piatti inseriti dall'utente, quindi modificabili, e quelli creati da altri utenti, quindi i piatti che si possono solo visualizzare.\newline
-In entrambi i casi, dovrà comparire il puldante PROPONI, che permette di proporre un piatto per il pranzo odierno e, se cliccato, farà visualizzare per tutti gli utenti il piatto nella lista dei piatti proposti.\newline
+In entrambi i casi, dovrà comparire il pulsante PROPONI, che permette di proporre un piatto per il pranzo odierno e, se cliccato, farà visualizzare per tutti gli utenti il piatto nella lista dei piatti proposti.\newline
 \newline
 Anche per la pagina Impostazioni sono stati creati dei componenti distinti\newline
 (\emph{box\textunderscore impostazioni.dart} e \emph{box\textunderscore impostazioni\textunderscore modale.dart}), mentre i seguenti file rappresentano dei componenti unici, modificabili in base all'uso:
@@ -205,7 +205,7 @@ Anche per la pagina Impostazioni sono stati creati dei componenti distinti\newli
     \item \emph{calendario.dart} definisce il calendario utilizzato per gestire le presenze dell'utente o dei stagisti;
     \item \emph{chiamata\textunderscore modale.dart} permette di aprire una finestra che si posiziona sopra la schermata dove l'utente l'ha richiamata, non coprendola totalmente; in questo componente bisogna definire il messaggio o i dati da visualizzare e si definisce anche l'icona del pulsante che permette di visualizzare questa finestra; è stata utilizzata per permettere di aggiungere, eliminare o modificare alcuni dati tramite app;
     \item \emph{pulsante\textunderscore principale.dart} consente di visualizzare un bottone, bisognerà definire il testo, il colore e l'azione che deve svolgere il bottone se viene cliccato;
-    \item \emph{barra\textunderscore filtro.dart} definisce la barra superiore che deve essre visualizzata nelle schermate Spese e Menu; a destra della barra riporta un pulsante che consente di selezionare il filtro da applicare all'elenco presente in schermata, mentre il bottone a sinistra è modificabile dal programmatore.
+    \item \emph{barra\textunderscore filtro.dart} definisce la barra superiore che deve essere visualizzata nelle schermate Spese e Menu; a destra della barra riporta un pulsante che consente di selezionare il filtro da applicare all'elenco presente in schermata, mentre il bottone a sinistra è modificabile dal programmatore.
 \end{itemize}
 
 \newpage
@@ -303,8 +303,8 @@ Le due schermate che si occupano di queste funzioni, sono la schermata Spese, ch
 La struttura di queste due pagine è uguale alla struttura delle pagine Home e Utente, ovvero contengono una barra superiore, una barra inferiore per navigare e una schermata, ma se si analizza le due pagine Spese e Menu, si nota che sono state progettate in modo molto simile tra loro.\newline
 La barra di navigazione non cambia, per questo ci concentreremo di più sulla barra superiore e alla schermata principale.
 \begin{itemize}
-    \item Tramite la barra superiore, è possibile aggiungere un elemento alla lista oppure utilizzare il filtro per visualizzare solo alcuni elementi specifici.
-    \item Nella schermata principale, è possibile monitorare una lista di dati, nel caso di Spese si tratta della lista transazioni, per il Menu invese si tratta di tutti i piatti salvati dagli utenti, sempre gestita come una lista.
+    \item Tramite la barra superiore è possibile aggiungere un elemento alla lista oppure utilizzare il filtro per visualizzare solo alcuni elementi specifici.
+    \item Nella schermata principale è possibile monitorare una lista di dati, nel caso di Spese si tratta della lista transazioni, per il Menu invece si tratta di tutti i piatti salvati dagli utenti, sempre gestita come una lista.
 \end{itemize}
 In Spese, le transazioni sono di tre colori distinti, ovvero verde nel caso in cui l'utente riceve dei soldi da altri utenti, rosso per le spese o se l'utente ha inviato i soldi ad altri e, infine, grigio per tutti gli altri casi.\newline
 Le transazioni sono inizialmente in ordine di data decrescente, ma è possibile cambiare l'ordine e i dati visualizzati tramite il filtro.\newline
